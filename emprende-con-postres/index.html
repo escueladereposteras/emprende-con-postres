@@ -31,31 +31,32 @@
   </script>
   
   <style>
-    /* Prevent layouts from flickering during script execution */
-    [v-cloak] { display: none !important; }
-    
     @keyframes pulse-slow {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.85; transform: scale(0.98); }
     }
-    
     .animate-pulse-slow {
       animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    /* Smooth transition for accordions */
+    .accordion-content {
+      transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+      overflow: hidden;
     }
   </style>
 </head>
 <body class="font-sans antialiased text-[#2D2224] bg-[#FFFBFB] min-h-screen">
 
-  <!-- 1. TOP BAR MAP -->
-  <div class="bg-[#E1194E] text-white py-2 px-2 relative z-50 shadow-md">
-    <div class="max-w-7xl mx-auto flex flex-row items-center justify-center gap-1.5 text-center whitespace-nowrap overflow-hidden">
-      <p class="font-display font-black text-[9px] xs:text-[11px] sm:text-xs md:text-sm lg:text-base flex items-center justify-center gap-1 select-none">
+  <!-- 1. TOP BAR -->
+  <div class="bg-[#E1194E] text-white py-2.5 px-2 relative z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-row items-center justify-center gap-2 text-center whitespace-nowrap overflow-hidden">
+      <p class="font-display font-black text-[11px] xs:text-[13px] sm:text-sm md:text-base lg:text-lg flex items-center justify-center gap-1.5 select-none">
         <span>🎁</span> <span>Es el último día para ahorrar 65% OFF</span>
       </p>
-      <div class="flex items-center gap-0.5 text-[#FFF] font-sans font-black text-[9px] xs:text-[11px] sm:text-xs bg-black/20 px-1 py-0.5 rounded border border-white/10 shadow-inner shrink-0 leading-none">
-        <span id="timer-top-min" class="bg-[#FFF] text-[#E1194E] px-1 py-0.5 rounded text-[8px] xs:text-[10px] sm:text-xs font-black leading-none">59</span>
-        <span class="text-white text-[8px] xs:text-[10px] sm:text-xs font-black px-0.5">:</span>
-        <span id="timer-top-sec" class="bg-[#FFF] text-[#E1194E] px-1 py-0.5 rounded text-[8px] xs:text-[10px] sm:text-xs font-black leading-none">00</span>
+      <div class="flex items-center gap-1 text-[#FFF] font-sans font-black text-[11px] xs:text-[13px] sm:text-sm bg-black/25 px-1.5 py-1 rounded border border-white/10 shadow-inner shrink-0 leading-none">
+        <span id="timer-top-min" class="bg-[#FFF] text-[#E1194E] px-1 py-0.5 rounded text-[10px] xs:text-[12px] sm:text-sm font-black leading-none">59</span>
+        <span class="text-white text-[10px] xs:text-[12px] sm:text-sm font-black">:</span>
+        <span id="timer-top-sec" class="bg-[#FFF] text-[#E1194E] px-1 py-0.5 rounded text-[10px] xs:text-[12px] sm:text-sm font-black leading-none">00</span>
       </div>
     </div>
   </div>
@@ -66,7 +67,7 @@
     <div class="absolute right-0 top-1/3 w-80 h-80 bg-pink-100/30 rounded-full filter blur-3xl pointer-events-none"></div>
     
     <div class="max-w-4xl mx-auto text-center relative z-10">
-      <h1 class="font-display font-black text-[22px] xs:text-[28px] sm:text-[38px] md:text-[48px] lg:text-[56px] leading-[1.12] text-[#35151C] mb-6 tracking-tight max-w-4xl mx-auto px-2">
+      <h1 class="font-display font-black text-[25px] xs:text-[32px] sm:text-[38px] md:text-[48px] lg:text-[56px] leading-[1.12] text-[#35151C] mb-6 tracking-tight max-w-4xl mx-auto px-2">
         Emprende y gana dinero<br class="hidden xs:inline" /> 
         vendiendo <span class="text-[#DE286B]">postres</span> <span class="text-[#CB1C3F]">desde casa</span><br class="hidden xs:inline" /> 
         sin utensilios costosos
@@ -88,7 +89,7 @@
         <span>6,137 estudiantes inscritos</span>
       </div>
 
-      <p class="font-display font-black text-red-600 tracking-wide text-[10px] xs:text-[11px] sm:text-xs md:text-sm lg:text-base mb-6 uppercase flex items-center justify-center gap-1.5 leading-none select-none animate-pulse-slow">
+      <p class="font-display font-black text-red-600 tracking-wide text-[12px] xs:text-[14px] sm:text-sm md:text-sm lg:text-base mb-6 uppercase flex items-center justify-center gap-1.5 leading-none select-none animate-pulse-slow">
         <span>👇</span> NO CONTINÚES SIN VER ESTE VIDEO <span>👇</span>
       </p>
 
@@ -271,10 +272,10 @@
           />
         </div>
 
-        <!-- Right side syllabus items Accordion rendered via JavaScript -->
+        <!-- Right side syllabus items accordions -->
         <div class="md:col-span-6 bg-white p-6 sm:p-8 rounded-3xl shadow-lg border border-pink-100">
           <div id="syllabus-accordion" class="divide-y divide-rose-100">
-            <!-- Dynamic items loaded via script -->
+            <!-- Curriculum modules render dynamically via JS at bottom -->
           </div>
         </div>
       </div>
@@ -305,7 +306,7 @@
         <!-- Grid Item 3 -->
         <div class="flex flex-col items-center text-center p-1.5 xs:p-3 rounded-xl sm:rounded-2xl bg-white border border-pink-100/50 shadow-sm hover:shadow-md transition-shadow">
           <img src="https://lh3.googleusercontent.com/d/124feMqbwA6Xfo1rSsW2s1-9sNWL3LuvT" alt="DECORACIÓN CON BUTTERCREAM" class="w-full aspect-square rounded-lg sm:rounded-xl mb-2 sm:mb-4 object-cover bg-rose-50" referrerpolicy="no-referrer" />
-          <p class="font-display font-black text-[#4B0017] leading-tight select-all py-0.5 px-0.5 sm:px-2 text-[8px] xs:text-[11px] sm:text-xs md:text-sm font-sans">DECORACIÓN CON BUTTERCREAM</p>
+          <p class="font-display font-black text-[#4B0017] leading-tight select-all py-0.5 px-0.5 sm:px-2 text-[8px] xs:text-[11px] sm:text-xs md:text-sm">DECORACIÓN CON BUTTERCREAM</p>
         </div>
         <!-- Grid Item 4 -->
         <div class="flex flex-col items-center text-center p-1.5 xs:p-3 rounded-xl sm:rounded-2xl bg-white border border-pink-100/50 shadow-sm hover:shadow-md transition-shadow">
@@ -320,7 +321,7 @@
         <!-- Grid Item 6 -->
         <div class="flex flex-col items-center text-center p-1.5 xs:p-3 rounded-xl sm:rounded-2xl bg-white border border-pink-100/50 shadow-sm hover:shadow-md transition-shadow">
           <img src="https://lh3.googleusercontent.com/d/1YGBHT4nqWHlxRG23rm6Gqwf52FAZqvZW" alt="MASTERCLASS EXCLUSIVA" class="w-full aspect-square rounded-lg sm:rounded-xl mb-2 sm:mb-4 object-cover bg-rose-50" referrerpolicy="no-referrer" />
-          <p class="font-display font-black text-[#4B0017] leading-tight select-all py-0.5 px-0.5 sm:px-2 text-[8px] xs:text-[11px] sm:text-xs md:text-sm">MASTERCLASS EXCLUSIVA</p>
+          <p class="font-display font-black text-[#4B0017] leading-tight select-all py-0.5 px-0.5 sm:px-2 text-[8px] xs:text-[11px] sm:text-xs md:text-sm font-sans">MASTERCLASS EXCLUSIVA</p>
         </div>
       </div>
     </div>
@@ -384,7 +385,7 @@
           <div class="mt-8 space-y-4 w-full">
             <a 
               href="https://go.hotmart.com/P96266349T?ap=c722" 
-              class="block text-center w-full bg-[#FF6B00] hover:bg-[#E56000] text-white py-4 px-6 rounded-2xl font-display font-extrabold text-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-orange-500/30 active:scale-[0.99] uppercase animate-pulse-slow text-center select-all"
+              class="block text-center w-full bg-[#FF6B00] hover:bg-[#E56000] text-white py-4 px-6 rounded-2xl font-display font-extrabold text-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-orange-500/30 active:scale-[0.99] uppercase animate-pulse-slow select-all"
             >
               QUIERO INSCRIBIRME
             </a>
@@ -655,7 +656,7 @@
             </p>
             <a 
               href="https://go.hotmart.com/P96266349T?ap=c722" 
-              class="block text-center text-sm sm:text-xs font-black bg-rose-600 hover:bg-rose-700 text-white rounded-lg sm:rounded py-3 sm:py-2 mt-4 transition-colors uppercase animate-pulse shadow-md shadow-rose-600/30"
+              class="block text-center text-sm sm:text-xs font-black bg-rose-600 hover:bg-rose-700 text-white rounded-lg sm:rounded py-3 sm:py-2 mt-4 transition-colors uppercase animate-pulse shadow-md shadow-rose-600/30 animation-delay-200"
             >
               QUIERO INSCRIBIRME
             </a>
@@ -836,16 +837,16 @@
           </h3>
 
           <div class="space-y-3">
-            <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ Más de 80 clases prácticas con acceso ilimitado</p>
-            <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ Certificado de culminación</p>
-            <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ Grupos de soporte de estudiantes en Telegram y Facebook</p>
-            <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ Clases en vivo mensuales</p>
-            <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ 8 bonos de regalo (costos, marketing)</p>
+             <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ Más de 80 clases prácticas con acceso ilimitado</p>
+             <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ Certificado de culminación</p>
+             <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ Grupos de soporte de estudiantes en Telegram y Facebook</p>
+             <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ Clases en vivo mensuales</p>
+             <p class="text-[#3F2B31] font-semibold text-base leading-relaxed text-center sm:text-left">✓ 8 bonos de regalo (costos, marketing)</p>
           </div>
 
           <!-- Vimeo Video inside the resumen -->
           <div class="pt-6 flex justify-center">
-            <div class="rounded-xl overflow-hidden border border-rose-900/10 shadow-lg relative w-full max-w-[320px] aspect-[9/16] bg-black">
+            <div class="rounded-xl overflow-hidden border border-rose-900/10 shadow-lg relative w-full max-w-[320px] aspect-[9/16] bg-black font-sans">
               <iframe
                 src="https://player.vimeo.com/video/917565002?title=0&byline=0&portrait=0&badge=0&autopause=0&color=DE286B&loop=1"
                 class="absolute top-0 left-0 w-full h-full"
@@ -984,6 +985,7 @@
     <div class="max-w-6xl mx-auto">
       
       <div class="grid md:grid-cols-2 gap-12 items-center">
+        
         <!-- Left platform image -->
         <div class="flex justify-center w-full">
           <img 
@@ -997,7 +999,7 @@
         <!-- Right content details -->
         <div class="space-y-6">
           <h3 class="font-display font-black text-2xl sm:text-3xl text-[#35151C] tracking-tight">
-            Accede a nuestra plataforma de educación en línea
+            Accede a nuestra platafroma de educación en línea
           </h3>
           
           <p class="text-neutral-600 leading-relaxed text-sm sm:text-base">
@@ -1019,6 +1021,7 @@
             </p>
           </div>
         </div>
+
       </div>
 
     </div>
@@ -1032,8 +1035,8 @@
         ¿Aún tienes dudas? Aquí te las resuelvo
       </h2>
 
-      <div id="faq-accordion" class="space-y-4">
-        <!-- Dynamic FAQs loaded via JS -->
+      <div class="space-y-4" id="faq-accordion-container">
+        <!-- Faq dynamic structure loaded from script -->
       </div>
 
     </div>
@@ -1043,7 +1046,7 @@
   <div class="bg-white py-16 px-4 border-t border-rose-100">
     <div class="max-w-2xl mx-auto text-center space-y-6">
       <div class="flex justify-center mb-2 animate-bounce">
-        <svg class="w-12 h-12 text-[#35151C]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        <svg class="w-12 h-12 text-[#35151C]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
       <h2 class="font-display font-black text-[22px] xs:text-[28px] sm:text-[38px] md:text-[48px] lg:text-[56px] leading-[1.12] text-[#35151C] tracking-tight">
         ¿Quieres pagar en efectivo?
@@ -1054,7 +1057,7 @@
 
       <a 
         href="https://go.hotmart.com/P96266349T?ap=c722" 
-        class="inline-block bg-[#E1194E] hover:bg-[#C2113D] text-white py-4 px-10 rounded-2xl font-display font-black text-base sm:text-lg transition-all hover:scale-[1.02] shadow-lg shadow-rose-500/20 uppercase"
+        class="inline-block bg-[#E1194E] hover:bg-[#C2113D] text-white py-4 px-10 rounded-2xl font-display font-black text-base sm:text-lg transition-all hover:scale-[1.02] shadow-lg shadow-rose-500/20 uppercase animate-pulse-slow"
       >
         HACER PAGO EN EFECTIVO
       </a>
@@ -1078,67 +1081,81 @@
     </p>
   </footer>
 
+  <!-- DYNAMIC DATA AND INTERACTIVE SCRIPTS -->
   <script>
-    // Set copyright year automatically
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    // 1. COPYRIGHT YEAR
+    document.getElementById('copyright-year').innerText = new Date().getFullYear();
 
-    // 1. RESTARTING 59-MINUTE COUNTDOWN WITH PERSISTENCE (Matches React logic perfectly)
+    // 2. COUNTDOWN TIMER ENGINE (PERSISTENT LOGIC MIRRORING THE REACT APP)
     const countdownDuration = 59 * 60; // 59 minutes in seconds
 
-    function getRemainingTime() {
+    function initCountdown() {
       const savedEndTime = localStorage.getItem('sweet_baking_end_time_59m_v1');
       const now = Date.now();
+      let timeLeft = countdownDuration;
+
       if (savedEndTime) {
         const remaining = Math.ceil((parseInt(savedEndTime, 10) - now) / 1000);
         if (remaining > 0 && remaining <= countdownDuration) {
-          return remaining;
+          timeLeft = remaining;
+        } else {
+          // Restart countdown end time
+          const newEndTime = now + countdownDuration * 1000;
+          localStorage.setItem('sweet_baking_end_time_59m_v1', String(newEndTime));
         }
+      } else {
+        const newEndTime = now + countdownDuration * 1000;
+        localStorage.setItem('sweet_baking_end_time_59m_v1', String(newEndTime));
       }
-      const newEndTime = now + countdownDuration * 1000;
-      localStorage.setItem('sweet_baking_end_time_59m_v1', String(newEndTime));
-      return countdownDuration;
+
+      updateTimersHTML(timeLeft);
+
+      const intervalId = setInterval(() => {
+        const currentSavedEndTime = localStorage.getItem('sweet_baking_end_time_59m_v1');
+        const currentTime = Date.now();
+        let remaining = Math.ceil((parseInt(currentSavedEndTime, 10) - currentTime) / 1000);
+
+        if (remaining <= 0) {
+          // Reset
+          const nextEndTime = Date.now() + countdownDuration * 1000;
+          localStorage.setItem('sweet_baking_end_time_59m_v1', String(nextEndTime));
+          remaining = countdownDuration;
+        }
+
+        updateTimersHTML(remaining);
+      }, 1000);
     }
 
-    let timeLeft = getRemainingTime();
-
-    function updateTimers() {
-      const h = Math.floor(timeLeft / 3600);
-      const m = Math.floor((timeLeft % 3600) / 60);
-      const s = timeLeft % 60;
+    function updateTimersHTML(totalSecs) {
+      const m = Math.floor(totalSecs / 60);
+      const s = totalSecs % 60;
 
       const pad = (num) => String(num).padStart(2, '0');
-      const minutesStr = pad(m);
-      const secondsStr = pad(s);
+      const minStr = pad(m);
+      const secStr = pad(s);
 
-      // Top Bar Timer
-      document.getElementById('timer-top-min').textContent = minutesStr;
-      document.getElementById('timer-top-sec').textContent = secondsStr;
+      // Top Bar Elements
+      const topMin = document.getElementById('timer-top-min');
+      const topSec = document.getElementById('timer-top-sec');
+      if (topMin) topMin.innerText = minStr;
+      if (topSec) topSec.innerText = secStr;
 
-      // Offer Box Timer
-      document.getElementById('timer-box-min').textContent = minutesStr;
-      document.getElementById('timer-box-sec').textContent = secondsStr;
+      // Offer Card Elements
+      const boxMin = document.getElementById('timer-box-min');
+      const boxSec = document.getElementById('timer-box-sec');
+      if (boxMin) boxMin.innerText = minStr;
+      if (boxSec) boxSec.innerText = secStr;
 
-      // Sub Timer (bottom bonuses section)
-      document.getElementById('timer-bottom-min').textContent = minutesStr;
-      document.getElementById('timer-bottom-sec').textContent = secondsStr;
+      // Bottom Bonus Elements
+      const botMin = document.getElementById('timer-bottom-min');
+      const botSec = document.getElementById('timer-bottom-sec');
+      if (botMin) botMin.innerText = minStr;
+      if (botSec) botSec.innerText = secStr;
     }
 
-    // Start interval
-    updateTimers();
-    const interval = setInterval(() => {
-      if (timeLeft <= 1) {
-        // Reset countdown
-        const newEndTime = Date.now() + countdownDuration * 1000;
-        localStorage.setItem('sweet_baking_end_time_59m_v1', String(newEndTime));
-        timeLeft = countdownDuration;
-      } else {
-        timeLeft--;
-      }
-      updateTimers();
-    }, 1000);
+    window.addEventListener('DOMContentLoaded', initCountdown);
 
-
-    // 2. CURRICULUM MODULES (Syllabus Accordion rendering)
+    // 3. CURRICULUM SYLLABUS DATA & TOGGLE LOGIC
     const curriculumModules = [
       {
         title: "Módulo 1 - Introducción",
@@ -1269,67 +1286,69 @@
       }
     ];
 
-    const syllabusAccordionEl = document.getElementById('syllabus-accordion');
-    let openModuleIndex = 0; // First module open by default
+    const syllabusContainer = document.getElementById('syllabus-accordion');
+    let activeModuleIndex = 0; // First module open by default
 
     function renderSyllabus() {
-      syllabusAccordionEl.innerHTML = '';
+      syllabusContainer.innerHTML = '';
       curriculumModules.forEach((mod, idx) => {
-        const isOpen = openModuleIndex === idx;
-        const dividerDiv = document.createElement('div');
-        dividerDiv.className = 'py-3';
+        const modId = 'syllabus-mod-' + idx;
+        const panelId = 'syllabus-panel-' + idx;
+        const isOpen = activeModuleIndex === idx;
 
-        // Button Header
-        const button = document.createElement('button');
-        button.className = 'w-full flex items-center justify-between text-left font-bold text-[#4B0017] hover:text-rose-600 transition-colors focus:outline-none';
-        button.innerHTML = `
-          <span class="text-sm sm:text-base flex items-center gap-2">
-            <span class="text-rose-400">🧁</span> ${mod.title}
-          </span>
-          <span class="chevron-holder">
-            ${isOpen ? 
-              `<svg class="w-4 h-4 text-rose-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>` : 
-              `<svg class="w-4 h-4 text-rose-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>`
-            }
-          </span>
-        `;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'py-3';
 
-        button.addEventListener('click', () => {
-          openModuleIndex = (openModuleIndex === idx) ? null : idx;
-          renderSyllabus();
+        // Header button
+        const btn = document.createElement('button');
+        btn.className = 'w-full flex items-center justify-between text-left font-bold text-[#4B0017] hover:text-rose-600 transition-colors focus:outline-none py-1';
+        btn.onclick = () => toggleModule(idx);
+
+        const titleSpan = document.createElement('span');
+        titleSpan.className = 'text-sm sm:text-base flex items-center gap-2';
+        titleSpan.innerHTML = `<span class="text-rose-400">🧁</span> ${mod.title}`;
+
+        const arrowSpan = document.createElement('span');
+        arrowSpan.className = 'arrow-icon text-rose-400 transform transition-transform duration-200';
+        arrowSpan.innerHTML = isOpen 
+          ? `<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>`
+          : `<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>`;
+
+        btn.appendChild(titleSpan);
+        btn.appendChild(arrowSpan);
+
+        // Sub items div container
+        const subList = document.createElement('div');
+        subList.id = panelId;
+        subList.className = 'accordion-content transition-all duration-300 ' + (isOpen ? 'mt-2.5 p-2.5 border border-rose-100/50 bg-rose-50/50 rounded-lg max-h-[800px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none');
+
+        mod.items.forEach(sub => {
+          const lower = sub.toLowerCase();
+          const hasNoBullet = lower.startsWith("clase") || 
+                              lower.startsWith("ebook") || 
+                              lower.startsWith("crema") || 
+                              lower.startsWith("decoración");
+          
+          const p = document.createElement('p');
+          p.className = 'text-xs sm:text-sm text-[#5C454B] py-0.5 font-medium';
+          p.innerText = `${hasNoBullet ? "" : "• "}${sub}`;
+          subList.appendChild(p);
         });
 
-        dividerDiv.appendChild(button);
-
-        // Body items panel if open
-        if (isOpen) {
-          const bodyDiv = document.createElement('div');
-          bodyDiv.className = 'mt-2.5 pl-6 pr-2 space-y-1 bg-rose-50/50 p-2.5 rounded-lg border border-rose-100/50';
-          
-          mod.items.forEach(item => {
-            const lowerItem = item.toLowerCase();
-            const hasNoBullet = lowerItem.startsWith("clase") || 
-                                lowerItem.startsWith("ebook") || 
-                                lowerItem.startsWith("crema") || 
-                                lowerItem.startsWith("decoración");
-            
-            const p = document.createElement('p');
-            p.className = 'text-xs sm:text-sm text-[#5C454B] py-0.5 font-medium';
-            p.textContent = (hasNoBullet ? "" : "• ") + item;
-            bodyDiv.appendChild(p);
-          });
-          
-          dividerDiv.appendChild(bodyDiv);
-        }
-
-        syllabusAccordionEl.appendChild(dividerDiv);
+        wrapper.appendChild(btn);
+        wrapper.appendChild(subList);
+        syllabusContainer.appendChild(wrapper);
       });
+    }
+
+    function toggleModule(idx) {
+      activeModuleIndex = activeModuleIndex === idx ? null : idx;
+      renderSyllabus();
     }
 
     renderSyllabus();
 
-
-    // 3. FAQS SECTION (FAQ Accordion rendering)
+    // 4. FAQ ACCORDION ENGINE
     const faqs = [
       {
         q: "¿Es un curso en línea o presencial?",
@@ -1361,48 +1380,54 @@
       }
     ];
 
-    const faqAccordionEl = document.getElementById('faq-accordion');
-    let openFaqIndex = null;
+    const faqAccordionContainer = document.getElementById('faq-accordion-container');
+    let activeFaqIndex = null;
 
     function renderFaqs() {
-      faqAccordionEl.innerHTML = '';
+      faqAccordionContainer.innerHTML = '';
       faqs.forEach((faq, index) => {
-        const isOpen = openFaqIndex === index;
-        const containerDiv = document.createElement('div');
-        containerDiv.className = 'bg-white rounded-2xl border border-rose-100 shadow-sm overflow-hidden transition-all duration-200';
+        const isOpen = activeFaqIndex === index;
 
-        const button = document.createElement('button');
-        button.className = 'w-full flex items-center justify-between text-left p-5 font-bold text-[#4B0017] hover:bg-rose-50/30 font-display transition-colors focus:outline-none';
-        button.innerHTML = `
-          <span class="text-sm sm:text-base">${faq.q}</span>
-          <span>
-            ${isOpen ? 
-              `<svg class="w-5 h-5 text-rose-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>` : 
-              `<svg class="w-5 h-5 text-rose-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>`
-            }
-          </span>
-        `;
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-2xl border border-rose-100 shadow-sm overflow-hidden transition-all duration-200';
 
-        button.addEventListener('click', () => {
-          openFaqIndex = (openFaqIndex === index) ? null : index;
-          renderFaqs();
-        });
+        // Header button
+        const btn = document.createElement('button');
+        btn.className = 'w-full flex items-center justify-between text-left p-5 font-bold text-[#4B0017] hover:bg-rose-50/30 font-display transition-colors focus:outline-none';
+        btn.onclick = () => toggleFaq(index);
 
-        containerDiv.appendChild(button);
+        const qSpan = document.createElement('span');
+        qSpan.className = 'text-sm sm:text-base';
+        qSpan.innerText = faq.q;
 
-        if (isOpen) {
-          const contentDiv = document.createElement('div');
-          contentDiv.className = 'p-5 pt-0 border-t border-rose-50/50 bg-[#FFFDFE]';
-          contentDiv.innerHTML = `
-            <p class="text-neutral-600 text-sm sm:text-base leading-relaxed font-medium">
-              ${faq.a}
-            </p>
-          `;
-          containerDiv.appendChild(contentDiv);
-        }
+        const arrowDiv = document.createElement('div');
+        arrowDiv.className = 'text-rose-500 shrink-0 transform transition-transform duration-200';
+        arrowDiv.innerHTML = isOpen
+          ? `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>`
+          : `<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>`;
 
-        faqAccordionEl.appendChild(containerDiv);
+        btn.appendChild(qSpan);
+        btn.appendChild(arrowDiv);
+
+        // Panel content
+        const aDiv = document.createElement('div');
+        aDiv.className = 'accordion-content transition-all duration-300 ' + (isOpen ? 'p-5 pt-0 border-t border-rose-50/50 bg-[#FFFDFE] max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none');
+
+        const p = document.createElement('p');
+        p.className = 'text-neutral-600 text-sm sm:text-base leading-relaxed font-medium mt-3';
+        p.innerText = faq.a;
+
+        aDiv.appendChild(p);
+
+        card.appendChild(btn);
+        card.appendChild(aDiv);
+        faqAccordionContainer.appendChild(card);
       });
+    }
+
+    function toggleFaq(index) {
+      activeFaqIndex = activeFaqIndex === index ? null : index;
+      renderFaqs();
     }
 
     renderFaqs();
