@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MegaPack Postres para Emprender - Dulce Negocio</title>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lobster&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+            serif: ["Playfair Display", "Georgia", "serif"],
+            mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
+            cursive: ["Lobster", "cursive"],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Keyframe Animations matching React motion */
+    @keyframes marquee {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+    .animate-marquee-loop {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+
+    @keyframes blink-slow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    .animate-blink-slow {
+      animation: blink-slow 2.5s ease-in-out infinite;
+    }
+
+    /* Selection styling */
+    ::selection {
+      background-color: #fbcfe8;
+      color: #9d174d;
+    }
+
+    /* Accordion transition utility */
+    .faq-answer-container {
+      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out;
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1342339014701440');
+  fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+<body class="font-sans antialiased text-neutral-800 bg-white">
+  <!-- Meta Pixel Code (noscript) -->
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1342339014701440&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code (noscript) -->
+
+  <!-- MAIN SCROLL CONTAINER -->
+  <main>
+
+    <!-- HERO SECTION (No sticky navigation bar or header above, starts directly here) -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-rose-50 via-pink-50/30 to-white pt-16 pb-16 md:pt-24 md:pb-20">
+      <!-- Decorative background elements -->
+      <div class="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-pink-200/40 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/3 right-10 w-80 h-80 bg-rose-100/50 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        <!-- Headline -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold tracking-tight text-neutral-900 leading-[1.2] max-w-4xl mx-auto">
+          Crea tu propio negocio de repostería desde casa con nuestro <span class="text-pink-600 bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent italic font-semibold">Megapack de Postres</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto mt-6 leading-relaxed">
+          Aprende el paso a paso para generar ingresos desde tu cocina con recetas sencillas, de bajo costo y listas para vender
+        </p>
+
+        <!-- Mockup Graphic -->
+        <div class="relative max-w-xl mx-auto mt-10 md:mt-12 group">
+          <div class="relative">
+            <img
+              src="https://lh3.googleusercontent.com/d/1mSvsbeM2inTlTpHuV8j--eZJrbdzvoMW"
+              alt="Ebook Bundle Mockup MegaPack Dulce Negocio"
+              class="w-full h-auto object-contain"
+              referrerpolicy="no-referrer"
+            />
+            
+            <!-- Overlay badge with star rating -->
+            <div class="absolute -bottom-4 -right-4 sm:-right-6 bg-white border border-pink-100 shadow-lg px-4 py-3 rounded-2xl flex flex-col items-center z-10">
+              <div class="flex gap-0.5 mb-1 text-amber-400">
+                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
+                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
+                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
+                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
+                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
+              </div>
+              <span class="text-[10px] sm:text-xs font-bold text-neutral-700">+2.397 Alumnas felices</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA and trust factors -->
+        <div class="mt-14 max-w-sm mx-auto flex flex-col items-center gap-4">
+          <button
+            onclick="scrollToPricing()"
+            id="cta-hero"
+            class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-bold py-4 px-8 rounded-[20px] shadow-lg shadow-pink-200/80 hover:shadow-xl hover:shadow-pink-300/80 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-sm sm:text-base uppercase tracking-wider cursor-pointer flex items-center justify-center gap-2"
+          >
+            <span>QUIERO EL MEGAPACK AHORA</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+          <span class="text-xs font-semibold tracking-wider text-pink-600 uppercase flex items-center gap-1">
+            ✨ Acceso inmediato
+          </span>
+        </div>
+
+        <!-- Trust pillars checklists -->
+        <div class="mt-12 pt-8 border-t border-pink-100 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-left sm:text-center text-sm text-neutral-600 font-medium">
+          <div class="flex items-center sm:justify-center gap-2.5">
+            <div class="bg-emerald-100 text-emerald-600 p-1 rounded-full shrink-0">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+            </div>
+            <span>Acceso inmediato</span>
+          </div>
+          <div class="flex items-center sm:justify-center gap-2.5">
+            <div class="bg-emerald-100 text-emerald-600 p-1 rounded-full shrink-0">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+            </div>
+            <span>Garantía de 7 días</span>
+          </div>
+          <div class="flex items-center sm:justify-center gap-2.5">
+            <div class="bg-emerald-100 text-emerald-600 p-1 rounded-full shrink-0">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+            </div>
+            <span>Compatible con celular y PC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- QUALIFICATION SECTION -->
+    <section class="bg-gradient-to-b from-white to-pink-50/20 pt-[30px] pb-20 md:pb-24 relative overflow-hidden">
+      <!-- Decorative side accent blur -->
+      <div class="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 bg-pink-100/40 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
+        <!-- Header Block -->
+        <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
+            Este MegaPack es <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">perfecto para ti si...</span>
+          </h2>
+        </div>
+
+        <!-- Qualifications Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          
+          <!-- Card 1 -->
+          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
+                <i data-lucide="compass" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
+                Has pensado en emprender pero no sabes con qué receta empezar
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
+                <i data-lucide="home" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
+                Quieres trabajar desde la comodidad de tu casa y tener más tiempo con tus hijos
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
+                <i data-lucide="trending-up" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
+                Tienes un negocio y quieres aumentar tus ganancias y tu menú
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
+                <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
+                Quieres aprender a hacer postres deliciosos, económicos y rentables
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
+                <i data-lucide="piggy-bank" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
+                Quieres tener ingresos extra pero cuentas con bajo presupuesto para emprender
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
+                <i data-lucide="share-2" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
+                Quieres vender desde las redes sociales
+              </h3>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Banner -->
+        <div class="mt-12 bg-gradient-to-r from-pink-50 to-rose-50/60 rounded-2xl border border-pink-100 p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+          <div class="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-pink-500 flex-shrink-0 mx-auto sm:mx-0">
+            <i data-lucide="award" class="w-5.5 h-5.5"></i>
+          </div>
+          <p class="text-sm text-neutral-700 font-medium">
+            No necesitas hornos profesionales ni ingredientes costosos. ¡Puedes empezar hoy mismo con los utensilios que ya tienes en tu propia cocina!
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- INTRODUCTION SECTION (SLIDER MARQUEE) -->
+    <section class="bg-gradient-to-b from-white to-rose-50/30 pt-[50px] pb-20 md:pb-24 relative overflow-hidden">
+      <!-- Decorative side accent blur -->
+      <div class="absolute top-1/2 left-10 w-72 h-72 bg-pink-100/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="w-full relative">
+        <!-- Header Block -->
+        <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 px-4">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
+            Aprenderás esto <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">y muchísimo más!!</span>
+          </h2>
+          <p class="text-neutral-600 mt-4 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+            Aprende a preparar los postres más solicitados desde casa
+          </p>
+        </div>
+
+        <!-- Infinite Marquee Slider -->
+        <div class="relative w-full overflow-hidden py-4">
+
+          <!-- Scrolling track containing 6 categories duplicated for seamless looping -->
+          <div class="animate-marquee-loop gap-4 sm:gap-6 px-4">
+            
+            <!-- Category Item 2 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1-_puHBEgHj9xvP4qQGRomKWM2lOvJHkk" alt="Tortas en porción" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tortas en porción</h3>
+              </div>
+            </div>
+
+            <!-- Category Item 3 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1iYbmDf1zg0xMuutuSdYHdE8gymJRVytX" alt="Brownies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Brownies</h3>
+              </div>
+            </div>
+
+            <!-- Category Item 1 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1fMEbl_tbzr4mneyNKMMKi2uQFWWPrbCl" alt="Postres en shot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Postres en shot</h3>
+              </div>
+            </div>
+
+            <!-- Category Item 4 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1ROngLx-p8x3TzWYc_WbBPBAhMT6ZRH1V" alt="Galletas NY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Galletas NY</h3>
+              </div>
+            </div>
+
+            <!-- Category Item 5 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1ZYOnNjNKJcNfNCpEKDA5ulT71M-WV8pR" alt="Tartas Heladas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tartas Heladas</h3>
+              </div>
+            </div>
+
+            <!-- Category Item 6 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1Lxv7qAJsCaF0a-Om9547Sxp4gk5-f_3A" alt="Tres leches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tres leches</h3>
+              </div>
+            </div>
+
+            <!-- Category Item 7 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1O9zwm0WJo4dHzHjpRDMQl3xYOB-sZDcd" alt="Cheesecake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Cheesecake</h3>
+              </div>
+            </div>
+
+            <!-- Category Item 8 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1SmQFF5UkqUCzJ5ILFGk_7av9nMDqmU1N" alt="Tortas en lata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tortas en lata</h3>
+              </div>
+            </div>
+
+            <!-- Category Item 9 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1lODnst40gXtpEM2e4hSwaMTOkGxn2t2_" alt="Postres en vaso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Postres en vaso</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 2 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1-_puHBEgHj9xvP4qQGRomKWM2lOvJHkk" alt="Tortas en porción" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tortas en porción</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 3 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1iYbmDf1zg0xMuutuSdYHdE8gymJRVytX" alt="Brownies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Brownies</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 1 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1fMEbl_tbzr4mneyNKMMKi2uQFWWPrbCl" alt="Postres en shot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Postres en shot</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 4 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1ROngLx-p8x3TzWYc_WbBPBAhMT6ZRH1V" alt="Galletas NY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Galletas NY</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 5 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1ZYOnNjNKJcNfNCpEKDA5ulT71M-WV8pR" alt="Tartas Heladas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tartas Heladas</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 6 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1Lxv7qAJsCaF0a-Om9547Sxp4gk5-f_3A" alt="Tres leches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tres leches</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 7 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1O9zwm0WJo4dHzHjpRDMQl3xYOB-sZDcd" alt="Cheesecake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Cheesecake</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 8 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1SmQFF5UkqUCzJ5ILFGk_7av9nMDqmU1N" alt="Tortas en lata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tortas en lata</h3>
+              </div>
+            </div>
+
+            <!-- DUPLICATED Category Item 9 -->
+            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
+              <img src="https://lh3.googleusercontent.com/d/1lODnst40gXtpEM2e4hSwaMTOkGxn2t2_" alt="Postres en vaso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
+              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
+                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Postres en vaso</h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Call to Action Bar -->
+        <div class="mt-16 text-center relative z-10 px-4">
+          <button
+            onclick="scrollToPricing()"
+            id="cta-intro"
+            class="inline-flex items-center justify-center bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-[20px] shadow-lg shadow-pink-200/50 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider text-sm sm:text-base cursor-pointer"
+          >
+            QUIERO ACCEDER AL MEGAPACK
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- BONUSES SECTION -->
+    <section class="bg-neutral-900 text-white py-20 md:py-28 relative overflow-hidden">
+      <!-- Decorative colored blurs for a premium dark contrast theme -->
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+        <!-- Header Block -->
+        <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-white leading-tight">
+            Además recibirás <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-300 font-extrabold">6 bonos exclusivos si te inscribes HOY!</span>
+          </h2>
+          <p class="text-neutral-400 mt-4 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+            Herramientas indispensables, plantillas de costos automatizadas y soporte directo para que no cometas los errores comunes que hacen fracasar al 90% de las emprendedoras
+          </p>
+        </div>
+
+        <!-- Bonuses Grid -->
+        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
+          
+          <!-- Bonus Card 1 -->
+          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
+            <div class="flex flex-col">
+              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
+                <img src="https://lh3.googleusercontent.com/d/1x86vj8LVyP_vw7K7zDhK4Pi8nOfz7Nh8" alt="Plantilla de costos" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
+              </div>
+              <div class="p-3 sm:p-6">
+                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
+                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
+                    <i data-lucide="calculator" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                  </div>
+                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 01</span>
+                </div>
+                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Plantilla de costos</h4>
+              </div>
+            </div>
+            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
+              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
+                <span class="text-neutral-500">Valor: <span class="line-through">$25 USD</span></span>
+                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bonus Card 2 -->
+          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
+            <div class="flex flex-col">
+              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
+                <img src="https://lh3.googleusercontent.com/d/1XZi1puVVO5Z51HW4LFy4gnvrWQ_iW6dP" alt="Grupo Privado de WhatsApp" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
+              </div>
+              <div class="p-3 sm:p-6">
+                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
+                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
+                    <i data-lucide="message-square" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                  </div>
+                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 02</span>
+                </div>
+                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Grupo Privado de WhatsApp</h4>
+              </div>
+            </div>
+            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
+              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
+                <span class="text-neutral-500">Valor: <span class="line-through">$19 USD</span></span>
+                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bonus Card 3 -->
+          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
+            <div class="flex flex-col">
+              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
+                <img src="https://lh3.googleusercontent.com/d/1XW9nek89uG2FWmq7y4lhKRPEAvklHenJ" alt="Vende por Redes Sociales" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
+              </div>
+              <div class="p-3 sm:p-6">
+                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
+                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
+                    <i data-lucide="share-2" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                  </div>
+                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 03</span>
+                </div>
+                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Vende por Redes Sociales</h4>
+              </div>
+            </div>
+            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
+              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
+                <span class="text-neutral-500">Valor: <span class="line-through">$17 USD</span></span>
+                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bonus Card 4 -->
+          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
+            <div class="flex flex-col">
+              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
+                <img src="https://lh3.googleusercontent.com/d/1B10WV2OKG7z1QahMmF_3OtuFp5B3Q5r7" alt="Lista de Proveedores" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
+              </div>
+              <div class="p-3 sm:p-6">
+                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
+                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
+                    <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                  </div>
+                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 04</span>
+                </div>
+                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Lista de Proveedores por País</h4>
+              </div>
+            </div>
+            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
+              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
+                <span class="text-neutral-500">Valor: <span class="line-through">$12 USD</span></span>
+                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bonus Card 5 -->
+          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
+            <div class="flex flex-col">
+              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
+                <img src="https://lh3.googleusercontent.com/d/1AvsN0Sk5qfXmsiAfHH5tGWzDgPU1zIJL" alt="Masterclass" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
+              </div>
+              <div class="p-3 sm:p-6">
+                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
+                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
+                    <i data-lucide="play-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                  </div>
+                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 05</span>
+                </div>
+                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Masterclass de Emprendimiento</h4>
+              </div>
+            </div>
+            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
+              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
+                <span class="text-neutral-500">Valor: <span class="line-through">$15 USD</span></span>
+                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bonus Card 6 -->
+          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
+            <div class="flex flex-col">
+              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
+                <img src="https://lh3.googleusercontent.com/d/175-ZCI7kmavqiI6DXxYCeECvyYNGPvDG" alt="Decoraciones" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
+              </div>
+              <div class="p-3 sm:p-6">
+                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
+                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
+                    <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                  </div>
+                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 06</span>
+                </div>
+                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Decoraciones que Venden</h4>
+              </div>
+            </div>
+            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
+              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
+                <span class="text-neutral-500">Valor: <span class="line-through">$15 USD</span></span>
+                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Call to Action -->
+        <div class="mt-16 text-center">
+          <button onclick="scrollToPricing()" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-[20px] shadow-lg shadow-pink-500/10 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider text-xs sm:text-sm cursor-pointer">
+            <span>QUIERO TODO CON LOS BONOS</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- OFFER / PRICING SECTION -->
+    <section id="pricing-section" class="bg-gradient-to-b from-white to-rose-50/30 py-20 md:py-28 relative">
+      <div class="absolute top-0 right-1/4 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        <!-- Header Block -->
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
+            Comienza tu <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">negocio hoy mismo</span>
+          </h2>
+          <p class="text-neutral-700 mt-4 text-sm sm:text-base md:text-lg">
+            No dejes pasar esta oportunidad de acceder a todo el material con un <span class="text-rose-600 font-extrabold animate-blink-slow">descuento exclusivo de 77%</span>
+          </p>
+        </div>
+
+        <!-- Purchase Card Box - Single Column Layout -->
+        <div class="bg-white border-2 border-pink-200 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-pink-100/80 relative overflow-hidden max-w-2xl mx-auto flex flex-col">
+          
+          <!-- Centered Highly Prominent "OFERTA" Badge -->
+          <div class="flex flex-col items-center justify-center mb-4 gap-4 text-center">
+            <span class="bg-gradient-to-r from-pink-600 to-rose-500 text-white text-xs sm:text-sm font-extrabold px-6 py-2 rounded-full uppercase tracking-widest shadow-md border border-pink-500">
+              ¡OFERTA ESPECIAL LIMITADA!
+            </span>
+          </div>
+
+          <!-- Heading -->
+          <div class="text-center mb-6">
+            <h3 class="text-2xl sm:text-3xl font-sans font-black text-neutral-800 leading-tight">
+              MegaPack Postres para Emprender + 6 Bonos
+            </h3>
+            <p class="text-sm text-pink-600 font-bold mt-2">
+              🧁 Acceso inmediato y de por vida para emprender
+            </p>
+          </div>
+
+          <!-- Prominent Image inside the card -->
+          <div class="w-full flex justify-center mb-8">
+            <div class="relative bg-neutral-50 p-2 rounded-2xl border border-pink-100 shadow-sm max-w-md w-full">
+              <img
+                src="https://lh3.googleusercontent.com/d/1KcJympI9Ur5jiM79Jo8E5cjglF2kElHL"
+                alt="MegaPack Postres para Emprender"
+                class="w-full h-auto rounded-xl object-contain mx-auto"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+          </div>
+
+          <!-- Inclusions checklist -->
+          <div class="max-w-md mx-auto w-full mb-8">
+            <ul class="space-y-3.5 text-sm sm:text-base text-neutral-600 font-semibold">
+              <li class="flex items-start gap-3">
+                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+                </div>
+                <span>Todos mis recetarios fáciles para emprender y listos para vender desde tu hogar</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+                </div>
+                <span>6 Bonos exclusivos GRATIS</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+                </div>
+                <span>Excel de costos y presupuestos automático</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+                </div>
+                <span>Vende por redes sociales rápidamente</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+                </div>
+                <span>Guía de Proveedores por País</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
+                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+                </div>
+                <span>Acceso al Grupo Privado de WhatsApp</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- High-visibility pricing box -->
+          <div class="p-6 bg-gradient-to-br from-pink-50 to-rose-100/40 rounded-2xl border-2 border-dashed border-pink-400 flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden mb-6 max-w-md mx-auto w-full">
+            <span class="text-sm sm:text-base md:text-lg text-rose-500/90 font-extrabold tracking-wider uppercase line-through decoration-rose-600 decoration-2">
+              PRECIO NORMAL DE $67 USD
+            </span>
+            <span class="mt-2 text-xs sm:text-sm md:text-base text-white bg-gradient-to-r from-pink-600 to-rose-500 font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
+              TODO POR SÓLO
+            </span>
+            <div class="flex items-baseline gap-1 mt-3">
+              <span class="text-5xl sm:text-6xl md:text-7xl font-sans font-black text-pink-600 tracking-tight">
+                $14,90 <span class="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-800">USD</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <div class="mb-6 max-w-md mx-auto w-full">
+            <button
+              onclick="redirectToCheckout()"
+              id="checkout-button"
+              class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-extrabold py-4 rounded-[20px] shadow-lg shadow-pink-200/80 hover:shadow-xl hover:shadow-pink-300/80 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center text-sm sm:text-base uppercase tracking-wider cursor-pointer"
+            >
+              QUIERO ACCEDER AHORA
+            </button>
+          </div>
+
+          <!-- Security Badges -->
+          <div class="flex flex-col items-center gap-2">
+            <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-bold uppercase tracking-wider">
+              <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+              <span>Compra 100% Segura</span>
+            </div>
+            <div class="w-full max-w-[280px] mt-1">
+              <img
+                src="https://lh3.googleusercontent.com/d/1s2vMkqEYV653nBBufdwasSvnfGNIxsRc"
+                alt="Compra Segura"
+                class="w-full h-auto object-contain mx-auto"
+                referrerpolicy="no-referrer"
+              />
+            </div>
+          </div>
+
+          <!-- Countdown Timer -->
+          <div class="flex flex-col items-center justify-center mt-6 pt-6 border-t border-dashed border-neutral-200 max-w-md mx-auto w-full">
+            <span class="text-[#DE1A53] font-sans font-extrabold tracking-[0.12em] text-center text-[11px] sm:text-xs mb-3">
+              LA OFERTA TERMINA EN:
+            </span>
+            <div class="flex items-center justify-center gap-2.5">
+              <!-- Hours Card -->
+              <div class="flex flex-col items-center gap-1">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#DE1A53] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(222,26,83,0.25)] border-b-[3px] border-[#b0103c]">
+                  <span id="timer-hours" class="text-xl sm:text-2xl font-sans font-black text-white tracking-tight">23</span>
+                </div>
+                <span class="text-[8px] sm:text-[9px] font-bold text-neutral-400 uppercase tracking-widest">Horas</span>
+              </div>
+              
+              <!-- Colon Separator -->
+              <span class="text-base sm:text-lg font-black text-[#DE1A53] self-start mt-2">:</span>
+
+              <!-- Minutes Card -->
+              <div class="flex flex-col items-center gap-1">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#DE1A53] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(222,26,83,0.25)] border-b-[3px] border-[#b0103c]">
+                  <span id="timer-minutes" class="text-xl sm:text-2xl font-sans font-black text-white tracking-tight">59</span>
+                </div>
+                <span class="text-[8px] sm:text-[9px] font-bold text-neutral-400 uppercase tracking-widest">Min</span>
+              </div>
+              
+              <!-- Colon Separator -->
+              <span class="text-base sm:text-lg font-black text-[#DE1A53] self-start mt-2">:</span>
+
+              <!-- Seconds Card -->
+              <div class="flex flex-col items-center gap-1">
+                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#DE1A53] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(222,26,83,0.25)] border-b-[3px] border-[#b0103c]">
+                  <span id="timer-seconds" class="text-xl sm:text-2xl font-sans font-black text-white tracking-tight">59</span>
+                </div>
+                <span class="text-[8px] sm:text-[9px] font-bold text-neutral-400 uppercase tracking-widest">Seg</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="bg-white py-20 md:py-24 relative overflow-hidden">
+      <!-- Visual background accents -->
+      <div class="absolute top-10 right-0 w-80 h-80 bg-rose-50 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
+        <!-- Header Block -->
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
+            Lo que dicen <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">nuestras alumnas</span>
+          </h2>
+        </div>
+
+        <!-- Video Testimonials Responsive Grid -->
+        <div class="space-y-8 max-w-4xl mx-auto">
+          <!-- Horizontal Videos Row -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="bg-white border border-pink-100 rounded-2xl p-2 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300">
+              <div class="relative aspect-video w-full rounded-xl overflow-hidden bg-black shadow-inner">
+                <iframe
+                  src="https://player.vimeo.com/video/797134937?title=0&byline=0&portrait=0&badge=0&loop=1"
+                  class="absolute inset-0 w-full h-full"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="bg-white border border-pink-100 rounded-2xl p-2 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300">
+              <div class="relative aspect-video w-full rounded-xl overflow-hidden bg-black shadow-inner">
+                <iframe
+                  src="https://player.vimeo.com/video/801388966?title=0&byline=0&portrait=0&badge=0&loop=1"
+                  class="absolute inset-0 w-full h-full"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Vertical Videos Row -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center max-w-2xl mx-auto">
+            
+            <div class="bg-white border border-pink-100 rounded-2xl p-2 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300 w-full max-w-[280px] sm:max-w-[300px] mx-auto">
+              <div class="relative aspect-[9/16] w-full rounded-xl overflow-hidden bg-black shadow-inner">
+                <iframe
+                  src="https://player.vimeo.com/video/917564554?title=0&byline=0&portrait=0&badge=0&loop=1"
+                  class="absolute inset-0 w-full h-full"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+            <div class="bg-white border border-pink-100 rounded-2xl p-2 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300 w-full max-w-[280px] sm:max-w-[300px] mx-auto">
+              <div class="relative aspect-[9/16] w-full rounded-xl overflow-hidden bg-black shadow-inner">
+                <iframe
+                  src="https://player.vimeo.com/video/917565002?title=0&byline=0&portrait=0&badge=0&loop=1"
+                  class="absolute inset-0 w-full h-full"
+                  frameborder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Text Testimonials Grid -->
+        <div class="mt-20 border-t border-pink-100/50 pt-16">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Testimonial Card 1 -->
+            <div class="bg-white border border-pink-100/80 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_10px_35px_rgba(244,63,94,0.03)] hover:shadow-md transition-shadow duration-300 relative">
+              <div>
+                <div class="flex gap-1 mb-4 text-amber-400">
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                </div>
+                <p class="text-neutral-600 text-sm sm:text-[15px] leading-relaxed italic mb-6">
+                  "Buscaba recetas que de verdad funcionaran para vender en vasos y este programa superó todas mis expectativas. Comencé vendiendo a mis vecinos y en dos semanas ya tenía pedidos para cumpleaños enteros. ¡Ya recuperé mi inversión de sobra!"
+                </p>
+              </div>
+              
+              <div class="flex items-center gap-4 pt-4 border-t border-pink-50">
+                <div class="w-12 h-12 rounded-full overflow-hidden border border-pink-100 flex-shrink-0 bg-neutral-50">
+                  <img
+                    src="https://lh3.googleusercontent.com/d/16Lnr6SnpAiJspyM69soKmS7vF9VwLbG4"
+                    alt="Maribel Orellano"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-sm sm:text-base font-sans font-bold text-[#4A0B22]">
+                    Maribel Orellano
+                  </h4>
+                  <p class="text-xs text-neutral-400 font-medium">México</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div class="bg-white border border-pink-100/80 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_10px_35px_rgba(244,63,94,0.03)] hover:shadow-md transition-shadow duration-300 relative">
+              <div>
+                <div class="flex gap-1 mb-4 text-amber-400">
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                </div>
+                <p class="text-neutral-600 text-sm sm:text-[15px] leading-relaxed italic mb-6">
+                  "Siempre sentí que la repostería era para gente con mucho talento porque a mí todo se me quemaba o me quedaba seco. El paso a paso de este curso es tan detallado que por fin logré cheesecakes perfectos. ¡Mis hijos están encantados de verme emprender!"
+                </p>
+              </div>
+              
+              <div class="flex items-center gap-4 pt-4 border-t border-pink-50">
+                <div class="w-12 h-12 rounded-full overflow-hidden border border-pink-100 flex-shrink-0 bg-neutral-50">
+                  <img
+                    src="https://lh3.googleusercontent.com/d/1Hr2wXs-VZmvx4Mq6mPl6GUT-xEs722uO"
+                    alt="Laura Pichardo"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-sm sm:text-base font-sans font-bold text-[#4A0B22]">
+                    Laura Pichardo
+                  </h4>
+                  <p class="text-xs text-neutral-400 font-medium">Estados Unidos</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="bg-white border border-pink-100/80 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_10px_35px_rgba(244,63,94,0.03)] hover:shadow-md transition-shadow duration-300 relative">
+              <div>
+                <div class="flex gap-1 mb-4 text-amber-400">
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
+                </div>
+                <p class="text-neutral-600 text-sm sm:text-[15px] leading-relaxed italic mb-6">
+                  "Mil gracias por el soporte del docente. Cuando tuve dudas con el buttercream, en el grupo privado me corrigieron la temperatura de la mantequilla y me quedó espectacular. ¡Las plantillas de costos valen oro puro!"
+                </p>
+              </div>
+              
+              <div class="flex items-center gap-4 pt-4 border-t border-pink-50">
+                <div class="w-12 h-12 rounded-full overflow-hidden border border-pink-100 flex-shrink-0 bg-neutral-50">
+                  <img
+                    src="https://lh3.googleusercontent.com/d/1C3g9G3K8litv-b8LZbxAGnmNzm7zyb7h"
+                    alt="Marganith Cantillano"
+                    class="w-full h-full object-cover"
+                    referrerpolicy="no-referrer"
+                  />
+                </div>
+                <div>
+                  <h4 class="text-sm sm:text-base font-sans font-bold text-[#4A0B22]">
+                    Marganith Cantillano
+                  </h4>
+                  <p class="text-xs text-neutral-400 font-medium">Costa Rica</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- FAQ SECTION (With interactive JavaScript accordion toggles) -->
+    <section class="bg-white py-20 md:py-24 relative">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        
+        <!-- Header Block -->
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
+            ¿Aún tienes dudas? <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">Aquí te las resuelvo</span>
+          </h2>
+          <p class="text-neutral-500 mt-4 text-sm sm:text-base">
+            Resolvemos todas tus dudas de forma transparente para que puedas tomar la mejor decisión hoy
+          </p>
+        </div>
+
+        <!-- Accordion List -->
+        <div class="space-y-2.5 sm:space-y-4">
+          
+          <!-- FAQ 1 -->
+          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="true">
+            <button
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
+            >
+              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Cómo recibo el MegaPack?</span>
+              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-pink-100 text-pink-600">
+                <i data-lucide="chevron-up" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </div>
+            </button>
+            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 500px; opacity: 1;">
+              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
+                Una vez que realices el pago, el acceso es de inmediato. Recibirás un enlace directo en tu correo electrónico para que puedas ver y descargar todo el material (los recetarios, guías y el Excel de costos) al instante.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
+            <button
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
+            >
+              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Necesito experiencia previa?</span>
+              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </div>
+            </button>
+            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
+              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
+                No, absolutamente ninguna. Este MegaPack fue diseñado pensando en principiantes. Cada receta incluye el paso a paso detallado, consejos prácticos, utensilios necesarios y los secretos para que siempre te salgan perfectas desde el primer intento.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
+            <button
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
+            >
+              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Puedo verlo desde mi celular?</span>
+              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </div>
+            </button>
+            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
+              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
+                ¡Sí! Todo el material viene en formato digital (PDFs interactivos de alta calidad y archivos compatibles) 100% optimizados para leerse de manera cómoda en celulares, tablets, computadoras o laptops. También puedes imprimirlos si lo prefieres.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
+            <button
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
+            >
+              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Cómo funcionan los bonos?</span>
+              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </div>
+            </button>
+            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
+              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
+                Los 6 bonos exclusivos se añaden de forma 100% automática y totalmente GRATIS a tu pedido el día de hoy. No tienes que pagar nada adicional por ellos, se incluyen como un regalo especial para asegurar el éxito de tu emprendimiento.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
+            <button
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
+            >
+              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Cuánto tiempo tendré acceso?</span>
+              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </div>
+            </button>
+            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
+              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
+                Tu acceso es de por vida. Esto significa que puedes descargar los archivos, guardarlos en tu dispositivo y consultarlos cuantas veces quieras, hoy, mañana o dentro de unos años. No hay cuotas mensuales ni cobros futuros.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
+            <button
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
+            >
+              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿La compra es segura?</span>
+              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </div>
+            </button>
+            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
+              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
+                Sí, es 100% segura. El proceso de pago es administrado por plataformas de alta seguridad
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
+            <button
+              onclick="toggleFaq(this)"
+              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
+            >
+              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Cuál es el valor en mi moneda local?</span>
+              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
+                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </div>
+            </button>
+            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
+              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
+                Al momento de hacer clic en los botones de compra e ir a la página de pago, el sistema detectará tu país y convertirá de forma automática el precio a tu moneda local exacta con las opciones de pago de tu país.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- EMERGENCY FOOTER -->
+    <footer class="bg-neutral-900 text-white relative pt-20 pb-12 overflow-hidden border-t border-neutral-800">
+      <!-- Visual background accents -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 relative text-center">
+        
+        <!-- Urgent upper badge -->
+        <span class="inline-block bg-pink-500/10 border border-pink-500/30 text-pink-400 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+          🚨 Última Oportunidad
+        </span>
+
+        <!-- Big headline -->
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-white tracking-tight leading-tight">
+          Emprende y gana dinero <br class="hidden sm:inline" />
+          <span class="text-pink-400 bg-gradient-to-r from-pink-400 to-rose-300 bg-clip-text text-transparent">vendiendo postres desde casa sin utensilios costosos</span>
+        </h2>
+        
+        <p class="text-neutral-400 mt-4 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+          Todos mis recetarios fáciles para emprender y comenzar a vender postres deliciosos desde tu hogar hoy mismo!
+        </p>
+
+        <!-- Final Price Tag -->
+        <div class="mt-8 mb-6 inline-flex flex-col items-center justify-center bg-neutral-800/80 border border-neutral-700/60 p-5 sm:p-6 rounded-2xl">
+          <span class="text-pink-400 text-sm sm:text-base font-black uppercase tracking-widest">TODO POR SÓLO</span>
+          <div class="flex items-baseline gap-1.5 mt-2 text-pink-400">
+            <span class="text-xl sm:text-2xl font-black">solo</span>
+            <span class="text-4xl sm:text-5xl md:text-6xl font-sans font-black text-white">$14,90</span>
+            <span class="text-base sm:text-lg font-black uppercase">USD</span>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="max-w-sm mx-auto">
+          <button
+            onclick="redirectToCheckout()"
+            id="cta-footer"
+            class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-extrabold py-4 rounded-[20px] shadow-lg shadow-pink-500/10 hover:shadow-xl hover:shadow-pink-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center text-sm sm:text-base uppercase tracking-wider cursor-pointer"
+          >
+            QUIERO EL MEGAPACK AHORA
+          </button>
+        </div>
+
+        <!-- Checkout Trust Badges -->
+        <div class="mt-6 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-xs text-neutral-400 font-semibold uppercase tracking-wider">
+          <div class="flex items-center gap-1.5 text-emerald-400">
+            <i data-lucide="shield-check" class="w-4 h-4 stroke-[2.5]"></i>
+            <span>Compra Protegida</span>
+          </div>
+          <span>•</span>
+          <span>Acceso inmediato</span>
+          <span>•</span>
+          <span>Garantía de 7 días</span>
+          <span>•</span>
+          <span>Compatible con celular y PC</span>
+        </div>
+
+        <!-- Secure payment logos -->
+        <div class="mt-8 flex justify-center items-center select-none max-w-[280px] mx-auto">
+          <img
+            src="https://lh3.googleusercontent.com/d/1s2vMkqEYV653nBBufdwasSvnfGNIxsRc"
+            alt="Compra Segura"
+            class="w-full h-auto object-contain mx-auto"
+            referrerpolicy="no-referrer"
+          />
+        </div>
+
+        <!-- Copyright info -->
+        <div class="mt-16 pt-8 border-t border-neutral-800/80 text-xs text-neutral-500 text-center">
+          <p>© 2026 - Todos los derechos reservados.</p>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- INTERACTIVE FUNCTIONALITY SCRIPTS -->
+  <script>
+    // Smooth scroll to offer/pricing section
+    function scrollToPricing() {
+      const element = document.getElementById("pricing-section");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    // Redirect directly to Hotmart Checkout
+    function redirectToCheckout() {
+      window.location.href = "https://pay.hotmart.com/Y106546858K?off=4x1na6q8&checkoutMode=10";
+    }
+
+    // Initializer on page load
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Create Lucide icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // 2. Setup persistent countdown target (24h)
+      initCountdown();
+    });
+
+    // FAQ Accordion Toggle Interaction
+    function toggleFaq(button) {
+      const faqItem = button.closest(".faq-item");
+      const answerContainer = faqItem.querySelector(".faq-answer-container");
+      const iconContainer = faqItem.querySelector(".faq-icon-container");
+      const isAlreadyOpen = faqItem.getAttribute("data-open") === "true";
+
+      // Close all other FAQ items
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        if (item !== faqItem) {
+          item.setAttribute("data-open", "false");
+          const otherAns = item.querySelector(".faq-answer-container");
+          otherAns.style.maxHeight = "0px";
+          otherAns.style.opacity = "0";
+          const otherIcon = item.querySelector(".faq-icon-container");
+          otherIcon.className = "faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400";
+          // Update icon to chevron-down
+          const iconEl = otherIcon.querySelector("i");
+          if (iconEl) iconEl.setAttribute("data-lucide", "chevron-down");
+        }
+      });
+
+      // Toggle clicked item
+      if (isAlreadyOpen) {
+        faqItem.setAttribute("data-open", "false");
+        answerContainer.style.maxHeight = "0px";
+        answerContainer.style.opacity = "0";
+        iconContainer.className = "faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400";
+        const iconEl = iconContainer.querySelector("i");
+        if (iconEl) iconEl.setAttribute("data-lucide", "chevron-down");
+      } else {
+        faqItem.setAttribute("data-open", "true");
+        answerContainer.style.maxHeight = "500px";
+        answerContainer.style.opacity = "1";
+        iconContainer.className = "faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-pink-100 text-pink-600";
+        const iconEl = iconContainer.querySelector("i");
+        if (iconEl) iconEl.setAttribute("data-lucide", "chevron-up");
+      }
+
+      // Refresh Lucide icons inside containers
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // Persistent 24h Countdown Timer logic
+    function initCountdown() {
+      const storageKey = "offer_target_timestamp_24h";
+      let targetTime = localStorage.getItem(storageKey);
+
+      if (!targetTime) {
+        // Set new target 24 hours from now
+        targetTime = Date.now() + 24 * 60 * 60 * 1000;
+        localStorage.setItem(storageKey, targetTime.toString());
+      } else {
+        targetTime = parseInt(targetTime, 10);
+        // If invalid, reset to 24h from now (no auto-reset if expired)
+        if (isNaN(targetTime)) {
+          targetTime = Date.now() + 24 * 60 * 60 * 1000;
+          localStorage.setItem(storageKey, targetTime.toString());
+        }
+      }
+
+      function updateTimer() {
+        const diff = Math.floor((targetTime - Date.now()) / 1000);
+        
+        if (diff <= 0) {
+          // If finished, reset or keep at 0
+          document.getElementById("timer-hours").textContent = "00";
+          document.getElementById("timer-minutes").textContent = "00";
+          document.getElementById("timer-seconds").textContent = "00";
+          clearInterval(timerInterval);
+          return;
+        }
+
+        const hours = Math.floor(diff / 3600);
+        const minutes = Math.floor((diff % 3600) / 60);
+        const seconds = diff % 60;
+
+        document.getElementById("timer-hours").textContent = hours.toString().padStart(2, "0");
+        document.getElementById("timer-minutes").textContent = minutes.toString().padStart(2, "0");
+        document.getElementById("timer-seconds").textContent = seconds.toString().padStart(2, "0");
+      }
+
+      updateTimer();
+      const timerInterval = setInterval(updateTimer, 1000);
+    }
+  </script>
+</body>
+</html>
