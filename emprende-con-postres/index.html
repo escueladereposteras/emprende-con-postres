@@ -458,7 +458,7 @@
         <!-- Call to Action Bar -->
         <div class="mt-16 text-center relative z-10 px-4">
           <button
-            onclick="scrollToPricing()"
+            onclick="redirectToCheckout()"
             id="cta-intro"
             class="inline-flex items-center justify-center bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-[20px] shadow-lg shadow-pink-200/50 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider text-sm sm:text-base cursor-pointer"
           >
@@ -640,7 +640,7 @@
 
         <!-- Bottom Call to Action -->
         <div class="mt-16 text-center">
-          <button onclick="scrollToPricing()" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-[20px] shadow-lg shadow-pink-500/10 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider text-xs sm:text-sm cursor-pointer">
+          <button onclick="redirectToCheckout()" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-[20px] shadow-lg shadow-pink-500/10 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider text-xs sm:text-sm cursor-pointer">
             <span>QUIERO TODO CON LOS BONOS</span>
             <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
           </button>
@@ -756,7 +756,7 @@
           <!-- CTA Button -->
           <div class="mb-6 max-w-md mx-auto w-full">
             <button
-              onclick="redirectToCheckout()"
+              onclick="redirectToAffiliateCheckout()"
               id="checkout-button"
               class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-extrabold py-4 rounded-[20px] shadow-lg shadow-pink-200/80 hover:shadow-xl hover:shadow-pink-300/80 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center text-sm sm:text-base uppercase tracking-wider cursor-pointer"
             >
@@ -1194,7 +1194,7 @@
         <!-- CTA Button -->
         <div class="max-w-sm mx-auto">
           <button
-            onclick="redirectToCheckout()"
+            onclick="redirectToAffiliateCheckout()"
             id="cta-footer"
             class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-extrabold py-4 rounded-[20px] shadow-lg shadow-pink-500/10 hover:shadow-xl hover:shadow-pink-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center text-sm sm:text-base uppercase tracking-wider cursor-pointer"
           >
@@ -1248,7 +1248,12 @@
 
     // Redirect directly to Hotmart Checkout
     function redirectToCheckout() {
-      window.location.href = "https://pay.hotmart.com/Y106546858K?off=4x1na6q8&checkoutMode=10";
+      window.location.href = "https://pay.hotmart.com/Y106546858K?checkoutMode=10";
+    }
+
+    // Redirect to Affiliate Checkout
+    function redirectToAffiliateCheckout() {
+      window.location.href = "https://go.hotmart.com/N106672869Q?ap=9ac0";
     }
 
     // Initializer on page load
