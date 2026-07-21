@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Guía de Crochet Completa — Teje Manteles de Lujo</title>
+  
+  <!-- Carga de Fuentes de Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              DEFAULT: '#C5A059',
+              light: '#f9f6f0',
+              accent: '#B08C46',
+            },
+            forest: {
+              DEFAULT: '#2C3E2E',
+              muted: 'rgba(44, 62, 46, 0.8)',
+              light: 'rgba(44, 62, 46, 0.7)',
+            },
+            olive: {
+              DEFAULT: '#1E5E3A',
+              hover: '#154c2d',
+              border: '#276e46',
+            },
+            warmBg: '#FDFBF7'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Montserrat"', 'system-ui', 'sans-serif'],
+            accent: ['"Inter"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Animación y estilos personalizados del Marquee y acordeón -->
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 25s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    
+    /* Scroll suave para la página */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Prevenir selección en elementos decorativos */
+    .select-none {
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-[#FDFBF7] text-[#2C3E2E] font-sans antialiased min-h-screen flex flex-col items-center justify-start py-12 px-4 sm:px-6 md:px-8 text-center select-none overflow-x-hidden">
+
+  <!-- 1. SECCIÓN PRINCIPAL (HEADER) -->
+  <div class="max-w-4xl mx-auto flex flex-col items-center justify-center pt-8 pb-10">
+    
+    <!-- Badge / Pill Superior -->
+    <div class="inline-flex items-center gap-1.5 px-4.5 py-1.5 rounded-full bg-[#C5A059]/15 text-[#C5A059] text-[11px] font-accent font-bold tracking-widest uppercase mb-8 shadow-sm">
+      <!-- Sparkles icon representation -->
+      <svg class="w-3.5 h-3.5 animate-pulse text-[#C5A059]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+      </svg>
+      <span>✦ OFERTA POR TIEMPO LIMITADO</span>
+    </div>
+    
+    <!-- Título Principal -->
+    <h1 class="font-serif text-[38px] sm:text-5xl md:text-[56px] leading-[1.1] font-medium tracking-tight text-[#2C3E2E] max-w-[850px] mx-auto mb-6 px-2">
+      Teje manteles de lujo a crochet desde tu sofá.
+    </h1>
+    
+    <!-- Subtítulo Explicativo -->
+    <p class="font-accent text-base sm:text-lg md:text-[22px] text-[#2C3E2E]/80 max-w-[680px] mx-auto leading-[1.6] mb-12 px-4">
+      La guía completa y sin rodeos para transformar el arte del crochet fino en una fuente de ingresos, sin presiones y aunque jamás hayas vendido una sola pieza.
+    </p>
+    
+    <!-- Imagen del producto principal -->
+    <div class="relative w-full max-w-xl mx-auto mb-16 select-none px-4">
+      <img
+        src="https://lh3.googleusercontent.com/d/1EWVjuB2w5mUoG_8j887Dg5BJVBefEBEE"
+        alt="The Crochet Method"
+        class="w-full h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(44,62,46,0.15)]"
+        onload="this.style.opacity=1"
+        onerror="this.src='https://docs.google.com/uc?export=view&id=1EWVjuB2w5mUoG_8j887Dg5BJVBefEBEE'"
+      />
+    </div>
+  </div>
+
+  <!-- 2. SECCIÓN DE OFERTA EXQUISITA Y PERSUASIVA -->
+  <div class="w-full max-w-xl mx-auto mb-20 px-4">
+    <!-- Tarjeta de Precio e Información -->
+    <div class="bg-white border border-[#C5A059]/30 rounded-[28px] shadow-[0_24px_70px_rgba(44,62,46,0.08)] p-8 md:p-10 text-center relative overflow-hidden">
+      
+      <!-- Decorative Top Accent Border -->
+      <div class="absolute top-0 left-0 right-0 h-[6px] bg-gradient-to-r from-[#C5A059]/30 via-[#C5A059] to-[#C5A059]/30" />
+      
+      <!-- Regular Price (Crossed out) -->
+      <div class="text-[#2C3E2E]/60 text-sm md:text-base font-medium mb-3">
+        Precio regular: <span class="line-through decoration-[#C5A059] decoration-2">$67 USD</span>
+      </div>
+
+      <!-- Premium Price Display -->
+      <div class="flex items-start justify-center text-[#2C3E2E] mb-4">
+        <span class="font-serif text-3xl md:text-4xl font-medium mt-1 mr-1 text-[#C5A059]">$</span>
+        <span class="font-serif text-7xl md:text-8xl font-light tracking-tighter leading-none text-[#C5A059]">14,90</span>
+        <span class="font-sans text-lg md:text-xl font-semibold tracking-wider uppercase ml-2.5 mt-8 text-[#2C3E2E]/80">USD</span>
+      </div>
+
+      <!-- Value Highlights Badge -->
+      <div class="inline-block bg-[#C5A059]/5 border border-[#C5A059]/20 rounded-full px-5 py-2 text-xs text-[#2C3E2E]/80 font-accent font-semibold mb-8">
+        Pago único <span class="text-[#C5A059] mx-1.5">•</span> Acceso inmediato <span class="text-[#C5A059] mx-1.5">•</span> Acceso de por vida
+      </div>
+
+      <!-- Divider Line -->
+      <div class="w-full h-px bg-[#C5A059]/15 mb-8" />
+
+      <!-- Persuasive Check List -->
+      <div class="max-w-md mx-auto flex flex-col gap-4 text-left mb-10">
+        <div class="flex items-start gap-3.5">
+          <div class="w-5 h-5 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="3.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-[#2C3E2E] text-sm md:text-[15px] font-medium leading-normal">
+            La Guía de Crochet Completo paso a paso
+          </span>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-5 h-5 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="3.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-[#2C3E2E] text-sm md:text-[15px] font-medium leading-normal">
+            <strong class="text-[#C5A059] font-bold">7 bonus exclusivos</strong> incluidos completamente gratis
+          </span>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <div class="w-5 h-5 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-3 h-3 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="3.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-[#2C3E2E] text-sm md:text-[15px] font-medium leading-normal">
+            Garantía total de reembolso por 7 días
+          </span>
+        </div>
+      </div>
+
+      <!-- Countdown Clock Section -->
+      <div class="bg-[#C5A059]/5 border border-[#C5A059]/25 rounded-2xl p-5 md:p-6 mb-2">
+        
+        <!-- Clock Header -->
+        <h4 class="text-[10px] md:text-[11px] tracking-[0.2em] font-accent font-bold uppercase text-[#C5A059] mb-4">
+          ESTE PRECIO ESPECIAL DESAPARECE EN:
+        </h4>
+
+        <!-- Micro Timer Blocks -->
+        <div class="flex justify-center items-center gap-3 sm:gap-4">
+          <!-- Hours -->
+          <div class="flex flex-col items-center">
+            <div class="w-14 sm:w-16 h-14 sm:h-16 bg-white border border-[#C5A059]/30 rounded-xl shadow-sm flex items-center justify-center">
+              <span id="timer-hours" class="font-serif text-2xl sm:text-3xl text-[#C5A059] font-normal">
+                24
+              </span>
+            </div>
+            <span class="text-[9px] tracking-wider text-[#2C3E2E]/70 uppercase font-semibold mt-1.5">Horas</span>
+          </div>
+
+          <!-- Colon divider -->
+          <span class="font-serif text-xl text-[#C5A059] -mt-4">:</span>
+
+          <!-- Minutes -->
+          <div class="flex flex-col items-center">
+            <div class="w-14 sm:w-16 h-14 sm:h-16 bg-white border border-[#C5A059]/30 rounded-xl shadow-sm flex items-center justify-center">
+              <span id="timer-minutes" class="font-serif text-2xl sm:text-3xl text-[#C5A059] font-normal">
+                00
+              </span>
+            </div>
+            <span class="text-[9px] tracking-wider text-[#2C3E2E]/70 uppercase font-semibold mt-1.5">Minutos</span>
+          </div>
+
+          <!-- Colon divider -->
+          <span class="font-serif text-xl text-[#C5A059] -mt-4">:</span>
+
+          <!-- Seconds -->
+          <div class="flex flex-col items-center">
+            <div class="w-14 sm:w-16 h-14 sm:h-16 bg-white border border-[#C5A059]/30 rounded-xl shadow-sm flex items-center justify-center">
+              <span id="timer-seconds" class="font-serif text-2xl sm:text-3xl text-[#C5A059] font-normal">
+                00
+              </span>
+            </div>
+            <span class="text-[9px] tracking-wider text-[#2C3E2E]/70 uppercase font-semibold mt-1.5">Segundos</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 3. BOTÓN PRINCIPAL LLAMATIVO Y PERSUASIVO DEBAJO -->
+    <div class="mt-8 flex flex-col items-center gap-4">
+      <a href="#purchase-section" class="w-full max-w-md py-4 px-8 rounded-full bg-[#1E5E3A] hover:bg-[#154c2d] text-white font-semibold text-sm md:text-base tracking-[0.12em] uppercase shadow-[0_12px_32px_rgba(30,94,58,0.35)] transition-all flex items-center justify-center gap-2.5 border border-[#276e46] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
+        <span>✦ SI, QUIERO MI GUÍA AHORA</span>
+        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+
+      <!-- Secure / Peace of mind badges -->
+      <div class="flex items-center justify-center gap-5 font-accent text-[13px] text-[#2C3E2E]/80 font-medium mt-1">
+        <span class="flex items-center gap-1">
+          <svg class="w-3.5 h-3.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          Pago 100% encriptado y seguro
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SECCIÓN: PROBLEMAS / AGITACIÓN -->
+  <div class="w-full max-w-3xl mx-auto mb-24 px-4 text-center">
+    
+    <!-- Título Provocativo -->
+    <h2 class="font-serif text-3xl sm:text-4xl md:text-[40px] leading-[1.15] font-medium tracking-tight text-[#2C3E2E] max-w-[650px] mx-auto mb-4">
+      ¿Sientes que te esfuerzas tejiendo verdaderas obras de arte... <span class="font-serif italic text-[#C5A059] block sm:inline">solo para que luego te digan que "está muy caro"?</span>
+    </h2>
+
+    <!-- Separador de Estrellas/Diamantes -->
+    <div class="flex justify-center gap-2 text-xs text-[#C5A059]/60 mb-12 select-none">
+      <span>✦</span>
+      <span>✦</span>
+      <span>✦</span>
+    </div>
+
+    <!-- Contenedor de Tarjetas de Frustración (Estilo artesanal) -->
+    <div class="flex flex-col gap-4 text-left">
+      
+      <!-- Pain 1 -->
+      <div class="bg-white border border-[#C5A059]/30 border-l-[5px] border-l-[#C5A059] rounded-r-2xl rounded-l-md p-5 md:p-6 shadow-[0_8px_30px_rgba(44,62,46,0.03)] flex flex-col sm:flex-row items-start gap-4.5">
+        <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/25 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">El dinero nunca alcanza</h3>
+          <p class="font-sans text-sm md:text-[14.5px] text-[#2C3E2E]/70 leading-relaxed font-normal">Estiras el sueldo a más no poder y nunca te queda nada para darte un gusto.</p>
+        </div>
+      </div>
+
+      <!-- Pain 2 -->
+      <div class="bg-white border border-[#C5A059]/30 border-l-[5px] border-l-[#C5A059] rounded-r-2xl rounded-l-md p-5 md:p-6 shadow-[0_8px_30px_rgba(44,62,46,0.03)] flex flex-col sm:flex-row items-start gap-4.5">
+        <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/25 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Tus pasatiempos terminan siendo un lujo</h3>
+          <p class="font-sans text-sm md:text-[14.5px] text-[#2C3E2E]/70 leading-relaxed font-normal">Te encanta hacer manualidades, pero siempre terminas dejándolas al último en tu lista de cosas por hacer.</p>
+        </div>
+      </div>
+
+      <!-- Pain 3 -->
+      <div class="bg-white border border-[#C5A059]/30 border-l-[5px] border-l-[#C5A059] rounded-r-2xl rounded-l-md p-5 md:p-6 shadow-[0_8px_30px_rgba(44,62,46,0.03)] flex flex-col sm:flex-row items-start gap-4.5">
+        <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/25 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Los dineritos extra te dejan agotada</h3>
+          <p class="font-sans text-sm md:text-[14.5px] text-[#2C3E2E]/70 leading-relaxed font-normal">Cada idea que intentas para ganar algo más te quita más tiempo y energía de la que tienes.</p>
+        </div>
+      </div>
+
+      <!-- Pain 4 -->
+      <div class="bg-white border border-[#C5A059]/30 border-l-[5px] border-l-[#C5A059] rounded-r-2xl rounded-l-md p-5 md:p-6 shadow-[0_8px_30px_rgba(44,62,46,0.03)] flex flex-col sm:flex-row items-start gap-4.5">
+        <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/25 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Los grupos de crochet en Facebook no dan dinero</h3>
+          <p class="font-sans text-sm md:text-[14.5px] text-[#2C3E2E]/70 leading-relaxed font-normal">Ves que otros venden, pero nadie te enseña bien cómo cobrar lo que realmente vale tu trabajo y tu tiempo.</p>
+        </div>
+      </div>
+
+      <!-- Pain 5 -->
+      <div class="bg-white border border-[#C5A059]/30 border-l-[5px] border-l-[#C5A059] rounded-r-2xl rounded-l-md p-5 md:p-6 shadow-[0_8px_30px_rgba(44,62,46,0.03)] flex flex-col sm:flex-row items-start gap-4.5">
+        <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/25 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Te siente estancada y sin opciones</h3>
+          <p class="font-sans text-sm md:text-[14.5px] text-[#2C3E2E]/70 leading-relaxed font-normal">Ya te cansaste de cursos que prometen mucho y no sirven; buscas algo sencillo, real y directo al grano.</p>
+        </div>
+      </div>
+
+      <!-- Pain 6 -->
+      <div class="bg-white border border-[#C5A059]/30 border-l-[5px] border-l-[#C5A059] rounded-r-2xl rounded-l-md p-5 md:p-6 shadow-[0_8px_30px_rgba(44,62,46,0.03)] flex flex-col sm:flex-row items-start gap-4.5">
+        <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/25 flex items-center justify-center shrink-0 mt-0.5">
+          <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Quieres dinero extra, no matarte trabajando</h3>
+          <p class="font-sans text-sm md:text-[14.5px] text-[#2C3E2E]/70 leading-relaxed font-normal">Quieres ganar desde tu sillón, a tus tiempos y sin descuidar tu vida ni a tu familia.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. SECCIÓN: BENEFICIOS DEL ARTE CASI OLVIDADO -->
+  <div class="w-screen max-w-[100vw] bg-[#FDFBF7] py-20 px-4 sm:px-6 md:px-8 -mx-4 sm:-mx-6 md:-mx-8 mb-24 text-center border-y border-[#C5A059]/20">
+    <div class="w-full max-w-5xl mx-auto">
+      
+      <!-- Título Persuasivo y Elegante -->
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-[40px] leading-[1.15] font-medium tracking-tight text-[#2C3E2E] max-w-[800px] mx-auto mb-4">
+        El oficio artesanal casi olvidado que <span class="font-serif italic text-[#C5A059]">genera ingresos en silencio</span>
+      </h2>
+
+      <!-- Subtítulo Descriptivo -->
+      <p class="font-accent text-lg sm:text-xl md:text-[21px] text-[#2C3E2E]/80 max-w-[720px] mx-auto leading-relaxed mb-12">
+        Tejer manteles de lujo a crochet es de los pocos oficios que requiere muy poca inversión, se vende a muy buen precio y tiene clientes buscando comprar durante todo el año.
+      </p>
+
+      <!-- Grid de Beneficios Exclusivos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
+        
+        <!-- Card 1 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[24px] p-6 md:p-8 shadow-[0_12px_40px_rgba(44,62,46,0.02)] flex flex-col sm:flex-row items-start gap-5">
+          <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+            <!-- Scissors icon representation -->
+            <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-4.879-4.879L21 12m-6.879 2.121l-3.536-3.536m0 0a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243zm0 0L19 19m-3.536-3.536L12 12m0 0a3 3 0 114.243-4.242 3 3 0 01-4.243 4.242z"/></svg>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Barato para empezar</h3>
+            <p class="font-sans text-sm md:text-[14px] text-[#2C3E2E]/70 leading-relaxed font-normal">Un par de bolas de hilo y un ganchillo. Eso es todo lo que necesitas. Sin máquinas caras, sin taller y sin gastos fijos.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[24px] p-6 md:p-8 shadow-[0_12px_40px_rgba(44,62,46,0.02)] flex flex-col sm:flex-row items-start gap-5">
+          <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+            <!-- Sofa icon representation -->
+            <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12V8a2 2 0 00-2-2H6a2 2 0 00-2 2v4m16 0a2 2 0 012 2v3a2 2 0 01-2 2h-1a1 1 0 01-1-1v-2a1 1 0 00-1-1H7a1 1 0 00-1 1v2a1 1 0 01-1 1H4a2 2 0 01-2-2v-3a2 2 0 012-2m16 0V9a2 2 0 00-2-2H6a2 2 0 00-2 2v3"/></svg>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Un trabajo tranquilo y a tu ritmo</h3>
+            <p class="font-sans text-sm md:text-[14px] text-[#2C3E2E]/70 leading-relaxed font-normal">Trabajas desde tu sillón, sin prisas. Te pones a ver una película o a escuchar música, y vas ganando dinero mientras lo haces.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[24px] p-6 md:p-8 shadow-[0_12px_40px_rgba(44,62,46,0.02)] flex flex-col sm:flex-row items-start gap-5">
+          <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+            <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Clientes que no te regatean</h3>
+            <p class="font-sans text-sm md:text-[14px] text-[#2C3E2E]/70 leading-relaxed font-normal">Las piezas hechas a mano y de calidad defienden su precio. La gente paga lo que vale porque reconoce el tiempo y el arte que hay detrás.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[24px] p-6 md:p-8 shadow-[0_12px_40px_rgba(44,62,46,0.02)] flex flex-col sm:flex-row items-start gap-5">
+          <div class="w-12 h-12 rounded-full bg-[#C5A059]/10 border border-[#C5A059]/20 flex items-center justify-center shrink-0 mt-0.5">
+            <!-- Calendar icon representation -->
+            <svg class="w-5.5 h-5.5 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <h3 class="font-sans text-base md:text-[17px] font-semibold text-[#2C3E2E]">Una entrada de dinero segura, todo el año</h3>
+            <p class="font-sans text-sm md:text-[14px] text-[#2C3E2E]/70 leading-relaxed font-normal">Bodas, regalos, recuerdos familiares o decoración para el hogar. Nunca hay una "temporada baja" para los manteles finos hechos a mano.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5. SECCIÓN: ESTO ES PARA TI SI... -->
+  <div class="w-full max-w-4xl mx-auto mb-24 px-4 text-center">
+    
+    <!-- Título -->
+    <h2 class="font-serif text-3xl sm:text-4xl md:text-[40px] leading-[1.15] font-medium tracking-tight text-[#2C3E2E] max-w-[800px] mx-auto mb-3">
+      Esto es <span class="font-serif italic text-[#C5A059]">perfecto para ti</span> si...
+    </h2>
+
+    <!-- Adorno de diamantes -->
+    <div class="flex justify-center gap-3 text-lg md:text-xl text-[#C5A059] mb-10 select-none">
+      <span>✦</span>
+      <span>✦</span>
+      <span>✦</span>
+    </div>
+
+    <!-- Tarjeta contenedora de color blanco -->
+    <div class="bg-white border border-[#C5A059]/30 rounded-[32px] p-8 sm:p-12 md:p-16 shadow-[0_16px_48px_rgba(44,62,46,0.03)] max-w-3xl mx-auto">
+      
+      <!-- Texto Principal -->
+      <h3 class="font-sans text-xl sm:text-2xl md:text-[25px] leading-relaxed font-bold text-[#C5A059] mb-8">
+        Quieres generar de $500 a $1,000 USD extra al mes, a tu manera.
+      </h3>
+
+      <!-- Bloques de Párrafos -->
+      <div class="flex flex-col gap-6 text-center max-w-[620px] mx-auto">
+        <p class="font-sans text-sm sm:text-base md:text-[16px] text-[#2C3E2E]/80 leading-relaxed">
+          No quieres salir de tu casa, no quieres tener un jefe y tampoco te interesa andar persiguiendo la última "fórmula mágica" para ganar dinero por internet.
+        </p>
+        <p class="font-sans text-sm sm:text-base md:text-[16px] text-[#2C3E2E]/80 leading-relaxed">
+          Quieres un ingreso tranquilo, digno y real — hecho con tus propias manos, a tus tiempos y desde el mismo sillón donde ya pasas tus tardes.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 6. SECCIÓN: PASO A PASO -->
+  <div class="w-screen max-w-[100vw] bg-[#FDFBF7] py-24 px-4 sm:px-6 md:px-8 -mx-4 sm:-mx-6 md:-mx-8 mb-10 border-y border-[#C5A059]/20">
+    <div class="w-full max-w-5xl mx-auto text-center">
+      
+      <!-- Título Principal -->
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-[40px] leading-[1.15] font-medium tracking-tight text-[#2C3E2E] max-w-[800px] mx-auto mb-3">
+        Desde tu sofá hasta <span class="font-serif italic text-[#C5A059]">realizar tu primera venta</span>, paso a paso
+      </h2>
+
+      <!-- Adorno de diamantes -->
+      <div class="flex justify-center gap-3 text-lg md:text-xl text-[#C5A059] mb-14 select-none">
+        <span>✦</span>
+        <span>✦</span>
+        <span>✦</span>
+      </div>
+
+      <!-- Grid de 3 Pasos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Paso 1 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[28px] p-8 md:p-10 shadow-[0_12px_40px_rgba(44,62,46,0.02)] flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-sans text-base font-bold mb-6 select-none">
+            1
+          </div>
+          <h3 class="font-serif text-xl sm:text-2xl font-medium text-[#2C3E2E] mb-4 text-center">
+            Aprende
+          </h3>
+          <p class="font-sans text-sm sm:text-[14px] text-[#2C3E2E]/80 leading-relaxed text-center">
+            Domina los puntos básicos y los patrones sin enredarte — con nuestra guía explicada paso a paso, hecha para quienes van empezando desde cero.
+          </p>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[28px] p-8 md:p-10 shadow-[0_12px_40px_rgba(44,62,46,0.02)] flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-sans text-base font-bold mb-6 select-none">
+            2
+          </div>
+          <h3 class="font-serif text-xl sm:text-2xl font-medium text-[#2C3E2E] mb-4 text-center">
+            Teje
+          </h3>
+          <p class="font-sans text-sm sm:text-[14px] text-[#2C3E2E]/80 leading-relaxed text-center">
+            Sigue un camino que ya funciona: empieza haciendo tu primer mantel de mesa hasta llegar a manteles de lujo que la gente te va a comprar con gusto.
+          </p>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[28px] p-8 md:p-10 shadow-[0_12px_40px_rgba(44,62,46,0.02)] flex flex-col items-center">
+          <div class="w-10 h-10 rounded-full bg-[#C5A059] text-white flex items-center justify-center font-sans text-base font-bold mb-6 select-none">
+            3
+          </div>
+          <h3 class="font-serif text-xl sm:text-2xl font-medium text-[#2C3E2E] mb-4 text-center">
+            Vende
+          </h3>
+          <p class="font-sans text-sm sm:text-[14px] text-[#2C3E2E]/80 leading-relaxed text-center">
+            Usa nuestras plantillas para saber exactamente cuánto cobrar, cómo tomarle fotos a tus tejidos y qué responderle a los clientes para vender con toda la confianza.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 7. SECCIÓN: PROGRESIÓN DE PIEZAS (INFINITE MARQUEE CAROUSEL) -->
+  <div class="w-screen max-w-[100vw] bg-[#FDFBF7] pt-16 pb-20 px-4 sm:px-6 md:px-8 -mx-4 sm:-mx-6 md:-mx-8 mb-0 border-y border-[#C5A059]/20">
+    <div class="w-full max-w-5xl mx-auto text-center">
+      
+      <!-- Título Principal -->
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-[40px] leading-[1.15] font-medium tracking-tight text-[#2C3E2E] max-w-[800px] mx-auto mb-3">
+        Desde alfombra para principiantes hasta <span class="font-serif italic text-[#C5A059]">piezas de lujo</span>
+      </h2>
+
+      <!-- Subtítulo -->
+      <p class="font-accent text-[18px] sm:text-[20px] text-[#2C3E2E]/80 leading-relaxed max-w-2xl mx-auto mb-14">
+        En la guía te enseño paso a paso desde las piezas más fáciles para empezar, hasta los manteles más cotizados que se venden rapidísimo.
+      </p>
+
+      <!-- Infinite Marquee Loop (Seamless) -->
+      <div class="w-screen max-w-[100vw] overflow-hidden -mx-4 sm:-mx-6 md:-mx-8 relative py-4">
+        <!-- Soft gradient masks on both sides for premium look -->
+        <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#FDFBF7] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#FDFBF7] to-transparent z-10 pointer-events-none"></div>
+
+        <div class="animate-marquee whitespace-nowrap gap-6">
+          
+          <!-- original slider items -->
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/10HTRd8uSo7G0O9n48daNyoErTg4jztNv" alt="Carpeta de Inicio" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Carpeta de Inicio</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel principiante</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1d2C5Gf0xwpGYJ-Nqj8w9gpuJyuzRvR5j" alt="Camino de Mesa" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Camino de Mesa</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Se vende rápido</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1JX6E5NOhELL60Gua_OG96lgqmYApBTXZ" alt="Tapete Redondo" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Redondo</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Gama media</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1K1y1UvJLxXSbk-LSlSpYmfLpEvwh128P" alt="Encaje de Piña" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Encaje de Piña</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Premium</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1Usspr9CWaCdisUH1ho-Fi3sr3wMm5QSJ" alt="Tapete Rectangular" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Rectangular</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Alta demanda</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1biZ_dwlI4EBYbA7xRmOgaGbCUKbVSd7s" alt="Edición Reliquia" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Edición Reliquia</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel exclusivo</p>
+            </div>
+          </div>
+
+          <!-- duplicate items for seamless scrolling -->
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/10HTRd8uSo7G0O9n48daNyoErTg4jztNv" alt="Carpeta de Inicio" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Carpeta de Inicio</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel principiante</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1d2C5Gf0xwpGYJ-Nqj8w9gpuJyuzRvR5j" alt="Camino de Mesa" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Camino de Mesa</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Se vende rápido</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1JX6E5NOhELL60Gua_OG96lgqmYApBTXZ" alt="Tapete Redondo" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Redondo</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Gama media</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1K1y1UvJLxXSbk-LSlSpYmfLpEvwh128P" alt="Encaje de Piña" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Encaje de Piña</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Premium</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1Usspr9CWaCdisUH1ho-Fi3sr3wMm5QSJ" alt="Tapete Rectangular" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Rectangular</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Alta demanda</p>
+            </div>
+          </div>
+
+          <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group select-none">
+            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative">
+              <img src="https://lh3.googleusercontent.com/d/1biZ_dwlI4EBYbA7xRmOgaGbCUKbVSd7s" alt="Edición Reliquia" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" />
+            </div>
+            <div class="p-6 flex flex-col justify-center text-center">
+              <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Edición Reliquia</h4>
+              <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel exclusivo</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. SECCIÓN: OFERTA FINAL (GET THE METHOD + THE 7 BONUSES) -->
+  <div id="purchase-section" class="w-screen max-w-[100vw] bg-[#FDFBF7] py-24 px-4 sm:px-6 md:px-8 -mx-4 sm:-mx-6 md:-mx-8 border-t border-[#C5A059]/20 text-center flex flex-col items-center justify-center">
+    <div class="w-full max-w-xl mx-auto flex flex-col items-center">
+      
+      <!-- Título Principal de la Oferta -->
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-[42px] leading-[1.15] font-normal tracking-tight text-[#2C3E2E] max-w-[600px] mb-3 text-center">
+        Empieza tu negocio hoy con la guía completa <span class="font-serif italic text-[#C5A059]">+ 7 bonos de regalo</span>
+      </h2>
+
+      <!-- Adorno de Diamantes Gold -->
+      <div class="flex justify-center gap-3 text-sm text-[#C5A059] mb-10 select-none">
+        <span>✦</span>
+        <span>✦</span>
+        <span>✦</span>
+      </div>
+
+      <!-- Tarjeta de Oferta -->
+      <div class="w-full bg-white border border-[#C5A059]/30 rounded-[28px] p-8 sm:p-10 md:p-12 shadow-[0_20px_50px_rgba(44,62,46,0.03)] mb-8 flex flex-col items-center">
+        <!-- Regular price -->
+        <p class="text-[#2C3E2E]/60 font-accent text-[15px] sm:text-[17px] font-normal line-through mb-4 tracking-wide text-center">
+          Precio regular 67 USD
+        </p>
+
+        <!-- Price displaying $14,90 USD -->
+        <div class="flex items-start justify-center text-[#2C3E2E] mb-6 select-none pl-3">
+          <span class="font-serif text-[#C5A059] text-3xl sm:text-4xl font-medium mt-1.5 mr-1">$</span>
+          <span class="font-serif text-7xl sm:text-8xl font-normal tracking-tighter leading-none text-[#C5A059]">14,90</span>
+          <span class="font-sans text-base sm:text-lg font-semibold tracking-wider text-[#2C3E2E]/80 ml-2.5 mt-8">USD</span>
+        </div>
+
+        <!-- Sub-badge: One-time payment - Instant access - Lifetime -->
+        <p class="font-accent text-sm sm:text-[15px] text-[#2C3E2E]/85 text-center tracking-wide mb-8 border-b border-[#C5A059]/15 pb-6 w-full">
+          Pago único — Acceso inmediato — Para toda la vida
+        </p>
+
+        <!-- Bullets -->
+        <div class="space-y-4 w-full max-w-[280px] sm:max-w-[325px] mx-auto text-left flex flex-col">
+          <div class="flex items-start gap-3">
+            <span class="text-[#C5A059] font-bold text-lg leading-none mt-0.5">✓</span>
+            <span class="font-sans text-sm sm:text-[15px] text-[#2C3E2E] font-normal leading-relaxed">
+              La Guía Digital Completa de Crochet (Paso a Paso)
+            </span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-[#C5A059] font-bold text-lg leading-none mt-0.5">✓</span>
+            <span class="font-sans text-sm sm:text-[15px] text-[#2C3E2E] font-normal leading-relaxed">
+              7 Bonos de Regalo Exclusivos (Valorados en $150 USD)
+            </span>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="text-[#C5A059] font-bold text-lg leading-none mt-0.5">✓</span>
+            <span class="font-sans text-sm sm:text-[15px] text-[#2C3E2E] font-normal leading-relaxed">
+              Garantía de devolución de dinero de 7 días
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Botón de Acceso -->
+      <div class="w-full flex justify-center">
+        <!-- Reemplaza con tu enlace de pago/checkout aquí -->
+        <a href="https://example.com/checkout" target="_blank" class="w-full max-w-md py-4.5 px-8 rounded-full bg-[#1E5E3A] hover:bg-[#154c2d] text-white font-semibold text-sm md:text-base tracking-[0.12em] uppercase shadow-[0_12px_32px_rgba(30,94,58,0.35)] transition-all flex items-center justify-center gap-2.5 border border-[#276e46] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
+          <span>✦ QUIERO MI GUÍA AHORA</span>
+          <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 9. SECCIÓN: GARANTÍA -->
+  <div class="w-screen max-w-[100vw] bg-[#FDFBF7] pb-24 pt-4 px-4 sm:px-6 md:px-8 -mx-4 sm:-mx-6 md:-mx-8 text-center flex flex-col items-center justify-center">
+    <div class="w-full max-w-4xl mx-auto px-2">
+      
+      <div class="w-full bg-[#FDFBF7] border-2 border-[#C5A059]/30 rounded-[28px] p-8 sm:p-14 md:p-16 flex flex-col items-center shadow-[0_12px_40px_rgba(44,62,46,0.02)]">
+        <!-- Icono de Escudo Grande y Elegante -->
+        <div class="mb-8 relative flex items-center justify-center select-none">
+          <div class="relative bg-[#FDFBF7] border-2 border-[#C5A059]/25 p-5 sm:p-6 rounded-full shadow-[0_8px_30px_rgba(44,62,46,0.03)] flex items-center justify-center">
+            <!-- ShieldCheck representation -->
+            <svg class="w-16 h-16 sm:w-20 sm:h-20 text-[#C5A059]" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+        </div>
+
+        <!-- Title heading -->
+        <h3 class="font-serif text-3xl sm:text-4xl text-[#C5A059] italic font-normal tracking-tight mb-6 leading-tight">
+          7 días. Sin preguntas. Sin complicaciones.
+        </h3>
+
+        <!-- Content paragraph -->
+        <p class="font-sans text-sm sm:text-[16px] text-[#2C3E2E]/85 max-w-[620px] mx-auto leading-relaxed font-normal">
+          Prueba la guía, mira los modelos y aprovecha los 7 bonos de regalo. Si sientes que esto no es para ti o simplemente no cumple tus expectativas, escríbenos un correo dentro de los primeros 7 días y te devolvemos el 100% de tu dinero.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 10. SECCIÓN: PREGUNTAS FRECUENTES (FAQ) -->
+  <div class="w-screen max-w-[100vw] bg-[#FDFBF7] pb-32 pt-8 px-4 sm:px-6 md:px-8 -mx-4 sm:-mx-6 md:-mx-8 text-center flex flex-col items-center justify-center">
+    <div class="w-full max-w-3xl mx-auto">
+      
+      <!-- Título Principal -->
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-[42px] leading-[1.15] font-normal tracking-tight text-[#2C3E2E] mb-3">
+        ¿Tienes dudas? <span class="font-serif italic text-[#C5A059]">Aquí te las resuelvo todas</span>
+      </h2>
+
+      <!-- Adorno de Diamantes -->
+      <div class="flex justify-center gap-3 text-sm text-[#C5A059] mb-12 select-none">
+        <span>✦</span>
+        <span>✦</span>
+        <span>✦</span>
+      </div>
+
+      <!-- FAQ Accordion List -->
+      <div class="space-y-4 text-left">
+        
+        <!-- FAQ 1 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(44,62,46,0.01)] transition-all duration-300">
+          <button onclick="toggleFaq(0)" class="w-full py-5 px-6 sm:px-8 flex justify-between items-center text-left focus:outline-none select-none cursor-pointer group">
+            <span class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] pr-4 group-hover:text-[#C5A059] transition-colors duration-200 leading-snug">
+              ¿De verdad se puede ganar ese dinero tejiendo a crochet?
+            </span>
+            <span id="faq-toggle-0" class="faq-toggle-icon text-[22px] sm:text-[24px] font-sans font-light leading-none select-none transition-all duration-300 text-[#C5A059]">
+              +
+            </span>
+          </button>
+          <div id="faq-answer-0" class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 pt-1 border-t border-[#C5A059]/15">
+              <p class="font-sans text-sm sm:text-[15px] text-[#2C3E2E]/85 leading-relaxed">
+                Sí, y somos muy realistas. La mayoría de las alumnas reportan ingresos de entre $500 y $1,000 USD al mes una vez que aprenden lo básico y empiezan a vender. Unas ganan más y a otras les toma un poco más de tiempo, pero la guía funciona si sigues el paso a paso.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(44,62,46,0.01)] transition-all duration-300">
+          <button onclick="toggleFaq(1)" class="w-full py-5 px-6 sm:px-8 flex justify-between items-center text-left focus:outline-none select-none cursor-pointer group">
+            <span class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] pr-4 group-hover:text-[#C5A059] transition-colors duration-200 leading-snug">
+              ¿Y si no sé nada y empiezo desde cero?
+            </span>
+            <span id="faq-toggle-1" class="faq-toggle-icon text-[22px] sm:text-[24px] font-sans font-light leading-none select-none transition-all duration-300 text-[#C5A059]">
+              +
+            </span>
+          </button>
+          <div id="faq-answer-1" class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 pt-1 border-t border-[#C5A059]/15">
+              <p class="font-sans text-sm sm:text-[15px] text-[#2C3E2E]/85 leading-relaxed">
+                ¡Tranquila, estás en el lugar perfecto! El Bono 01 es una clase pensada exactamente para quienes jamás han tomado una aguja de crochet. Te explicamos todo desde cero absoluto, sin dar nada por sentado.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(44,62,46,0.01)] transition-all duration-300">
+          <button onclick="toggleFaq(2)" class="w-full py-5 px-6 sm:px-8 flex justify-between items-center text-left focus:outline-none select-none cursor-pointer group">
+            <span class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] pr-4 group-hover:text-[#C5A059] transition-colors duration-200 leading-snug">
+              ¿Cuánto tiempo le tengo que dedicar a la semana?
+            </span>
+            <span id="faq-toggle-2" class="faq-toggle-icon text-[22px] sm:text-[24px] font-sans font-light leading-none select-none transition-all duration-300 text-[#C5A059]">
+              +
+            </span>
+          </button>
+          <div id="faq-answer-2" class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 pt-1 border-t border-[#C5A059]/15">
+              <p class="font-sans text-sm sm:text-[15px] text-[#2C3E2E]/85 leading-relaxed">
+                Con solo 4 a 6 horas a la semana verás un gran avance. La mayoría de las alumnas aprovechan ratitos libres: mientras ven la televisión por la noche, los fines de semana o mientras esperan a sus hijos. Son pequeños momentos que suman un montón.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(44,62,46,0.01)] transition-all duration-300">
+          <button onclick="toggleFaq(3)" class="w-full py-5 px-6 sm:px-8 flex justify-between items-center text-left focus:outline-none select-none cursor-pointer group">
+            <span class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] pr-4 group-hover:text-[#C5A059] transition-colors duration-200 leading-snug">
+              ¿Necesito tener página web o saber usar redes sociales para vender?
+            </span>
+            <span id="faq-toggle-3" class="faq-toggle-icon text-[22px] sm:text-[24px] font-sans font-light leading-none select-none transition-all duration-300 text-[#C5A059]">
+              +
+            </span>
+          </button>
+          <div id="faq-answer-3" class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 pt-1 border-t border-[#C5A059]/15">
+              <p class="font-sans text-sm sm:text-[15px] text-[#2C3E2E]/85 leading-relaxed">
+                Para nada. Te enseñamos un método facilísimo para vender usando solo tu WhatsApp y un catálogo muy sencillo. Nada de configuraciones raras ni cosas técnicas difíciles.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(44,62,46,0.01)] transition-all duration-300">
+          <button onclick="toggleFaq(4)" class="w-full py-5 px-6 sm:px-8 flex justify-between items-center text-left focus:outline-none select-none cursor-pointer group">
+            <span class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] pr-4 group-hover:text-[#C5A059] transition-colors duration-200 leading-snug">
+              ¿Por cuánto tiempo voy a tener acceso al material?
+            </span>
+            <span id="faq-toggle-4" class="faq-toggle-icon text-[22px] sm:text-[24px] font-sans font-light leading-none select-none transition-all duration-300 text-[#C5A059]">
+              +
+            </span>
+          </button>
+          <div id="faq-answer-4" class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 pt-1 border-t border-[#C5A059]/15">
+              <p class="font-sans text-sm sm:text-[15px] text-[#2C3E2E]/85 leading-relaxed">
+                De por vida. Haces un solo pago hoy y el método, los bonos y cualquier actualización futura son tuyos para siempre. Sin mensualidades, sin cobros sorpresa y sin renovaciones.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="bg-white border border-[#C5A059]/20 rounded-[20px] overflow-hidden shadow-[0_4px_20px_rgba(44,62,46,0.01)] transition-all duration-300">
+          <button onclick="toggleFaq(5)" class="w-full py-5 px-6 sm:px-8 flex justify-between items-center text-left focus:outline-none select-none cursor-pointer group">
+            <span class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] pr-4 group-hover:text-[#C5A059] transition-colors duration-200 leading-snug">
+              ¿Qué pasa si al final no me gusta o no es para mí?
+            </span>
+            <span id="faq-toggle-5" class="faq-toggle-icon text-[22px] sm:text-[24px] font-sans font-light leading-none select-none transition-all duration-300 text-[#C5A059]">
+              +
+            </span>
+          </button>
+          <div id="faq-answer-5" class="faq-answer max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="px-6 sm:px-8 pb-6 pt-1 border-t border-[#C5A059]/15">
+              <p class="font-sans text-sm sm:text-[15px] text-[#2C3E2E]/85 leading-relaxed">
+                Solo mándanos un correo dentro de los primeros 7 días y te devolvemos el 100% de tu dinero. Sin preguntas incómodas y sin rodeos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 11. SECCIÓN: TODAY CAN BE THE DAY (CALL TO ACTION FINAL & FOOTER) -->
+  <div class="w-screen max-w-[100vw] bg-[#FDFBF7] pt-16 pb-12 px-4 sm:px-6 md:px-8 -mx-4 sm:-mx-6 md:-mx-8 text-center flex flex-col items-center justify-center border-t border-[#C5A059]/20">
+    <div class="w-full max-w-3xl mx-auto flex flex-col items-center">
+      
+      <!-- Título Principal -->
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-[46px] leading-[1.2] font-normal tracking-tight text-[#2C3E2E] max-w-[650px] mb-3 text-center">
+        Hoy estás a un solo clic de <br />
+        crear tus primeros manteles y <span class="font-serif italic text-[#C5A059]">empezar tu negocio</span>
+      </h2>
+
+      <!-- Adorno de Diamantes Gold -->
+      <div class="flex justify-center gap-3 text-sm text-[#C5A059] mb-8 select-none">
+        <span>✦</span>
+        <span>✦</span>
+        <span>✦</span>
+      </div>
+
+      <!-- Subtítulo descriptivo -->
+      <p class="font-accent text-[#2C3E2E]/80 text-lg sm:text-xl md:text-[21px] leading-relaxed max-w-[640px] mx-auto mb-10">
+        Pago único de $14,90 USD. Acceso inmediato a la Guía Completa de Crochet + 7 bonos de regalo. Respaldado por una garantía de devolución de dinero de 7 días.
+      </p>
+
+      <!-- Botón de Llamada a la Acción Final -->
+      <div class="w-full flex justify-center mb-10">
+        <!-- Reemplaza con tu enlace de pago/checkout aquí -->
+        <a href="https://example.com/checkout" target="_blank" class="w-full max-w-md py-4.5 px-8 rounded-full bg-[#1E5E3A] hover:bg-[#154c2d] text-white font-semibold text-sm md:text-base tracking-[0.12em] uppercase shadow-[0_12px_32px_rgba(30,94,58,0.35)] transition-all flex items-center justify-center gap-2.5 border border-[#276e46] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
+          <span>✦ QUIERO MI GUÍA AHORA</span>
+        </a>
+      </div>
+
+      <!-- Trust badges checklist -->
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[#2C3E2E]/70 font-accent text-xs font-semibold tracking-widest uppercase mb-20 select-none">
+        <span class="flex items-center gap-1.5">✓ ACCESO INMEDIATO</span>
+        <span class="text-[#C5A059]/40 hidden sm:inline">|</span>
+        <span class="flex items-center gap-1.5">✓ PAGO SEGURO</span>
+        <span class="text-[#C5A059]/40 hidden sm:inline">|</span>
+        <span class="flex items-center gap-1.5">✓ GARANTÍA DE 7 DÍAS</span>
+      </div>
+
+      <!-- Divider Línea sutil -->
+      <div class="w-full border-t border-[#C5A059]/20 pt-12 flex flex-col items-center justify-center">
+        <!-- Copyright -->
+        <p class="font-sans text-xs sm:text-[13px] text-[#2C3E2E]/60 font-normal tracking-wide mb-3 select-none">
+          © 2026 La Guía de Crochet — Todos los derechos reservados
+        </p>
+        <!-- Static texts -->
+        <div class="flex justify-center gap-4 text-xs sm:text-[13px] text-[#2C3E2E]/70 font-normal select-none">
+          <span>Política de privacidad</span>
+          <span class="text-[#C5A059]/30">|</span>
+          <span>Términos y condiciones</span>
+          <span class="text-[#C5A059]/30">|</span>
+          <span>Contacto</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript para interactividad simple -->
+  <script>
+    // --- 1. PERSISTENT 24-HOUR TIMER ---
+    function initTimer() {
+      const hours24InMs = 24 * 3600 * 1000;
+      let targetTime = localStorage.getItem("crochet_timer_end_static");
+      
+      if (!targetTime || isNaN(targetTime)) {
+        targetTime = Date.now() + hours24InMs;
+        localStorage.setItem("crochet_timer_end_static", targetTime);
+      } else {
+        targetTime = parseInt(targetTime, 10);
+      }
+
+      function updateTimer() {
+        const now = Date.now();
+        const difference = targetTime - now;
+
+        if (difference <= 0) {
+          document.getElementById("timer-hours").innerText = "00";
+          document.getElementById("timer-minutes").innerText = "00";
+          document.getElementById("timer-seconds").innerText = "00";
+          clearInterval(timerInterval);
+          return;
+        }
+
+        const totalSeconds = Math.floor(difference / 1000);
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+
+        document.getElementById("timer-hours").innerText = String(h).padStart(2, "0");
+        document.getElementById("timer-minutes").innerText = String(m).padStart(2, "0");
+        document.getElementById("timer-seconds").innerText = String(s).padStart(2, "0");
+      }
+
+      updateTimer();
+      const timerInterval = setInterval(updateTimer, 1000);
+    }
+    initTimer();
+
+    // --- 2. ACCORDION FAQ LOGIC ---
+    let openFaqIndex = 0; // Por defecto abre la primera pregunta como en React
+
+    function toggleFaq(index) {
+      const answerElement = document.getElementById(`faq-answer-${index}`);
+      const toggleElement = document.getElementById(`faq-toggle-${index}`);
+      
+      const isOpen = answerElement.classList.contains("max-h-[300px]");
+
+      // Cierra todos los acordeones abiertos
+      document.querySelectorAll(".faq-answer").forEach((el, i) => {
+        el.classList.remove("max-h-[300px]", "opacity-100");
+        el.classList.add("max-h-0", "opacity-0");
+        const toggleIcon = document.getElementById(`faq-toggle-${i}`);
+        if (toggleIcon) {
+          toggleIcon.innerText = "+";
+          toggleIcon.classList.remove("rotate-45", "text-[#C5A059]");
+          toggleIcon.classList.add("text-[#C5A059]/60");
+        }
+      });
+
+      // Si no estaba abierto, lo abre
+      if (!isOpen) {
+        answerElement.classList.remove("max-h-0", "opacity-0");
+        answerElement.classList.add("max-h-[300px]", "opacity-100");
+        toggleElement.innerText = "×";
+        toggleElement.classList.add("rotate-45", "text-[#C5A059]");
+        toggleElement.classList.remove("text-[#C5A059]/60");
+      }
+    }
+    
+    // Abrir la primera pregunta por defecto
+    toggleFaq(0);
+  </script>
+</body>
+</html>
