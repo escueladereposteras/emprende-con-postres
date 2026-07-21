@@ -11,34 +11,39 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Montserrat', 'system-ui', 'sans-serif'],
-                        serif: ['Playfair Display', 'Prata', 'Georgia', 'serif'],
-                        accent: ['Inter', 'system-ui', 'sans-serif']
+                        sans: ['"Montserrat"', 'system-ui', 'sans-serif'],
+                        serif: ['"Playfair Display"', '"Prata"', 'Georgia', 'serif'],
+                        accent: ['"Inter"', 'system-ui', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Robust, isolated loading to prevent fallback failure) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght=0,400;0,500;0,600;0,700;1,400&family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet">
     
     <!-- Custom Style for Animations -->
     <style>
         .font-serif {
-            font-family: 'Playfair Display', 'Prata', Georgia, serif !important;
+            font-family: "Playfair Display", "Prata", Georgia, serif !important;
         }
         .font-sans {
-            font-family: 'Montserrat', system-ui, sans-serif !important;
+            font-family: "Montserrat", system-ui, sans-serif !important;
         }
 
         /* Infinite Marquee */
         @keyframes marquee {
-            0% { transform: translateX(0%); }
+            0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
         .animate-marquee {
+            display: flex;
+            width: max-content;
             animation: marquee 35s linear infinite;
         }
 
@@ -59,9 +64,7 @@
         }
     </style>
 </head>
-<body class="min-h-screen bg-[#FDFBF7] text-[#2C3E2E] font-sans antialiased overflow-x-hidden selection:bg-[#C5A059]/20 selection:text-[#2C3E2E]">
-
-    <div class="flex flex-col items-center justify-start py-12 px-4 sm:px-6 md:px-8 text-center">
+<body class="bg-[#FDFBF7] text-[#2C3E2E] font-sans antialiased min-h-screen flex flex-col items-center justify-start py-12 px-4 sm:px-6 md:px-8 text-center select-none overflow-x-hidden selection:bg-[#C5A059]/20 selection:text-[#2C3E2E]">
 
         <!-- 1. SECCIÓN PRINCIPAL (HEADER) -->
         <div class="max-w-4xl mx-auto flex flex-col items-center justify-center pt-8 pb-10 reveal active">
@@ -484,139 +487,146 @@
                     <div class="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#FDFBF7] to-transparent z-10 pointer-events-none"></div>
                     <div class="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#FDFBF7] to-transparent z-10 pointer-events-none"></div>
 
-                    <div class="flex gap-6 animate-marquee whitespace-nowrap">
-                        <!-- Card 1 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/10HTRd8uSo7G0O9n48daNyoErTg4jztNv" alt="Carpeta de Inicio" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                    <div class="animate-marquee whitespace-nowrap select-none">
+                        <!-- Primera mitad (6 items) -->
+                        <div class="flex shrink-0 gap-6 pr-6">
+                            <!-- Card 1 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/10HTRd8uSo7G0O9n48daNyoErTg4jztNv" alt="Carpeta de Inicio" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Carpeta de Inicio</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel principiante</p>
+                                </div>
                             </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Carpeta de Inicio</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel principiante</p>
+
+                            <!-- Card 2 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1d2C5Gf0xwpGYJ-Nqj8w9gpuJyuzRvR5j" alt="Camino de Mesa" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Camino de Mesa</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Se vende rápido</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1JX6E5NOhELL60Gua_OG96lgqmYApBTXZ" alt="Tapete Redondo" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Redondo</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Gama media</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1K1y1UvJLxXSbk-LSlSpYmfLpEvwh128P" alt="Encaje de Piña" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Encaje de Piña</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Premium</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1Usspr9CWaCdisUH1ho-Fi3sr3wMm5QSJ" alt="Tapete Rectangular" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Rectangular</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Alta demanda</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 6 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1biZ_dwlI4EBYbA7xRmOgaGbCUKbVSd7s" alt="Edición Reliquia" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Edición Reliquia</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel exclusivo</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Card 2 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1d2C5Gf0xwpGYJ-Nqj8w9gpuJyuzRvR5j" alt="Camino de Mesa" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                        <!-- Segunda mitad (Réplica exacta de los 6 items) -->
+                        <div class="flex shrink-0 gap-6 pr-6">
+                            <!-- Duplicate Card 1 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/10HTRd8uSo7G0O9n48daNyoErTg4jztNv" alt="Carpeta de Inicio" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Carpeta de Inicio</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel principiante</p>
+                                </div>
                             </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Camino de Mesa</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Se vende rápido</p>
-                            </div>
-                        </div>
 
-                        <!-- Card 3 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1JX6E5NOhELL60Gua_OG96lgqmYApBTXZ" alt="Tapete Redondo" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                            <!-- Duplicate Card 2 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1d2C5Gf0xwpGYJ-Nqj8w9gpuJyuzRvR5j" alt="Camino de Mesa" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Camino de Mesa</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Se vende rápido</p>
+                                </div>
                             </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Redondo</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Gama media</p>
-                            </div>
-                        </div>
 
-                        <!-- Card 4 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1K1y1UvJLxXSbk-LSlSpYmfLpEvwh128P" alt="Encaje de Piña" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                            <!-- Duplicate Card 3 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1JX6E5NOhELL60Gua_OG96lgqmYApBTXZ" alt="Tapete Redondo" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Redondo</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Gama media</p>
+                                </div>
                             </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Encaje de Piña</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Premium</p>
-                            </div>
-                        </div>
 
-                        <!-- Card 5 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1Usspr9CWaCdisUH1ho-Fi3sr3wMm5QSJ" alt="Tapete Rectangular" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                            <!-- Duplicate Card 4 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1K1y1UvJLxXSbk-LSlSpYmfLpEvwh128P" alt="Encaje de Piña" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Encaje de Piña</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Premium</p>
+                                </div>
                             </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Rectangular</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Alta demanda</p>
-                            </div>
-                        </div>
 
-                        <!-- Card 6 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1biZ_dwlI4EBYbA7xRmOgaGbCUKbVSd7s" alt="Edición Reliquia" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                            <!-- Duplicate Card 5 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1Usspr9CWaCdisUH1ho-Fi3sr3wMm5QSJ" alt="Tapete Rectangular" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Rectangular</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Alta demanda</p>
+                                </div>
                             </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Edición Reliquia</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel exclusivo</p>
-                            </div>
-                        </div>
 
-                        <!-- Duplicate Card 1 (for seamless wrap) -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/10HTRd8uSo7G0O9n48daNyoErTg4jztNv" alt="Carpeta de Inicio" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
-                            </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Carpeta de Inicio</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel principiante</p>
-                            </div>
-                        </div>
-
-                        <!-- Duplicate Card 2 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1d2C5Gf0xwpGYJ-Nqj8w9gpuJyuzRvR5j" alt="Camino de Mesa" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
-                            </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Camino de Mesa</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Se vende rápido</p>
-                            </div>
-                        </div>
-
-                        <!-- Duplicate Card 3 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1JX6E5NOhELL60Gua_OG96lgqmYApBTXZ" alt="Tapete Redondo" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
-                            </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Redondo</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Gama media</p>
-                            </div>
-                        </div>
-
-                        <!-- Duplicate Card 4 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1K1y1UvJLxXSbk-LSlSpYmfLpEvwh128P" alt="Encaje de Piña" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
-                            </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Encaje de Piña</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Premium</p>
-                            </div>
-                        </div>
-
-                        <!-- Duplicate Card 5 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1Usspr9CWaCdisUH1ho-Fi3sr3wMm5QSJ" alt="Tapete Rectangular" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
-                            </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Tapete Rectangular</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Alta demanda</p>
-                            </div>
-                        </div>
-
-                        <!-- Duplicate Card 6 -->
-                        <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
-                            <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
-                                <img src="https://lh3.googleusercontent.com/d/1biZ_dwlI4EBYbA7xRmOgaGbCUKbVSd7s" alt="Edición Reliquia" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
-                            </div>
-                            <div class="p-6 flex flex-col justify-center text-center">
-                                <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Edición Reliquia</h4>
-                                <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel exclusivo</p>
+                            <!-- Duplicate Card 6 -->
+                            <div class="w-[280px] sm:w-[340px] shrink-0 bg-white border border-[#C5A059]/20 rounded-[24px] overflow-hidden flex flex-col shadow-[0_8px_30px_rgba(44,62,46,0.03)] hover:-translate-y-1.5 transition-all duration-300 group">
+                                <div class="bg-[#C5A059]/5 aspect-[4/3] w-full overflow-hidden relative select-none">
+                                    <img src="https://lh3.googleusercontent.com/d/1biZ_dwlI4EBYbA7xRmOgaGbCUKbVSd7s" alt="Edición Reliquia" class="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-105" referrerpolicy="no-referrer" />
+                                </div>
+                                <div class="p-6 flex flex-col justify-center text-center">
+                                    <h4 class="font-serif text-[17px] sm:text-[19px] font-medium text-[#2C3E2E] mb-1 leading-snug whitespace-normal">Edición Reliquia</h4>
+                                    <p class="font-accent text-[13px] sm:text-[14px] text-[#C5A059] font-semibold">Nivel exclusivo</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -896,8 +906,6 @@
 
             </div>
         </div>
-        
-    </div>
 
     <!-- JavaScript code for countdown, accordion and animations -->
     <script>
