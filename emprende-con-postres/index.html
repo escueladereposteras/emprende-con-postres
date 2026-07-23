@@ -87,6 +87,33 @@
   /></noscript>
   <!-- End Meta Pixel Code (noscript) -->
 
+  <!-- TOP MINI HEADER BANNER WITH 24H TIMER -->
+  <div class="bg-gradient-to-r from-rose-950 via-pink-900 to-neutral-900 text-white py-2 px-3 sm:px-4 text-xs sm:text-sm font-medium shadow-md relative z-20 border-b border-pink-500/30">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-4 text-center">
+      <!-- Banner Message -->
+      <div class="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
+        <span class="font-bold text-pink-100 text-xs sm:text-sm sm:text-base tracking-tight">
+          Solo para 9 Mujeres con 75% OFF
+        </span>
+      </div>
+
+      <!-- 24-Hour Countdown Timer -->
+      <div class="flex items-center justify-center gap-2 bg-black/50 px-3 py-1 rounded-full border border-pink-500/30">
+        <i data-lucide="clock" class="w-3.5 h-3.5 text-pink-400 animate-pulse"></i>
+        <span class="text-[11px] sm:text-xs text-neutral-300 font-medium hidden xs:inline">
+          La oferta expira en:
+        </span>
+        <div class="flex items-center gap-1 font-mono font-bold text-amber-300 text-xs sm:text-sm">
+          <span id="top-timer-hours" class="bg-neutral-950 px-1.5 py-0.5 rounded border border-pink-500/20">23h</span>
+          <span>:</span>
+          <span id="top-timer-minutes" class="bg-neutral-950 px-1.5 py-0.5 rounded border border-pink-500/20">59m</span>
+          <span>:</span>
+          <span id="top-timer-seconds" class="bg-neutral-950 px-1.5 py-0.5 rounded border border-pink-500/20">59s</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- MAIN SCROLL CONTAINER -->
   <main>
 
@@ -1315,44 +1342,49 @@
     // Persistent 24h Countdown Timer logic
     function initCountdown() {
       const storageKey = "offer_target_timestamp_24h";
-      let targetTime = localStorage.getItem(storageKey);
-
-      if (!targetTime) {
-        // Set new target 24 hours from now
-        targetTime = Date.now() + 24 * 60 * 60 * 1000;
-        localStorage.setItem(storageKey, targetTime.toString());
-      } else {
-        targetTime = parseInt(targetTime, 10);
-        // If invalid, reset to 24h from now (no auto-reset if expired)
-        if (isNaN(targetTime)) {
-          targetTime = Date.now() + 24 * 60 * 60 * 1000;
-          localStorage.setItem(storageKey, targetTime.toString());
-        }
-      }
 
       function updateTimer() {
-        const diff = Math.floor((targetTime - Date.now()) / 1000);
-        
-        if (diff <= 0) {
-          // If finished, reset or keep at 0
-          document.getElementById("timer-hours").textContent = "00";
-          document.getElementById("timer-minutes").textContent = "00";
-          document.getElementById("timer-seconds").textContent = "00";
-          clearInterval(timerInterval);
-          return;
+        let targetTime = localStorage.getItem(storageKey);
+        const now = Date.now();
+
+        if (!targetTime || isNaN(parseInt(targetTime, 10)) || parseInt(targetTime, 10) <= now) {
+          const newTarget = now + 24 * 60 * 60 * 1000;
+          localStorage.setItem(storageKey, newTarget.toString());
+          targetTime = newTarget;
+        } else {
+          targetTime = parseInt(targetTime, 10);
         }
+
+        let diff = Math.floor((targetTime - now) / 1000);
+        if (diff < 0) diff = 0;
 
         const hours = Math.floor(diff / 3600);
         const minutes = Math.floor((diff % 3600) / 60);
         const seconds = diff % 60;
 
-        document.getElementById("timer-hours").textContent = hours.toString().padStart(2, "0");
-        document.getElementById("timer-minutes").textContent = minutes.toString().padStart(2, "0");
-        document.getElementById("timer-seconds").textContent = seconds.toString().padStart(2, "0");
+        const hStr = hours.toString().padStart(2, "0");
+        const mStr = minutes.toString().padStart(2, "0");
+        const sStr = seconds.toString().padStart(2, "0");
+
+        // Offer section timer elements
+        const timerH = document.getElementById("timer-hours");
+        const timerM = document.getElementById("timer-minutes");
+        const timerS = document.getElementById("timer-seconds");
+        if (timerH) timerH.textContent = hStr;
+        if (timerM) timerM.textContent = mStr;
+        if (timerS) timerS.textContent = sStr;
+
+        // Top mini banner timer elements
+        const topH = document.getElementById("top-timer-hours");
+        const topM = document.getElementById("top-timer-minutes");
+        const topS = document.getElementById("top-timer-seconds");
+        if (topH) topH.textContent = hStr + "h";
+        if (topM) topM.textContent = mStr + "m";
+        if (topS) topS.textContent = sStr + "s";
       }
 
       updateTimer();
-      const timerInterval = setInterval(updateTimer, 1000);
+      setInterval(updateTimer, 1000);
     }
   </script>
 </body>
