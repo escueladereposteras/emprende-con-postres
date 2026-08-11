@@ -1,1359 +1,1779 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MegaPack Postres para Emprender - Dulce Negocio</title>
-  
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lobster&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Plus Jakarta Sans", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-            serif: ["Playfair Display", "Georgia", "serif"],
-            mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
-            cursive: ["Lobster", "cursive"],
-          }
-        }
-      }
-    }
-  </script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recetario Dulce Emprendimiento — +160 Recetas de Postres Listos para Vender Todo el Año</title>
+  <meta name="description" content="Recetario digital con +160 recetas de postres rentables y listos para vender todo el año. Guías paso a paso, trucos de repostería y bonos de negocio. Acceso inmediato." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" />
   <style>
-    /* Custom Keyframe Animations matching React motion */
-    @keyframes marquee {
-      0% {
-        transform: translate3d(0, 0, 0);
-      }
-      100% {
-        transform: translate3d(-50%, 0, 0);
-      }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary: #FAFAF7;
+      --bg-secondary: #FFFFFF;
+      --bg-accent: #FAF6F0;
+      --text-primary: #2A2421;
+      --text-secondary: #635650;
+      --text-muted: #8C7B75;
+      --brand-primary: #EE6C8A;
+      --brand-secondary: #D84A75;
+      --btn-cta: #FF5900;
+      --btn-cta-hover: #E04E00;
+      --btn-text: #FFFFFF;
+      --accent-badge: #FFD000;
+      --border-color: #EFE8E1;
+
+      /* Backwards compatible alias variables mapped to the new palette */
+      --teal: var(--brand-primary);
+      --teal-dark: var(--brand-secondary);
+      --teal-light: #FDEBF0;
+      --peach: var(--brand-primary);
+      --red: var(--brand-secondary);
+      --bg: var(--bg-primary);
+      --bg-alt: var(--bg-accent);
+      --dark: var(--text-primary);
+      --body: var(--text-secondary);
+      --muted: var(--text-muted);
+      --white: var(--bg-secondary);
+      --gold: var(--accent-badge);
+      --green-ok: #27AE60;
     }
-    .animate-marquee-loop {
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-secondary);
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===================== UTILITIES ===================== */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-alt { background-color: var(--bg-accent); }
+    .section-white { background-color: var(--bg-secondary); }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+    .tag-teal { background: #FDEBF0; color: var(--brand-secondary); }
+    .tag-red { background: var(--brand-secondary); color: #fff; }
+    .tag-peach { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; }
+
+    .section-label {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .section-headline {
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .section-headline span { color: var(--brand-primary); }
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+
+    /* CTA Buttons */
+    .btn {
+      display: inline-block;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      text-align: center;
+      border: none;
+    }
+    .btn-primary {
+      background-color: var(--btn-cta);
+      color: var(--btn-text);
+      box-shadow: 0 6px 20px rgba(255,89,0,0.35);
+    }
+    .btn-primary:hover {
+      background-color: var(--btn-cta-hover);
+      color: var(--btn-text);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(224,78,0,0.45);
+    }
+    .btn-white {
+      background-color: var(--bg-secondary);
+      color: var(--brand-primary);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 16px rgba(42,36,33,0.08);
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(42,36,33,0.14); }
+    .btn-full { width: 100%; display: block; }
+    .btn-center { display: block; width: fit-content; margin: 0 auto; }
+
+    /* Trust seals */
+    .seals {
       display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .seal {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .seal i { width: 14px; height: 14px; }
+
+    /* Check list */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+    }
+    .check-list li i { flex-shrink: 0; color: var(--green-ok); margin-top: 2px; width: 18px; height: 18px; }
+
+    /* ===================== URGENCY BAR ===================== */
+    #urgency-bar {
+      background-color: var(--brand-secondary);
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    #urgency-bar a { color: #fff; text-decoration: underline; }
+
+    /* ===================== HERO (VARIACIÓN DE LAYOUT: SPLIT 2-COLUMNAS) ===================== */
+    #hero {
+      background-color: var(--bg-secondary);
+      padding: 60px 0 60px;
+      position: relative;
+    }
+    .hero-split {
+      display: flex;
+      flex-direction: column;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .hero-content-col {
+      text-align: center;
+    }
+    .hero-content-col .hero-tag { margin-bottom: 14px; }
+    .hero-content-col h1 {
+      font-size: clamp(26px, 3.8vw, 38px);
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .hero-content-col h1 span { color: var(--brand-primary); }
+    .hero-content-col .hero-sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    .hero-visual-col {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #FDEBF0, var(--bg-accent));
+      border-radius: 24px;
+      padding: 24px 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 12px 32px rgba(238,108,138,0.12);
+      margin: 0 auto 28px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .hero-mockup {
+      width: 100%;
+      max-width: 480px;
+      max-height: 380px;
+      object-fit: contain;
+      margin: 0 auto;
+      animation: float 3.5s ease-in-out infinite;
+      filter: drop-shadow(0 16px 32px rgba(238,108,138,0.22));
+    }
+    @keyframes float {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+    .hero-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0 auto 24px;
+      max-width: 520px;
+      text-align: left;
+    }
+    .hero-bullet {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: var(--bg-secondary);
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      border-left: 3px solid var(--brand-primary);
+    }
+    .hero-bullet i { color: var(--brand-primary); width: 16px; height: 16px; flex-shrink: 0; }
+    .hero-emotional {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .hero-cta-block { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .hero-cta-block .btn { font-size: 17px; padding: 18px 44px; }
+    .hero-price-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-price-note strong { color: var(--text-primary); font-weight: 700; }
+    .hero-price-note span { display: flex; align-items: center; gap: 4px; }
+    .hero-price-note span i { width: 13px; height: 13px; }
+
+    /* ===================== PREVIEW / CAROUSEL ===================== */
+    #preview {
+      background: var(--bg-accent);
+      padding: 72px 0;
+      overflow: hidden;
+    }
+    .carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 40px;
+    }
+    .carousel-wrapper::before,
+    .carousel-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .carousel-wrapper::before { left: 0; background: linear-gradient(to right, var(--bg-accent), transparent); }
+    .carousel-wrapper::after { right: 0; background: linear-gradient(to left, var(--bg-accent), transparent); }
+    .carousel-track {
+      display: flex;
+      gap: 16px;
+      animation: scroll-left 30s linear infinite;
       width: max-content;
-      animation: marquee 30s linear infinite;
+    }
+    .carousel-wrapper:hover .carousel-track { animation-play-state: paused; }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .carousel-slide {
+      width: 200px;
+      height: 260px;
+      flex-shrink: 0;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 12px rgba(42,36,33,0.06);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    @keyframes blink-slow {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.35; }
+    /* ===================== CATEGORIES ===================== */
+    #categories { padding: 80px 0; background: var(--bg-secondary); }
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 40px;
     }
-    .animate-blink-slow {
-      animation: blink-slow 2.5s ease-in-out infinite;
+    .category-item {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      transition: transform 0.2s ease;
+    }
+    .category-item:hover { transform: translateX(4px); }
+    .category-item i { color: var(--brand-primary); flex-shrink: 0; width: 18px; height: 18px; }
+
+    /* ===================== BENEFITS (VARIACIÓN DE LAYOUT: ELEVATED CARDS) ===================== */
+    #benefits { padding: 80px 0; background: var(--bg-accent); }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 760px;
+      margin: 0 auto 40px;
+    }
+    .benefit-card {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 4px 18px rgba(42,36,33,0.05);
+      border: 1px solid var(--border-color);
+      border-top: 4px solid var(--brand-primary);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 26px rgba(238,108,138,0.15);
+    }
+    .benefit-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .benefit-icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #FDEBF0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefit-card i { color: var(--brand-primary); width: 24px; height: 24px; }
+    .benefit-card h3 { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+    .benefit-card p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.55; }
+
+    /* ===================== URGENCY BLOCK ===================== */
+    #urgency-block {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      padding: 72px 0;
+      text-align: center;
+      color: #fff;
+    }
+    #urgency-block h2 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 600;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    #urgency-block h2 span { color: var(--accent-badge); }
+    #urgency-block p {
+      font-size: 16px;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      opacity: 0.92;
+    }
+    #urgency-block .seals .seal { color: rgba(255,255,255,0.85); }
+
+    /* ===================== VALUE STACK (VARIACIÓN DE LAYOUT: ACCENT PANEL & BONUS GRID) ===================== */
+    #value-stack { padding: 80px 0; background: var(--bg-secondary); }
+    .value-stack-inner {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 56px;
+      background: var(--bg-accent);
+      border-radius: 20px;
+      padding: 36px 32px;
+      border: 1px solid var(--border-color);
+    }
+    .value-mockup {
+      width: 320px;
+      min-width: 320px;
+      height: auto;
+    }
+    .value-content { flex: 1; }
+    .value-content h2 {
+      font-size: clamp(22px, 3.5vw, 30px);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+    .value-content h2 span { color: var(--brand-primary); }
+    .bonus-transition {
+      margin-top: 32px;
+      margin-bottom: 20px;
+    }
+    .bonus-transition p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .bonus-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .bonus-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(42,36,33,0.08);
+    }
+    .bonus-img {
+      flex-shrink: 0;
+      width: 80px;
+      height: auto;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .bonus-body { flex: 1; }
+    .bonus-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+    .bonus-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .bonus-price {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bonus-price .old { font-size: 12px; color: var(--brand-secondary); text-decoration: line-through; }
+    .bonus-tag { font-size: 11px; color: var(--brand-secondary); text-decoration: line-through; margin-left: auto; white-space: nowrap; opacity: 0.8; }
+    .bonus-price .free { font-size: 13px; font-weight: 800; color: var(--green-ok); }
+
+    /* ===================== PRICING ===================== */
+    #pricing { padding: 80px 0; background: var(--bg-accent); }
+    .pricing-header { text-align: center; margin-bottom: 8px; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 760px;
+      margin: 0 auto 24px;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 32px 28px;
+      position: relative;
+      border: 2px solid var(--border-color);
+    }
+    .pricing-card.featured {
+      background: linear-gradient(155deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+      border-color: transparent;
+      box-shadow: 0 16px 48px rgba(238,108,138,0.35);
+      transform: scale(1.03);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-badge);
+      color: var(--text-primary);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 16px;
+      border-radius: 50px;
+      white-space: nowrap;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
     }
 
-    /* Selection styling */
-    ::selection {
-      background-color: #fbcfe8;
-      color: #9d174d;
+    .pricing-card.featured .plan-name { color: rgba(255,255,255,0.85); }
+    .pricing-card.featured .price-old { color: #FFC0CB; }
+    .pricing-card.featured .price-main { color: var(--accent-badge); }
+    .pricing-card.featured .price-savings { color: var(--accent-badge); }
+    .pricing-card.featured .pricing-items li { color: rgba(255,255,255,0.95); }
+    .pricing-card.featured .pricing-items li i { color: var(--accent-badge); }
+    .pricing-card.featured .pricing-items li.bonus-item { color: var(--accent-badge); font-weight: 600; }
+    .pricing-card.featured .pricing-items li.bonus-item i { color: var(--accent-badge); }
+    .pricing-card.featured .bonus-tag { color: #FFC0CB; opacity: 1; }
+    .pricing-card.featured .btn-primary {
+      background: var(--btn-cta);
+      color: var(--btn-text);
+      box-shadow: 0 4px 16px rgba(255,89,0,0.4);
+    }
+    .pricing-card.featured .btn-primary:hover {
+      background: var(--btn-cta-hover);
+      color: var(--btn-text);
+      box-shadow: 0 8px 24px rgba(224,78,0,0.5);
+    }
+    .pricing-card .plan-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .pricing-mock {
+      width: 100%;
+      height: auto;
+      max-height: 180px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    .pricing-items { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; }
+    .pricing-items li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .pricing-items li i { flex-shrink: 0; color: var(--green-ok); width: 16px; height: 16px; margin-top: 2px; }
+    .pricing-items li.bonus-item { color: var(--brand-secondary); font-weight: 500; }
+    .pricing-items li.bonus-item i { color: var(--brand-primary); }
+    .price-block { margin-bottom: 16px; text-align: center; }
+    .price-old { font-size: 13px; color: var(--brand-secondary); text-decoration: line-through; margin-bottom: 2px; }
+    .price-main { font-size: 48px; font-weight: 900; color: var(--text-primary); line-height: 1; }
+    .price-main sup { font-size: 22px; vertical-align: super; }
+    .price-installments { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .price-savings { font-size: 12px; color: var(--green-ok); font-weight: 700; margin-top: 4px; }
+    .basic-nudge {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand-secondary);
+      background: #FDEBF0;
+      border: 1.5px solid var(--brand-primary);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .basic-nudge i { color: var(--brand-primary); width: 18px; height: 18px; }
+    .pricing-social {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .payment-seals {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .payment-seal {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .payment-seal i { width: 14px; height: 14px; }
+
+    /* ===================== GUARANTEE ===================== */
+    #guarantee { padding: 72px 0; background: var(--bg-secondary); }
+    .guarantee-inner {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .guarantee-seal {
+      flex-shrink: 0;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid var(--brand-primary);
+      background: var(--bg-accent);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+    }
+    .guarantee-seal .seal-days {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--brand-primary);
+      line-height: 1;
+    }
+    .guarantee-seal .seal-text {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+    .guarantee-content h2 {
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+    .guarantee-content p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.65;
+    }
+    .guarantee-highlight {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--brand-secondary);
+      font-style: italic;
     }
 
-    /* Accordion transition utility */
-    .faq-answer-container {
-      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-out;
+    /* ===================== FAQ ===================== */
+    #faq { padding: 80px 0; background: var(--bg-accent); }
+    .faq-list { max-width: 740px; margin: 0 auto 40px; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 1px 8px rgba(42,36,33,0.04);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      gap: 16px;
+    }
+    .faq-question .faq-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #FDEBF0;
+      color: var(--brand-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 400;
+      transition: transform 0.3s ease;
+      line-height: 1;
+    }
+    .faq-item.active .faq-question .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 22px 18px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* ===================== FINAL CTA ===================== */
+    #final-cta {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      padding: 80px 0;
+      text-align: center;
+    }
+    #final-cta h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 600;
+      color: #fff;
+      max-width: 640px;
+      margin: 0 auto 28px;
+      line-height: 1.25;
+    }
+    #final-cta h2 span { color: var(--accent-badge); }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--text-primary);
+      color: var(--text-muted);
+      padding: 36px 24px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    footer strong { color: rgba(255,255,255,0.85); }
+
+    /* ===================== DEPOIMENTOS (SLIDER CONTINUO) ===================== */
+    #testimonials { padding: 80px 0; background: var(--bg-secondary); overflow: hidden; }
+    .t-marquee-wrap {
+      width: 100%;
+      overflow: hidden;
+      margin: 20px auto 30px;
+      position: relative;
+      padding: 10px 0;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+    .t-marquee-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: smooth-scroll 25s linear infinite;
+    }
+    .t-marquee-wrap:hover .t-marquee-track {
+      animation-play-state: paused;
+    }
+    .t-marquee-slide {
+      flex-shrink: 0;
+      width: 290px;
+    }
+    .t-marquee-slide .t-img {
+      width: 100%;
+      height: 480px;
+      object-fit: contain;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 4px 16px rgba(42,36,33,0.08);
+      border: 1px solid var(--border-color);
+      background: #fff;
+    }
+    @keyframes smooth-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 600px) {
+      .t-marquee-slide { width: 240px; }
+      .t-marquee-slide .t-img { height: 380px; }
+    }
+    
+    @keyframes pulse-cta {
+      0%   { box-shadow: 0 4px 16px rgba(255,89,0,0.35), 0 0 0 0 rgba(255,89,0,0.55); }
+      70%  { box-shadow: 0 4px 16px rgba(255,89,0,0.35), 0 0 0 12px rgba(255,89,0,0); }
+      100% { box-shadow: 0 4px 16px rgba(255,89,0,0.35), 0 0 0 0 rgba(255,89,0,0); }
+    }
+    .pricing-card.featured .btn-primary {
+      animation: pulse-cta 2s ease-out infinite;
+    }
+    .pricing-card.featured .btn-primary:hover {
+      animation: none;
+    }
+    @keyframes bounce-arrow {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+
+    /* ===================== POPUP UPSELL ===================== */
+    #upsell-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(42,36,33,0.65);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #upsell-overlay.active {
+      display: flex;
+      animation: overlay-in 0.25s ease forwards;
+    }
+    @keyframes overlay-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    #upsell-card {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 36px 32px 28px;
+      max-width: 460px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 20px 60px rgba(42,36,33,0.22);
+      animation: card-in 0.3s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+    @keyframes card-in {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    #upsell-close {
+      position: absolute;
+      top: 12px; right: 16px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+    }
+    #upsell-close:hover { color: var(--text-primary); }
+    .upsell-tag {
+      display: inline-block;
+      background: var(--accent-badge);
+      color: var(--text-primary);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+    .upsell-headline {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .upsell-body {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .upsell-price-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 22px;
+    }
+    .upsell-price-old {
+      font-size: 13px;
+      color: var(--brand-secondary);
+      text-decoration: line-through;
+      font-weight: 500;
+      opacity: 0.8;
+      text-align: center;
+    }
+    .upsell-price-new {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--brand-secondary);
+      text-align: center;
+    }
+    .upsell-price-new sup { font-size: 18px; font-weight: 700; vertical-align: super; }
+    .upsell-price-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      margin-top: -14px;
+      text-align: center;
+    }
+    @keyframes pulse-upsell {
+      0%   { box-shadow: 0 4px 16px rgba(255,89,0,.35), 0 0 0 0 rgba(255,89,0,.4); }
+      70%  { box-shadow: 0 4px 16px rgba(255,89,0,.35), 0 0 0 10px rgba(255,89,0,0); }
+      100% { box-shadow: 0 4px 16px rgba(255,89,0,.35), 0 0 0 0 rgba(255,89,0,0); }
+    }
+    .upsell-btn-yes {
+      display: block;
+      width: 100%;
+      padding: 15px 20px;
+      background: var(--btn-cta);
+      color: var(--btn-text);
+      border: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      animation: pulse-upsell 2s ease-out infinite;
+      text-align: center;
+    }
+    .upsell-btn-yes:hover {
+      background: var(--btn-cta-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(224,78,0,.4);
+      animation: none;
+    }
+    .upsell-btn-no {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: none;
+      border: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      color: var(--brand-secondary);
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      opacity: 0.8;
+    }
+    .upsell-btn-no:hover { opacity: 1; }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 992px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hero-content-col {
+        text-align: center;
+      }
+      .hero-bullets {
+        align-items: flex-start;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-cta-block {
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 60px 0; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .categories-grid { grid-template-columns: 1fr; }
+      .value-stack-inner { flex-direction: column; text-align: center; padding: 24px 18px; }
+      .value-mockup { width: 100%; min-width: unset; height: auto; }
+      .check-list li { text-align: left; }
+      .bonus-card { gap: 12px; }
+      .bonus-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .pricing-card.featured { transform: scale(1); }
+      .guarantee-inner { flex-direction: column; text-align: center; }
+
+      #hero .hero-sub { font-size: 14px; font-weight: 400; }
+      .hero-emotional { font-size: 13px; }
+    }
+
+    @media (max-width: 480px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      #hero h1 { font-size: 24px; }
+      .t-arrow { display: none; }
+      #upsell-card { padding: 28px 20px 22px; }
+      .upsell-headline { font-size: 18px; }
     }
   </style>
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1342339014701440');
-  fbq('track', 'PageView');
-  </script>
-  <!-- End Meta Pixel Code -->
 </head>
-<body class="font-sans antialiased text-neutral-800 bg-white">
-  <!-- Meta Pixel Code (noscript) -->
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1342339014701440&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code (noscript) -->
+<body>
 
-  <!-- MAIN SCROLL CONTAINER -->
-  <main>
+  <!-- ===== SECCIÓN 1: BARRA DE URGENCIA ===== -->
+  <div id="urgency-bar">
+    Esta oferta termina en: <span id="urgency-countdown" style="font-variant-numeric:tabular-nums; letter-spacing:.04em;">24:00:00</span>
+  </div>
 
-    <!-- HERO SECTION (No sticky navigation bar or header above, starts directly here) -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-rose-50 via-pink-50/30 to-white pt-16 pb-16 md:pt-24 md:pb-20">
-      <!-- Decorative background elements -->
-      <div class="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-pink-200/40 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute top-1/3 right-10 w-80 h-80 bg-rose-100/50 rounded-full blur-3xl pointer-events-none"></div>
+  <!-- ===== SECCIÓN 2: HERO ===== -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-split">
+        <div class="hero-content-col">
+          <div class="hero-tag">
+            <span class="tag tag-teal">Recetario Digital de Repostería</span>
+          </div>
 
-      <div class="relative max-w-5xl mx-auto px-4 sm:px-6 text-center">
-        <!-- Headline -->
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-semibold tracking-tight text-neutral-900 leading-[1.2] max-w-4xl mx-auto">
-          Crea tu propio negocio de repostería desde casa con nuestro <span class="text-pink-600 bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent italic font-semibold">Megapack de Postres</span>
-        </h1>
+          <p style="font-size:14px; font-weight:600; color:var(--text-muted); letter-spacing:.02em; margin-bottom:10px;">¿Buscando recetas rentables que sí se vendan todos los días?</p>
 
-        <!-- Subheadline -->
-        <p class="text-base sm:text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto mt-6 leading-relaxed">
-          Aprende el paso a paso para generar ingresos desde tu cocina con recetas sencillas, de bajo costo y listas para vender
+          <h1>
+            <span>+160 recetas</span> de postres listos para<span> vender todo el año</span>
+          </h1>
+
+          <p class="hero-sub">
+            Postres en vaso, cheesecakes, tortas frías, galletas gourmet y más. Explicados paso a paso para emprender con éxito.
+          </p>
+
+          <div class="hero-visual-col">
+            <img src="https://lh3.googleusercontent.com/d/1mSvsbeM2inTlTpHuV8j--eZJrbdzvoMW" alt="Recetario Dulce Emprendimiento" class="hero-mockup" width="1536" height="1024" fetchpriority="high" referrerpolicy="no-referrer" />
+          </div>
+
+          <div class="hero-bullets">
+            <div class="hero-bullet"><i data-lucide="zap"></i> Acceso inmediato tras la compra</div>
+            <div class="hero-bullet"><i data-lucide="printer"></i> Descarga en PDF e imprime cuando quieras</div>
+            <div class="hero-bullet"><i data-lucide="folder-open"></i> Recetas probadas, rentables y fáciles</div>
+            <div class="hero-bullet"><i data-lucide="layers"></i> +160 postres listos para vender todo el año</div>
+            <div class="hero-bullet"><i data-lucide="calculator"></i> Incluye fórmulas de costos y márgenes</div>
+          </div>
+
+          <p class="hero-emotional">
+            Basta de perder insumos con recetas que no funcionan.<br />Tendrás la receta exacta y deliciosa para enamorar a tus clientes.
+          </p>
+
+          <div class="hero-cta-block">
+            <a href="#preview" class="btn btn-primary">
+              Quiero mis recetas ahora
+            </a>
+            <div class="hero-price-note">
+              <span><i data-lucide="shield-check"></i> Garantía de 7 días</span>
+              <span><i data-lucide="lock"></i> Pago seguro</span>
+              <span><i data-lucide="download"></i> Acceso inmediato</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 3: PREVIEW DEL MATERIAL ===== -->
+  <section id="preview">
+    <div class="container">
+      <h2 class="section-headline">Mira el recetario por dentro</h2>
+      <p class="section-sub">Más de 160 recetas explicadas al detalle, listas para preparar y vender. Cada una diseñada para generar ingresos reales.</p>
+    </div>
+
+    <!-- CARRUSEL -->
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-track">
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1vhKjQItEbf9BBhcn2weKlNusxwR6DjVR" alt="Receta de postre 1" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1mfEdveQG9yQSIE43ObIFSJ_0KcdUAhhA" alt="Receta de postre 2" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1X8kIEJbXF26kfsQ9X_9ZmJcf9zPEI7rs" alt="Receta de postre 3" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1m0VSqakjwAQjSFaCWkCNXJwuEgQxOCfy" alt="Receta de postre 4" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1JMX0eIdCxYBeRGHP1QWTx7jJJhJelDgc" alt="Receta de postre 5" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/17OYiz51mnmmPWjjdediwKC_bmWaMfg52" alt="Receta de postre 6" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1XcSuoYU4lO5IZZcgMh10HShx4vg-UnKI" alt="Receta de postre 7" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/13R-LyoobpylukPt1RbZbhi_kIMSMcKgD" alt="Receta de postre 8" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <!-- Duplicados para loop infinito -->
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1vhKjQItEbf9BBhcn2weKlNusxwR6DjVR" alt="Receta de postre 1" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1mfEdveQG9yQSIE43ObIFSJ_0KcdUAhhA" alt="Receta de postre 2" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1X8kIEJbXF26kfsQ9X_9ZmJcf9zPEI7rs" alt="Receta de postre 3" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1m0VSqakjwAQjSFaCWkCNXJwuEgQxOCfy" alt="Receta de postre 4" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1JMX0eIdCxYBeRGHP1QWTx7jJJhJelDgc" alt="Receta de postre 5" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/17OYiz51mnmmPWjjdediwKC_bmWaMfg52" alt="Receta de postre 6" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/1XcSuoYU4lO5IZZcgMh10HShx4vg-UnKI" alt="Receta de postre 7" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+        <div class="carousel-slide"><img src="https://lh3.googleusercontent.com/d/13R-LyoobpylukPt1RbZbhi_kIMSMcKgD" alt="Receta de postre 8" style="width:100%;height:100%;object-fit:cover;border-radius:10px;" loading="lazy" referrerpolicy="no-referrer"></div>
+      </div>
+    </div>
+
+    <div class="container" style="text-align:center;">
+      <a href="#value-stack" class="btn btn-primary btn-center">
+        Quiero tener acceso ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 4: CATEGORÍAS / SITUACIONES ===== -->
+  <section id="categories" class="section-white">
+    <div class="container">
+      <h2 class="section-headline">Si alguna vez has querido emprender en repostería y vender postres rentables, <span>este recetario es para ti</span></h2>
+      <p class="section-sub">Cada receta fue probada para garantizar sabor, presentación irresistible y excelente margen de ganancia. ¿Reconoces alguna de estas metas?</p>
+
+      <div class="categories-grid">
+        <div class="category-item"><i data-lucide="cake"></i> Quieres vender postres en vaso prácticos y de alta demanda</div>
+        <div class="category-item"><i data-lucide="sparkles"></i> Quieres preparar cheesecakes cremosos sin fallar en la textura</div>
+        <div class="category-item"><i data-lucide="cookie"></i> Quieres ofrecer galletas gourmet crujientes por fuera y suaves por dentro</div>
+        <div class="category-item"><i data-lucide="flame"></i> Quieres generar un ingreso extra todos los fines de semana</div>
+        <div class="category-item"><i data-lucide="trending-up"></i> Quieres calcular tus costos de forma exacta para nunca perder dinero</div>
+        <div class="category-item"><i data-lucide="heart"></i> Quieres crear tu propia marca de repostería desde la cocina de tu casa</div>
+      </div>
+
+      <a href="#pricing" class="btn btn-primary btn-center">
+        Quiero mi recetario ahora
+      </a>
+      <p style="text-align:center; font-size:13px; color:var(--text-muted); margin-top:20px; max-width:500px; margin-left:auto; margin-right:auto;">
+        Estas son solo algunas de las categorías incluidas. El recetario te acompaña desde el primer paso hasta la comercialización de tus postres todo el año.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 5: BENEFICIOS ===== -->
+  <section id="benefits" class="section-alt" style="padding:80px 0;">
+    <div class="container">
+      <h2 class="section-headline">Lo que cambia cuando usas <span>recetas probadas y rentables</span></h2>
+      <p class="section-sub">Cada receta fue perfeccionada para asegurar sabor delicioso, procesos sencillos y alta ganancia.</p>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-card-header">
+            <div class="benefit-icon-badge"><i data-lucide="clock"></i></div>
+            <h3>Ahorro de tiempo en cocina</h3>
+          </div>
+          <p>Preparaciones optimizadas paso a paso para elaborar mayores volúmenes sin complicaciones.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card-header">
+            <div class="benefit-icon-badge"><i data-lucide="heart"></i></div>
+            <h3>Clientes enamorados</h3>
+          </div>
+          <p>Sabor superior y presentación impecable que genera recompra constante y recomendaciones boca a boca.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card-header">
+            <div class="benefit-icon-badge"><i data-lucide="shield-check"></i></div>
+            <h3>Cero desperdicios</h3>
+          </div>
+          <p>Instrucciones precisas e ingredientes accesibles para que cada preparación salga perfecta a la primera.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-card-header">
+            <div class="benefit-icon-badge"><i data-lucide="dollar-sign"></i></div>
+            <h3>Cálculo exacto de costos</h3>
+          </div>
+          <p>Aprende a fijar precios competitivos asegurando un margen de ganancia rentable en cada producto.</p>
+        </div>
+      </div>
+
+      <a href="#pricing" class="btn btn-primary btn-center">
+        Quiero mi recetario ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 6: BLOQUE DE URGENCIA ===== -->
+  <section id="urgency-block">
+    <div class="container">
+      <h2>Cada semana sin emprender<br /><span>es dinero que dejas de ganar</span></h2>
+      <p>
+        La repostería es uno de los negocios más nobles y lucrativos. Tus futuros clientes ya están buscando postres deliciosos para sus eventos y antojos diarios. Te mereces empezar hoy mismo con la guía correcta.
+      </p>
+      <a href="#pricing" class="btn btn-white" style="margin-bottom:24px;">
+        Quiero empezar mi negocio dulcemente
+      </a>
+      <div class="seals">
+        <div class="seal"><i data-lucide="zap"></i> Acceso inmediato</div>
+        <div class="seal"><i data-lucide="shield-check"></i> Garantía de 7 días</div>
+        <div class="seal"><i data-lucide="lock"></i> Pago seguro</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 7: STACK DE VALOR + BONOS ===== -->
+  <section id="value-stack">
+    <div class="container">
+      <h2 class="section-headline">Todo lo que <span>vas a recibir</span></h2>
+
+      <div class="value-stack-inner">
+        <img src="https://lh3.googleusercontent.com/d/1mSvsbeM2inTlTpHuV8j--eZJrbdzvoMW" alt="Recetario Dulce Emprendimiento" class="value-mockup" style="object-fit:contain;" loading="lazy" width="840" height="560" referrerpolicy="no-referrer" />
+
+        <div class="value-content">
+          <h2>Recetario Dulce Emprendimiento<br /><span>+160 recetas de postres lucrativos</span></h2>
+          <ul class="check-list">
+            <li><i data-lucide="check-circle-2"></i> Recetas de postres en vaso irresistibles (Trifles, Mousses, Tiramisú)</li>
+            <li><i data-lucide="check-circle-2"></i> Cheesecakes horneados y fríos con coberturas artesanales</li>
+            <li><i data-lucide="check-circle-2"></i> Galletas gourmet estilo New York y brownies melosos</li>
+            <li><i data-lucide="check-circle-2"></i> Tortas frías, tres leches y marquesas en porciones individuales</li>
+            <li><i data-lucide="check-circle-2"></i> Técnicas de conservación, empaque atractivo y presentación</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BONOS -->
+      <div class="bonus-transition">
+        <p>Y eso no es todo. En el recetario completo, también recibes 5 bonos exclusivos que acelerarán las ventas de tu negocio de repostería:</p>
+        <span class="tag tag-peach" style="font-size:12px; padding:6px 16px;">5 BONOS EXCLUSIVOS</span>
+      </div>
+
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <img class="bonus-img" src="https://lh3.googleusercontent.com/d/1x86vj8LVyP_vw7K7zDhK4Pi8nOfz7Nh8" alt="Calculadora & Guía de Costos y Precios" loading="lazy" referrerpolicy="no-referrer" />
+          <div class="bonus-body">
+            <h4>Calculadora & Guía de Costos y Precios</h4>
+            <p>Plantilla práctica para calcular ingredientes, mano de obra y fijar precios con margen de ganancia real.</p>
+            <div class="bonus-price"><span class="old">De $5.00 USD</span><span class="free">GRATIS</span></div>
+          </div>
+        </div>
+        <div class="bonus-card">
+          <img class="bonus-img" src="https://lh3.googleusercontent.com/d/1XW9nek89uG2FWmq7y4lhKRPEAvklHenJ" alt="Guión de Ventas por WhatsApp y Redes" loading="lazy" referrerpolicy="no-referrer" />
+          <div class="bonus-body">
+            <h4>Guión de Ventas por WhatsApp y Redes</h4>
+            <p>Plantillas de mensajes y guiones listos para responder a tus clientes y cerrar pedidos diariamente.</p>
+            <div class="bonus-price"><span class="old">De $4.00 USD</span><span class="free">GRATIS</span></div>
+          </div>
+        </div>
+        <div class="bonus-card">
+          <img class="bonus-img" src="https://lh3.googleusercontent.com/d/175-ZCI7kmavqiI6DXxYCeECvyYNGPvDG" alt="Guía de Empaques Irresistibles" loading="lazy" referrerpolicy="no-referrer" />
+          <div class="bonus-body">
+            <h4>Guía de Empaques Irresistibles</h4>
+            <p>Aprende a presentar tus postres de forma profesional y elegante sin gastar demasiado presupuesto.</p>
+            <div class="bonus-price"><span class="old">De $3.00 USD</span><span class="free">GRATIS</span></div>
+          </div>
+        </div>
+        <div class="bonus-card">
+          <img class="bonus-img" src="https://lh3.googleusercontent.com/d/1XZi1puVVO5Z51HW4LFy4gnvrWQ_iW6dP" alt="Manual de Sustitución de Ingredientes" loading="lazy" referrerpolicy="no-referrer" />
+          <div class="bonus-body">
+            <h4>Manual de Sustitución de Ingredientes</h4>
+            <p>Aprende cómo reemplazar insumos si falta un ingrediente sin alterar el sabor ni la textura de tu postre.</p>
+            <div class="bonus-price"><span class="old">De $3.00 USD</span><span class="free">GRATIS</span></div>
+          </div>
+        </div>
+        <div class="bonus-card" style="grid-column: 1 / -1;">
+          <img class="bonus-img" src="https://lh3.googleusercontent.com/d/1B10WV2OKG7z1QahMmF_3OtuFp5B3Q5r7" alt="Lista de Proveedores por País" loading="lazy" referrerpolicy="no-referrer" />
+          <div class="bonus-body">
+            <h4>Lista de Proveedores por País</h4>
+            <p>Directorio de distribuidores recomendados de insumos, herramientas y empaques para comprar a precio mayorista en tu país.</p>
+            <div class="bonus-price"><span class="old">De $3.00 USD</span><span class="free">GRATIS</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:36px;">
+        <a href="#testimonials" class="btn btn-primary">
+          Quiero mis recetas ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 8: TESTIMONIOS ===== -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-label"><span class="tag tag-teal">Lo que están diciendo</span></div>
+      <h2 class="section-headline">Emprendedoras que ya usan el recetario</h2>
+      <p class="section-sub">Historias de éxito de quienes comenzaron a vender postres desde su hogar.</p>
+
+      <div class="t-marquee-wrap">
+        <div class="t-marquee-track">
+          <!-- 5 imágenes de testimonios -->
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/1q1WWW4sugiAHX_pUfgSbzkQe8oiHRAos" alt="Testimonio 1" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/1qCHNylKm7mZyM5D3qIrzcHl1KOiGcq1p" alt="Testimonio 2" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/13yAjRXzdu8KfFteSEmNWAomZ4h0qpNVx" alt="Testimonio 3" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/17ZsQ507wk6q055dpdj_1O4DX7aFxV8ZQ" alt="Testimonio 4" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/16S8KvwFQ2MFOANVuEl8WEg0RwlH15IG0" alt="Testimonio 5" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+
+          <!-- Duplicado para loop continuo suave -->
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/1q1WWW4sugiAHX_pUfgSbzkQe8oiHRAos" alt="Testimonio 1" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/1qCHNylKm7mZyM5D3qIrzcHl1KOiGcq1p" alt="Testimonio 2" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/13yAjRXzdu8KfFteSEmNWAomZ4h0qpNVx" alt="Testimonio 3" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/17ZsQ507wk6q055dpdj_1O4DX7aFxV8ZQ" alt="Testimonio 4" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+          <div class="t-marquee-slide">
+            <img src="https://lh3.googleusercontent.com/d/16S8KvwFQ2MFOANVuEl8WEg0RwlH15IG0" alt="Testimonio 5" class="t-img" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; padding: 8px 0 0;">
+        <p style="font-size:13px; color:var(--text-muted); font-weight:500; margin-bottom:10px; letter-spacing:.01em;">
+          Oferta por tiempo limitado. Asegura tus recetas antes de que termine.
         </p>
+        <a href="#pricing" style="display:inline-flex; flex-direction:column; align-items:center; gap:4px; color:var(--brand-primary); font-size:13px; font-weight:700; text-decoration:none; animation: bounce-arrow 1.4s ease-in-out infinite;">
+          Ver oferta
+          <i data-lucide="chevrons-down" style="width:22px; height:22px;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <!-- Mockup Graphic -->
-        <div class="relative max-w-xl mx-auto mt-10 md:mt-12 group">
-          <div class="relative">
-            <img
-              src="https://lh3.googleusercontent.com/d/1mSvsbeM2inTlTpHuV8j--eZJrbdzvoMW"
-              alt="Ebook Bundle Mockup MegaPack Dulce Negocio"
-              class="w-full h-auto object-contain"
-              referrerpolicy="no-referrer"
-            />
-            
-            <!-- Overlay badge with star rating -->
-            <div class="absolute -bottom-4 -right-4 sm:-right-6 bg-white border border-pink-100 shadow-lg px-4 py-3 rounded-2xl flex flex-col items-center z-10">
-              <div class="flex gap-0.5 mb-1 text-amber-400">
-                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
-                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
-                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
-                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
-                <i data-lucide="star" class="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current"></i>
-              </div>
-              <span class="text-[10px] sm:text-xs font-bold text-neutral-700">+2.397 Alumnas felices</span>
-            </div>
+  <!-- ===== SECCIÓN 9: PLANES DE PRECIO ===== -->
+  <section id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <span class="tag" id="countdown-tag" style="margin-bottom:12px; display:inline-block; background:var(--accent-badge); color:var(--text-primary); letter-spacing:.08em;">OFERTA VÁLIDA HASTA: <span id="countdown-timer">24:00:00</span></span>
+        <h2 class="section-headline" style="margin-bottom:8px;">Elige tu versión del recetario</h2>
+        <p class="section-sub" style="margin-bottom:36px;">Ambas opciones te brindan acceso digital inmediato. La versión completa incluye todas las recetas y bonos estratégicos.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- RECETARIO BÁSICO -->
+        <div class="pricing-card" style="text-align:center;">
+          <p class="plan-name">Recetario Básico</p>
+          <img src="https://lh3.googleusercontent.com/d/1_o2Yu6Uni5MWEzVKS8IxbUTuJhNbdrZl" alt="Recetario Básico" class="pricing-mock" loading="lazy" width="840" height="560" referrerpolicy="no-referrer" />
+          <div class="price-block">
+            <p class="price-old">De $12.00 USD</p>
+            <p class="price-main"><sup>$</sup>7<sup>.90 USD</sup></p>
+            <p class="price-installments">Pago único</p>
+          </div>
+          <a href="https://pay.hotmart.com/Y106546858K?off=6c5r99t7&checkoutMode=10" target="_self" id="btn-basico-trigger" class="btn btn-primary btn-full" style="background: var(--text-muted); cursor:pointer; border:none; font-family:'Poppins',sans-serif; font-size:inherit; text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">
+            Quiero el recetario básico
+          </a>
+          <ul class="pricing-items" style="text-align:left; margin-top:20px;">
+            <li><i data-lucide="check-circle-2"></i> +80 recetas de postres fáciles y rentables</li>
+            <li><i data-lucide="check-circle-2"></i> Organizadas por tipo de postre</li>
+            <li><i data-lucide="check-circle-2"></i> Acceso inmediato en PDF</li>
+          </ul>
+          <div class="basic-nudge">
+            <span>El 92% elige el recetario completo — +160 recetas y +5 bonos exclusivos</span>
+            <i data-lucide="chevron-down"></i>
           </div>
         </div>
 
-        <!-- CTA and trust factors -->
-        <div class="mt-14 max-w-sm mx-auto flex flex-col items-center gap-4">
-          <button
-            onclick="scrollToPricing()"
-            id="cta-hero"
-            class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-bold py-4 px-8 rounded-[20px] shadow-lg shadow-pink-200/80 hover:shadow-xl hover:shadow-pink-300/80 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-sm sm:text-base uppercase tracking-wider cursor-pointer flex items-center justify-center gap-2"
-          >
-            <span>QUIERO EL MEGAPACK AHORA</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        <!-- RECETARIO COMPLETO -->
+        <div class="pricing-card featured" style="text-align:center;">
+          <div class="pricing-badge">MÁS VENDIDO</div>
+          <p class="plan-name">Recetario Completo</p>
+          <p style="font-size:12px; font-weight:700; background:var(--accent-badge); color:var(--text-primary); display:inline-block; padding:3px 12px; border-radius:50px; margin-bottom:14px; letter-spacing:.04em;">+160 RECETAS INCLUIDAS</p>
+          <img src="https://lh3.googleusercontent.com/d/1mSvsbeM2inTlTpHuV8j--eZJrbdzvoMW" alt="Recetario Completo" class="pricing-mock" loading="lazy" width="840" height="560" referrerpolicy="no-referrer" />
+          <div class="price-block">
+            <p style="font-size:13px; font-weight:600; color:rgba(255,255,255,0.8); margin-bottom:8px; line-height:1.3;">El paquete completo para triunfar en la repostería</p>
+            <p class="price-old">De $24.00 USD</p>
+            <p class="price-main"><sup>$</sup>9<sup>.90 USD</sup></p>
+            <p style="font-size:14px; font-weight:500; color:rgba(255,255,255,0.85); margin-top:4px;">Pago único &bull; Acceso de por vida</p>
+            <p style="font-size:11px; color:rgba(255,255,255,0.6); margin-top:3px; margin-bottom:6px;">Acceso inmediato en PDF</p>
+            <p class="price-savings">Ahorras $14.10 USD</p>
+          </div>
+          <a href="https://pay.hotmart.com/Y106546858K?off=nrm40zc2&checkoutMode=10" target="_self" class="btn btn-primary btn-full btn-checkout" id="btn-completo-link">
+            Quiero el recetario completo
+          </a>
+          <ul class="pricing-items" style="text-align:left; margin-top:20px;">
+            <li><i data-lucide="check-circle-2"></i> +160 recetas de postres listos para vender</li>
+            <li><i data-lucide="check-circle-2"></i> Guías paso a paso de preparación y empaque</li>
+            <li><i data-lucide="check-circle-2"></i> Acceso inmediato en PDF descargable</li>
+            <li class="bonus-item"><i data-lucide="gift"></i> Calculadora & Guía de Costos y Precios<span class="bonus-tag">$5.00 USD</span></li>
+            <li class="bonus-item"><i data-lucide="gift"></i> Guión de Ventas por WhatsApp y Redes<span class="bonus-tag">$4.00 USD</span></li>
+            <li class="bonus-item"><i data-lucide="gift"></i> Guía de Empaques Irresistibles<span class="bonus-tag">$3.00 USD</span></li>
+            <li class="bonus-item"><i data-lucide="gift"></i> Manual de Sustitución de Ingredientes<span class="bonus-tag">$3.00 USD</span></li>
+            <li class="bonus-item"><i data-lucide="gift"></i> Lista de Proveedores por País<span class="bonus-tag">$3.00 USD</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="pricing-social">La mayoría de las reposteras emprendedoras elige el recetario completo. Los bonos responden exactamente a lo que necesitas para vender rápido.</p>
+
+      <div class="payment-seals">
+        <div class="payment-seal"><i data-lucide="credit-card"></i> Tarjeta de crédito</div>
+        <div class="payment-seal"><i data-lucide="globe"></i> PayPal</div>
+        <div class="payment-seal"><i data-lucide="file-text"></i> Transferencia / Medios locales</div>
+        <div class="payment-seal"><i data-lucide="shield-check"></i> Compra 100% segura en USD</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 10: GARANTÍA ===== -->
+  <section id="guarantee" class="section-white">
+    <div class="container">
+      <div class="guarantee-inner">
+        <div class="guarantee-seal">
+          <span class="seal-days">7</span>
+          <span class="seal-text">días de<br />garantía</span>
+        </div>
+        <div class="guarantee-content">
+          <h2>Compra sin riesgo</h2>
+          <p>
+            Tienes 7 días completos para poner a prueba el recetario, preparar tus primeras delicias y comprobar lo fácil que es deleitar a tus clientes. Si por cualquier motivo no quedas totalmente satisfecha, solicita la devolución. Sin preguntas ni complicaciones.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 11: PREGUNTAS FRECUENTES ===== -->
+  <section id="faq" class="section-alt" style="padding:80px 0;">
+    <div class="container">
+      <h2 class="section-headline">¿Aún tienes alguna duda?</h2>
+      <p class="section-sub" style="margin-bottom:36px;">Respondemos aquí las preguntas más frecuentes sobre el recetario.</p>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Cómo accedo al recetario después de la compra?
+            <span class="faq-icon">+</span>
           </button>
-          <span class="text-xs font-semibold tracking-wider text-pink-600 uppercase flex items-center gap-1">
-            ✨ Acceso inmediato
-          </span>
-        </div>
-
-        <!-- Trust pillars checklists -->
-        <div class="mt-12 pt-8 border-t border-pink-100 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 text-left sm:text-center text-sm text-neutral-600 font-medium">
-          <div class="flex items-center sm:justify-center gap-2.5">
-            <div class="bg-emerald-100 text-emerald-600 p-1 rounded-full shrink-0">
-              <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Inmediatamente después de confirmar tu pago, recibirás un correo electrónico con el enlace de acceso directo para descargar todo el material digital en PDF a tu dispositivo.
             </div>
-            <span>Acceso inmediato</span>
-          </div>
-          <div class="flex items-center sm:justify-center gap-2.5">
-            <div class="bg-emerald-100 text-emerald-600 p-1 rounded-full shrink-0">
-              <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
-            </div>
-            <span>Garantía de 7 días</span>
-          </div>
-          <div class="flex items-center sm:justify-center gap-2.5">
-            <div class="bg-emerald-100 text-emerald-600 p-1 rounded-full shrink-0">
-              <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
-            </div>
-            <span>Compatible con celular y PC</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- QUALIFICATION SECTION -->
-    <section class="bg-gradient-to-b from-white to-pink-50/20 pt-[30px] pb-20 md:pb-24 relative overflow-hidden">
-      <!-- Decorative side accent blur -->
-      <div class="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 bg-pink-100/40 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
-        <!-- Header Block -->
-        <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
-            Este MegaPack es <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">perfecto para ti si...</span>
-          </h2>
-        </div>
-
-        <!-- Qualifications Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          
-          <!-- Card 1 -->
-          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
-                <i data-lucide="compass" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
-                Has pensado en emprender pero no sabes con qué receta empezar
-              </h3>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
-                <i data-lucide="home" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
-                Quieres trabajar desde la comodidad de tu casa y tener más tiempo con tus hijos
-              </h3>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
-                <i data-lucide="trending-up" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
-                Tienes un negocio y quieres aumentar tus ganancias y tu menú
-              </h3>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
-                <i data-lucide="sparkles" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
-                Quieres aprender a hacer postres deliciosos, económicos y rentables
-              </h3>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
-                <i data-lucide="piggy-bank" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
-                Quieres tener ingresos extra pero cuentas con bajo presupuesto para emprender
-              </h3>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="bg-white border border-pink-100 rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center gap-3 sm:gap-5 shadow-sm">
-            <div class="flex-shrink-0">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-50 rounded-lg sm:rounded-xl flex items-center justify-center text-pink-500">
-                <i data-lucide="share-2" class="w-5 h-5 sm:w-6 sm:h-6 stroke-[2]"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-sm sm:text-lg font-sans font-normal text-neutral-800 leading-snug">
-                Quieres vender desde las redes sociales
-              </h3>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Bottom Banner -->
-        <div class="mt-12 bg-gradient-to-r from-pink-50 to-rose-50/60 rounded-2xl border border-pink-100 p-6 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-          <div class="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center text-pink-500 flex-shrink-0 mx-auto sm:mx-0">
-            <i data-lucide="award" class="w-5.5 h-5.5"></i>
-          </div>
-          <p class="text-sm text-neutral-700 font-medium">
-            No necesitas hornos profesionales ni ingredientes costosos. ¡Puedes empezar hoy mismo con los utensilios que ya tienes en tu propia cocina!
-          </p>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- INTRODUCTION SECTION (SLIDER MARQUEE) -->
-    <section class="bg-gradient-to-b from-white to-rose-50/30 pt-[50px] pb-20 md:pb-24 relative overflow-hidden">
-      <!-- Decorative side accent blur -->
-      <div class="absolute top-1/2 left-10 w-72 h-72 bg-pink-100/20 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="w-full relative">
-        <!-- Header Block -->
-        <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 px-4">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
-            Aprenderás esto <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">y muchísimo más!!</span>
-          </h2>
-          <p class="text-neutral-600 mt-4 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-            Aprende a preparar los postres más solicitados desde casa
-          </p>
-        </div>
-
-        <!-- Infinite Marquee Slider -->
-        <div class="relative w-full overflow-hidden py-4">
-
-          <!-- Scrolling track containing 6 categories duplicated for seamless looping -->
-          <div class="animate-marquee-loop gap-4 sm:gap-6 px-4">
-            
-            <!-- Category Item 2 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1-_puHBEgHj9xvP4qQGRomKWM2lOvJHkk" alt="Tortas en porción" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tortas en porción</h3>
-              </div>
-            </div>
-
-            <!-- Category Item 3 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1iYbmDf1zg0xMuutuSdYHdE8gymJRVytX" alt="Brownies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Brownies</h3>
-              </div>
-            </div>
-
-            <!-- Category Item 1 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1fMEbl_tbzr4mneyNKMMKi2uQFWWPrbCl" alt="Postres en shot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Postres en shot</h3>
-              </div>
-            </div>
-
-            <!-- Category Item 4 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1ROngLx-p8x3TzWYc_WbBPBAhMT6ZRH1V" alt="Galletas NY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Galletas NY</h3>
-              </div>
-            </div>
-
-            <!-- Category Item 5 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1ZYOnNjNKJcNfNCpEKDA5ulT71M-WV8pR" alt="Tartas Heladas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tartas Heladas</h3>
-              </div>
-            </div>
-
-            <!-- Category Item 6 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1Lxv7qAJsCaF0a-Om9547Sxp4gk5-f_3A" alt="Tres leches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tres leches</h3>
-              </div>
-            </div>
-
-            <!-- Category Item 7 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1O9zwm0WJo4dHzHjpRDMQl3xYOB-sZDcd" alt="Cheesecake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Cheesecake</h3>
-              </div>
-            </div>
-
-            <!-- Category Item 8 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1SmQFF5UkqUCzJ5ILFGk_7av9nMDqmU1N" alt="Tortas en lata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tortas en lata</h3>
-              </div>
-            </div>
-
-            <!-- Category Item 9 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1lODnst40gXtpEM2e4hSwaMTOkGxn2t2_" alt="Postres en vaso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Postres en vaso</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 2 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1-_puHBEgHj9xvP4qQGRomKWM2lOvJHkk" alt="Tortas en porción" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tortas en porción</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 3 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1iYbmDf1zg0xMuutuSdYHdE8gymJRVytX" alt="Brownies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Brownies</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 1 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1fMEbl_tbzr4mneyNKMMKi2uQFWWPrbCl" alt="Postres en shot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Postres en shot</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 4 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1ROngLx-p8x3TzWYc_WbBPBAhMT6ZRH1V" alt="Galletas NY" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Galletas NY</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 5 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1ZYOnNjNKJcNfNCpEKDA5ulT71M-WV8pR" alt="Tartas Heladas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tartas Heladas</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 6 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1Lxv7qAJsCaF0a-Om9547Sxp4gk5-f_3A" alt="Tres leches" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tres leches</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 7 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1O9zwm0WJo4dHzHjpRDMQl3xYOB-sZDcd" alt="Cheesecake" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Cheesecake</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 8 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1SmQFF5UkqUCzJ5ILFGk_7av9nMDqmU1N" alt="Tortas en lata" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Tortas en lata</h3>
-              </div>
-            </div>
-
-            <!-- DUPLICATED Category Item 9 -->
-            <div class="w-[180px] sm:w-64 md:w-72 aspect-[3/4] flex-shrink-0 group rounded-[20px] sm:rounded-[40px] overflow-hidden transition-all duration-300 shadow-md relative border border-pink-100/20 cursor-pointer">
-              <img src="https://lh3.googleusercontent.com/d/1lODnst40gXtpEM2e4hSwaMTOkGxn2t2_" alt="Postres en vaso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerpolicy="no-referrer" />
-              <div class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-gradient-to-r from-pink-600 to-rose-500 text-white py-1.5 px-2 sm:py-2.5 sm:px-4 rounded-xl sm:rounded-[20px] text-center shadow-md border border-white/20 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center min-h-[36px] sm:min-h-[56px]">
-                <h3 class="text-[12px] sm:text-lg md:text-xl font-sans font-bold tracking-wide normal-case leading-tight drop-shadow-sm select-none truncate">Postres en vaso</h3>
-              </div>
-            </div>
-
           </div>
         </div>
 
-        <!-- Call to Action Bar -->
-        <div class="mt-16 text-center relative z-10 px-4">
-          <button
-            onclick="redirectToCheckout()"
-            id="cta-intro"
-            class="inline-flex items-center justify-center bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-[20px] shadow-lg shadow-pink-200/50 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider text-sm sm:text-base cursor-pointer"
-          >
-            QUIERO ACCEDER AL MEGAPACK
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿En qué formato viene el recetario?
+            <span class="faq-icon">+</span>
           </button>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-    <!-- BONUSES SECTION -->
-    <section class="bg-neutral-900 text-white py-20 md:py-28 relative overflow-hidden">
-      <!-- Decorative colored blurs for a premium dark contrast theme -->
-      <div class="absolute top-0 left-1/4 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
-        <!-- Header Block -->
-        <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-white leading-tight">
-            Además recibirás <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-300 font-extrabold">6 bonos exclusivos si te inscribes HOY!</span>
-          </h2>
-          <p class="text-neutral-400 mt-4 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-            Herramientas indispensables, plantillas de costos automatizadas y soporte directo para que no cometas los errores comunes que hacen fracasar al 90% de las emprendedoras
-          </p>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Todas las recetas y bonos están en formato PDF de alta resolución. Puedes guardarlo en tu celular, tablet o computadora, e incluso imprimirlo si prefieres tenerlo en formato físico.
+            </div>
+          </div>
         </div>
 
-        <!-- Bonuses Grid -->
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
-          
-          <!-- Bonus Card 1 -->
-          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
-            <div class="flex flex-col">
-              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
-                <img src="https://lh3.googleusercontent.com/d/1x86vj8LVyP_vw7K7zDhK4Pi8nOfz7Nh8" alt="Plantilla de costos" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
-              </div>
-              <div class="p-3 sm:p-6">
-                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
-                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
-                    <i data-lucide="calculator" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                  </div>
-                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 01</span>
-                </div>
-                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Plantilla de costos</h4>
-              </div>
-            </div>
-            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
-              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
-                <span class="text-neutral-500">Valor: <span class="line-through">$25 USD</span></span>
-                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bonus Card 2 -->
-          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
-            <div class="flex flex-col">
-              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
-                <img src="https://lh3.googleusercontent.com/d/1XZi1puVVO5Z51HW4LFy4gnvrWQ_iW6dP" alt="Grupo Privado de WhatsApp" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
-              </div>
-              <div class="p-3 sm:p-6">
-                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
-                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
-                    <i data-lucide="message-square" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                  </div>
-                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 02</span>
-                </div>
-                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Grupo Privado de WhatsApp</h4>
-              </div>
-            </div>
-            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
-              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
-                <span class="text-neutral-500">Valor: <span class="line-through">$19 USD</span></span>
-                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bonus Card 3 -->
-          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
-            <div class="flex flex-col">
-              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
-                <img src="https://lh3.googleusercontent.com/d/1XW9nek89uG2FWmq7y4lhKRPEAvklHenJ" alt="Vende por Redes Sociales" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
-              </div>
-              <div class="p-3 sm:p-6">
-                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
-                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
-                    <i data-lucide="share-2" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                  </div>
-                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 03</span>
-                </div>
-                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Vende por Redes Sociales</h4>
-              </div>
-            </div>
-            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
-              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
-                <span class="text-neutral-500">Valor: <span class="line-through">$17 USD</span></span>
-                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bonus Card 4 -->
-          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
-            <div class="flex flex-col">
-              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
-                <img src="https://lh3.googleusercontent.com/d/1B10WV2OKG7z1QahMmF_3OtuFp5B3Q5r7" alt="Lista de Proveedores" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
-              </div>
-              <div class="p-3 sm:p-6">
-                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
-                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
-                    <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                  </div>
-                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 04</span>
-                </div>
-                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Lista de Proveedores por País</h4>
-              </div>
-            </div>
-            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
-              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
-                <span class="text-neutral-500">Valor: <span class="line-through">$12 USD</span></span>
-                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bonus Card 5 -->
-          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
-            <div class="flex flex-col">
-              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
-                <img src="https://lh3.googleusercontent.com/d/1AvsN0Sk5qfXmsiAfHH5tGWzDgPU1zIJL" alt="Masterclass" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
-              </div>
-              <div class="p-3 sm:p-6">
-                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
-                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
-                    <i data-lucide="play-circle" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                  </div>
-                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 05</span>
-                </div>
-                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Masterclass de Emprendimiento</h4>
-              </div>
-            </div>
-            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
-              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
-                <span class="text-neutral-500">Valor: <span class="line-through">$15 USD</span></span>
-                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bonus Card 6 -->
-          <div class="bg-neutral-800/50 border border-neutral-700/60 rounded-2xl flex flex-col justify-between relative overflow-hidden shadow-lg">
-            <div class="flex flex-col">
-              <div class="w-full overflow-hidden relative bg-neutral-900/20 border-b border-neutral-700/40">
-                <img src="https://lh3.googleusercontent.com/d/175-ZCI7kmavqiI6DXxYCeECvyYNGPvDG" alt="Decoraciones" class="w-full h-auto object-contain" referrerpolicy="no-referrer" />
-              </div>
-              <div class="p-3 sm:p-6">
-                <div class="flex items-center gap-1.5 sm:gap-3 mb-2 sm:mb-3">
-                  <div class="w-6 h-6 sm:w-8 sm:h-8 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-lg flex items-center justify-center shrink-0">
-                    <i data-lucide="sparkles" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                  </div>
-                  <span class="text-[9px] sm:text-[10px] font-bold text-pink-400 tracking-wider uppercase truncate">BONO 06</span>
-                </div>
-                <h4 class="text-xs sm:text-base md:text-lg font-bold text-white line-clamp-2">Decoraciones que Venden</h4>
-              </div>
-            </div>
-            <div class="px-3 pb-3 sm:px-6 sm:pb-6 mt-auto">
-              <div class="pt-2 sm:pt-4 border-t border-neutral-700/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[10px] sm:text-xs">
-                <span class="text-neutral-500">Valor: <span class="line-through">$15 USD</span></span>
-                <span class="text-emerald-400 font-bold uppercase flex items-center gap-1">HOY GRATIS</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Bottom Call to Action -->
-        <div class="mt-16 text-center">
-          <button onclick="redirectToCheckout()" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-4 px-10 rounded-[20px] shadow-lg shadow-pink-500/10 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-wider text-xs sm:text-sm cursor-pointer">
-            <span>QUIERO TODO CON LOS BONOS</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Necesito ser repostera profesional o tener hornos industriales?
+            <span class="faq-icon">+</span>
           </button>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- OFFER / PRICING SECTION -->
-    <section id="pricing-section" class="bg-gradient-to-b from-white to-rose-50/30 py-20 md:py-28 relative">
-      <div class="absolute top-0 right-1/4 w-96 h-96 bg-pink-100/30 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-4xl mx-auto px-4 sm:px-6">
-        <!-- Header Block -->
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
-            Comienza tu <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">negocio hoy mismo</span>
-          </h2>
-          <p class="text-neutral-700 mt-4 text-sm sm:text-base md:text-lg">
-            No dejes pasar esta oportunidad de acceder a todo el material con un <span class="text-rose-600 font-extrabold animate-blink-slow">descuento exclusivo de 77%</span>
-          </p>
-        </div>
-
-        <!-- Purchase Card Box - Single Column Layout -->
-        <div class="bg-white border-2 border-pink-200 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-pink-100/80 relative overflow-hidden max-w-2xl mx-auto flex flex-col">
-          
-          <!-- Centered Highly Prominent "OFERTA" Badge -->
-          <div class="flex flex-col items-center justify-center mb-4 gap-4 text-center">
-            <span class="bg-gradient-to-r from-pink-600 to-rose-500 text-white text-xs sm:text-sm font-extrabold px-6 py-2 rounded-full uppercase tracking-widest shadow-md border border-pink-500">
-              ¡OFERTA ESPECIAL LIMITADA!
-            </span>
-          </div>
-
-          <!-- Heading -->
-          <div class="text-center mb-6">
-            <h3 class="text-2xl sm:text-3xl font-sans font-black text-neutral-800 leading-tight">
-              MegaPack Postres para Emprender + 6 Bonos
-            </h3>
-            <p class="text-sm text-pink-600 font-bold mt-2">
-              🧁 Acceso inmediato y de por vida para emprender
-            </p>
-          </div>
-
-          <!-- Prominent Image inside the card -->
-          <div class="w-full flex justify-center mb-8">
-            <div class="relative bg-neutral-50 p-2 rounded-2xl border border-pink-100 shadow-sm max-w-md w-full">
-              <img
-                src="https://lh3.googleusercontent.com/d/1KcJympI9Ur5jiM79Jo8E5cjglF2kElHL"
-                alt="MegaPack Postres para Emprender"
-                class="w-full h-auto rounded-xl object-contain mx-auto"
-                referrerpolicy="no-referrer"
-              />
-            </div>
-          </div>
-
-          <!-- Inclusions checklist -->
-          <div class="max-w-md mx-auto w-full mb-8">
-            <ul class="space-y-3.5 text-sm sm:text-base text-neutral-600 font-semibold">
-              <li class="flex items-start gap-3">
-                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
-                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
-                </div>
-                <span>Todos mis recetarios fáciles para emprender y listos para vender desde tu hogar</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
-                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
-                </div>
-                <span>6 Bonos exclusivos GRATIS</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
-                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
-                </div>
-                <span>Excel de costos y presupuestos automático</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
-                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
-                </div>
-                <span>Vende por redes sociales rápidamente</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
-                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
-                </div>
-                <span>Guía de Proveedores por País</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <div class="bg-emerald-100 text-emerald-600 p-0.5 rounded-full mt-0.5 flex-shrink-0">
-                  <i data-lucide="check" class="w-4 h-4 stroke-[3px]"></i>
-                </div>
-                <span>Acceso al Grupo Privado de WhatsApp</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- High-visibility pricing box -->
-          <div class="p-6 bg-gradient-to-br from-pink-50 to-rose-100/40 rounded-2xl border-2 border-dashed border-pink-400 flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden mb-6 max-w-md mx-auto w-full">
-            <span class="text-sm sm:text-base md:text-lg text-rose-500/90 font-extrabold tracking-wider uppercase line-through decoration-rose-600 decoration-2">
-              PRECIO NORMAL DE $67 USD
-            </span>
-            <span class="mt-2 text-xs sm:text-sm md:text-base text-white bg-gradient-to-r from-pink-600 to-rose-500 font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
-              TODO POR SÓLO
-            </span>
-            <div class="flex items-baseline gap-1 mt-3">
-              <span class="text-5xl sm:text-6xl md:text-7xl font-sans font-black text-pink-600 tracking-tight">
-                $14,90 <span class="text-2xl sm:text-3xl md:text-4xl font-black text-neutral-800">USD</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- CTA Button -->
-          <div class="mb-6 max-w-md mx-auto w-full">
-            <button
-              onclick="redirectToAffiliateCheckout()"
-              id="checkout-button"
-              class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-extrabold py-4 rounded-[20px] shadow-lg shadow-pink-200/80 hover:shadow-xl hover:shadow-pink-300/80 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center text-sm sm:text-base uppercase tracking-wider cursor-pointer"
-            >
-              QUIERO ACCEDER AHORA
-            </button>
-          </div>
-
-          <!-- Security Badges -->
-          <div class="flex flex-col items-center gap-2">
-            <div class="flex items-center gap-1.5 text-xs text-emerald-600 font-bold uppercase tracking-wider">
-              <i data-lucide="lock" class="w-3.5 h-3.5"></i>
-              <span>Compra 100% Segura</span>
-            </div>
-            <div class="w-full max-w-[280px] mt-1">
-              <img
-                src="https://lh3.googleusercontent.com/d/1s2vMkqEYV653nBBufdwasSvnfGNIxsRc"
-                alt="Compra Segura"
-                class="w-full h-auto object-contain mx-auto"
-                referrerpolicy="no-referrer"
-              />
-            </div>
-          </div>
-
-          <!-- Countdown Timer -->
-          <div class="flex flex-col items-center justify-center mt-6 pt-6 border-t border-dashed border-neutral-200 max-w-md mx-auto w-full">
-            <span class="text-[#DE1A53] font-sans font-extrabold tracking-[0.12em] text-center text-[11px] sm:text-xs mb-3">
-              LA OFERTA TERMINA EN:
-            </span>
-            <div class="flex items-center justify-center gap-2.5">
-              <!-- Hours Card -->
-              <div class="flex flex-col items-center gap-1">
-                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#DE1A53] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(222,26,83,0.25)] border-b-[3px] border-[#b0103c]">
-                  <span id="timer-hours" class="text-xl sm:text-2xl font-sans font-black text-white tracking-tight">23</span>
-                </div>
-                <span class="text-[8px] sm:text-[9px] font-bold text-neutral-400 uppercase tracking-widest">Horas</span>
-              </div>
-              
-              <!-- Colon Separator -->
-              <span class="text-base sm:text-lg font-black text-[#DE1A53] self-start mt-2">:</span>
-
-              <!-- Minutes Card -->
-              <div class="flex flex-col items-center gap-1">
-                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#DE1A53] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(222,26,83,0.25)] border-b-[3px] border-[#b0103c]">
-                  <span id="timer-minutes" class="text-xl sm:text-2xl font-sans font-black text-white tracking-tight">59</span>
-                </div>
-                <span class="text-[8px] sm:text-[9px] font-bold text-neutral-400 uppercase tracking-widest">Min</span>
-              </div>
-              
-              <!-- Colon Separator -->
-              <span class="text-base sm:text-lg font-black text-[#DE1A53] self-start mt-2">:</span>
-
-              <!-- Seconds Card -->
-              <div class="flex flex-col items-center gap-1">
-                <div class="w-12 h-12 sm:w-14 sm:h-14 bg-[#DE1A53] rounded-xl flex items-center justify-center shadow-[0_4px_8px_rgba(222,26,83,0.25)] border-b-[3px] border-[#b0103c]">
-                  <span id="timer-seconds" class="text-xl sm:text-2xl font-sans font-black text-white tracking-tight">59</span>
-                </div>
-                <span class="text-[8px] sm:text-[9px] font-bold text-neutral-400 uppercase tracking-widest">Seg</span>
-              </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              ¡Para nada! El recetario fue pensado especialmente para principiantes y emprendedoras desde casa. Las recetas utilizan utensilios de cocina cotidianos e ingredientes fáciles de conseguir.
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-
-
-
-
-
-    <!-- TESTIMONIALS SECTION -->
-    <section class="bg-white py-20 md:py-24 relative overflow-hidden">
-      <!-- Visual background accents -->
-      <div class="absolute top-10 right-0 w-80 h-80 bg-rose-50 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
-        <!-- Header Block -->
-        <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
-            Lo que dicen <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">nuestras alumnas</span>
-          </h2>
-        </div>
-
-        <!-- Video Testimonials Responsive Grid -->
-        <div class="space-y-8 max-w-4xl mx-auto">
-          <!-- Horizontal Videos Row -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <div class="bg-white border border-pink-100 rounded-2xl p-2 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300">
-              <div class="relative aspect-video w-full rounded-xl overflow-hidden bg-black shadow-inner">
-                <iframe
-                  src="https://player.vimeo.com/video/797134937?title=0&byline=0&portrait=0&badge=0&loop=1"
-                  class="absolute inset-0 w-full h-full"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-
-            <div class="bg-white border border-pink-100 rounded-2xl p-2 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300">
-              <div class="relative aspect-video w-full rounded-xl overflow-hidden bg-black shadow-inner">
-                <iframe
-                  src="https://player.vimeo.com/video/801388966?title=0&byline=0&portrait=0&badge=0&loop=1"
-                  class="absolute inset-0 w-full h-full"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Vertical Videos Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center max-w-2xl mx-auto">
-            
-            <div class="bg-white border border-pink-100 rounded-2xl p-2 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300 w-full max-w-[280px] sm:max-w-[300px] mx-auto">
-              <div class="relative aspect-[9/16] w-full rounded-xl overflow-hidden bg-black shadow-inner">
-                <iframe
-                  src="https://player.vimeo.com/video/917564554?title=0&byline=0&portrait=0&badge=0&loop=1"
-                  class="absolute inset-0 w-full h-full"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-
-            <div class="bg-white border border-pink-100 rounded-2xl p-2 shadow-sm hover:shadow-md hover:border-pink-200 transition-all duration-300 w-full max-w-[280px] sm:max-w-[300px] mx-auto">
-              <div class="relative aspect-[9/16] w-full rounded-xl overflow-hidden bg-black shadow-inner">
-                <iframe
-                  src="https://player.vimeo.com/video/917565002?title=0&byline=0&portrait=0&badge=0&loop=1"
-                  class="absolute inset-0 w-full h-full"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Text Testimonials Grid -->
-        <div class="mt-20 border-t border-pink-100/50 pt-16">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <!-- Testimonial Card 1 -->
-            <div class="bg-white border border-pink-100/80 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_10px_35px_rgba(244,63,94,0.03)] hover:shadow-md transition-shadow duration-300 relative">
-              <div>
-                <div class="flex gap-1 mb-4 text-amber-400">
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                </div>
-                <p class="text-neutral-600 text-sm sm:text-[15px] leading-relaxed italic mb-6">
-                  "Buscaba recetas que de verdad funcionaran para vender en vasos y este programa superó todas mis expectativas. Comencé vendiendo a mis vecinos y en dos semanas ya tenía pedidos para cumpleaños enteros. ¡Ya recuperé mi inversión de sobra!"
-                </p>
-              </div>
-              
-              <div class="flex items-center gap-4 pt-4 border-t border-pink-50">
-                <div class="w-12 h-12 rounded-full overflow-hidden border border-pink-100 flex-shrink-0 bg-neutral-50">
-                  <img
-                    src="https://lh3.googleusercontent.com/d/16Lnr6SnpAiJspyM69soKmS7vF9VwLbG4"
-                    alt="Maribel Orellano"
-                    class="w-full h-full object-cover"
-                    referrerpolicy="no-referrer"
-                  />
-                </div>
-                <div>
-                  <h4 class="text-sm sm:text-base font-sans font-bold text-[#4A0B22]">
-                    Maribel Orellano
-                  </h4>
-                  <p class="text-xs text-neutral-400 font-medium">México</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 2 -->
-            <div class="bg-white border border-pink-100/80 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_10px_35px_rgba(244,63,94,0.03)] hover:shadow-md transition-shadow duration-300 relative">
-              <div>
-                <div class="flex gap-1 mb-4 text-amber-400">
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                </div>
-                <p class="text-neutral-600 text-sm sm:text-[15px] leading-relaxed italic mb-6">
-                  "Siempre sentí que la repostería era para gente con mucho talento porque a mí todo se me quemaba o me quedaba seco. El paso a paso de este curso es tan detallado que por fin logré cheesecakes perfectos. ¡Mis hijos están encantados de verme emprender!"
-                </p>
-              </div>
-              
-              <div class="flex items-center gap-4 pt-4 border-t border-pink-50">
-                <div class="w-12 h-12 rounded-full overflow-hidden border border-pink-100 flex-shrink-0 bg-neutral-50">
-                  <img
-                    src="https://lh3.googleusercontent.com/d/1Hr2wXs-VZmvx4Mq6mPl6GUT-xEs722uO"
-                    alt="Laura Pichardo"
-                    class="w-full h-full object-cover"
-                    referrerpolicy="no-referrer"
-                  />
-                </div>
-                <div>
-                  <h4 class="text-sm sm:text-base font-sans font-bold text-[#4A0B22]">
-                    Laura Pichardo
-                  </h4>
-                  <p class="text-xs text-neutral-400 font-medium">Estados Unidos</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Testimonial Card 3 -->
-            <div class="bg-white border border-pink-100/80 rounded-[24px] p-6 sm:p-8 flex flex-col justify-between shadow-[0_10px_35px_rgba(244,63,94,0.03)] hover:shadow-md transition-shadow duration-300 relative">
-              <div>
-                <div class="flex gap-1 mb-4 text-amber-400">
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                  <i data-lucide="star" class="w-5 h-5 fill-current text-amber-400"></i>
-                </div>
-                <p class="text-neutral-600 text-sm sm:text-[15px] leading-relaxed italic mb-6">
-                  "Mil gracias por el soporte del docente. Cuando tuve dudas con el buttercream, en el grupo privado me corrigieron la temperatura de la mantequilla y me quedó espectacular. ¡Las plantillas de costos valen oro puro!"
-                </p>
-              </div>
-              
-              <div class="flex items-center gap-4 pt-4 border-t border-pink-50">
-                <div class="w-12 h-12 rounded-full overflow-hidden border border-pink-100 flex-shrink-0 bg-neutral-50">
-                  <img
-                    src="https://lh3.googleusercontent.com/d/1C3g9G3K8litv-b8LZbxAGnmNzm7zyb7h"
-                    alt="Marganith Cantillano"
-                    class="w-full h-full object-cover"
-                    referrerpolicy="no-referrer"
-                  />
-                </div>
-                <div>
-                  <h4 class="text-sm sm:text-base font-sans font-bold text-[#4A0B22]">
-                    Marganith Cantillano
-                  </h4>
-                  <p class="text-xs text-neutral-400 font-medium">Costa Rica</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-    <!-- FAQ SECTION (With interactive JavaScript accordion toggles) -->
-    <section class="bg-white py-20 md:py-24 relative">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6">
-        
-        <!-- Header Block -->
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-bold tracking-tight text-neutral-800 leading-tight">
-            ¿Aún tienes dudas? <span class="text-pink-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">Aquí te las resuelvo</span>
-          </h2>
-          <p class="text-neutral-500 mt-4 text-sm sm:text-base">
-            Resolvemos todas tus dudas de forma transparente para que puedas tomar la mejor decisión hoy
-          </p>
-        </div>
-
-        <!-- Accordion List -->
-        <div class="space-y-2.5 sm:space-y-4">
-          
-          <!-- FAQ 1 -->
-          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="true">
-            <button
-              onclick="toggleFaq(this)"
-              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
-            >
-              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Cómo recibo el MegaPack?</span>
-              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-pink-100 text-pink-600">
-                <i data-lucide="chevron-up" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-              </div>
-            </button>
-            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 500px; opacity: 1;">
-              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
-                Una vez que realices el pago, el acceso es de inmediato. Recibirás un enlace directo en tu correo electrónico para que puedas ver y descargar todo el material (los recetarios, guías y el Excel de costos) al instante.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 2 -->
-          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
-            <button
-              onclick="toggleFaq(this)"
-              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
-            >
-              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Necesito experiencia previa?</span>
-              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-              </div>
-            </button>
-            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
-              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
-                No, absolutamente ninguna. Este MegaPack fue diseñado pensando en principiantes. Cada receta incluye el paso a paso detallado, consejos prácticos, utensilios necesarios y los secretos para que siempre te salgan perfectas desde el primer intento.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
-            <button
-              onclick="toggleFaq(this)"
-              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
-            >
-              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Puedo verlo desde mi celular?</span>
-              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-              </div>
-            </button>
-            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
-              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
-                ¡Sí! Todo el material viene en formato digital (PDFs interactivos de alta calidad y archivos compatibles) 100% optimizados para leerse de manera cómoda en celulares, tablets, computadoras o laptops. También puedes imprimirlos si lo prefieres.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
-            <button
-              onclick="toggleFaq(this)"
-              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
-            >
-              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Cómo funcionan los bonos?</span>
-              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-              </div>
-            </button>
-            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
-              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
-                Los 6 bonos exclusivos se añaden de forma 100% automática y totalmente GRATIS a tu pedido el día de hoy. No tienes que pagar nada adicional por ellos, se incluyen como un regalo especial para asegurar el éxito de tu emprendimiento.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
-            <button
-              onclick="toggleFaq(this)"
-              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
-            >
-              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Cuánto tiempo tendré acceso?</span>
-              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-              </div>
-            </button>
-            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
-              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
-                Tu acceso es de por vida. Esto significa que puedes descargar los archivos, guardarlos en tu dispositivo y consultarlos cuantas veces quieras, hoy, mañana o dentro de unos años. No hay cuotas mensuales ni cobros futuros.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 6 -->
-          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
-            <button
-              onclick="toggleFaq(this)"
-              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
-            >
-              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿La compra es segura?</span>
-              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-              </div>
-            </button>
-            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
-              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
-                Sí, es 100% segura. El proceso de pago es administrado por plataformas de alta seguridad
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 7 -->
-          <div class="faq-item border border-pink-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-all duration-300 bg-white" data-open="false">
-            <button
-              onclick="toggleFaq(this)"
-              class="w-full flex items-center justify-between p-3.5 sm:p-5 text-left font-sans font-bold text-neutral-800 hover:text-pink-600 transition-colors duration-200 gap-3 sm:gap-4 cursor-pointer"
-            >
-              <span class="text-[13px] sm:text-base font-semibold sm:font-bold leading-tight">¿Cuál es el valor en mi moneda local?</span>
-              <div class="faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400">
-                <i data-lucide="chevron-down" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
-              </div>
-            </button>
-            <div class="faq-answer-container overflow-hidden bg-rose-50/20" style="max-height: 0px; opacity: 0;">
-              <div class="px-3.5 pb-3.5 pt-0 sm:px-5 sm:pb-5 sm:pt-0 border-t border-pink-50 text-[12px] sm:text-sm md:text-base text-neutral-600 leading-relaxed">
-                Al momento de hacer clic en los botones de compra e ir a la página de pago, el sistema detectará tu país y convertirá de forma automática el precio a tu moneda local exacta con las opciones de pago de tu país.
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- EMERGENCY FOOTER -->
-    <footer class="bg-neutral-900 text-white relative pt-20 pb-12 overflow-hidden border-t border-neutral-800">
-      <!-- Visual background accents -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 relative text-center">
-        
-        <!-- Urgent upper badge -->
-        <span class="inline-block bg-pink-500/10 border border-pink-500/30 text-pink-400 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
-          🚨 Última Oportunidad
-        </span>
-
-        <!-- Big headline -->
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-sans font-black text-white tracking-tight leading-tight">
-          Emprende y gana dinero <br class="hidden sm:inline" />
-          <span class="text-pink-400 bg-gradient-to-r from-pink-400 to-rose-300 bg-clip-text text-transparent">vendiendo postres desde casa sin utensilios costosos</span>
-        </h2>
-        
-        <p class="text-neutral-400 mt-4 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-          Todos mis recetarios fáciles para emprender y comenzar a vender postres deliciosos desde tu hogar hoy mismo!
-        </p>
-
-        <!-- Final Price Tag -->
-        <div class="mt-8 mb-6 inline-flex flex-col items-center justify-center bg-neutral-800/80 border border-neutral-700/60 p-5 sm:p-6 rounded-2xl">
-          <span class="text-pink-400 text-sm sm:text-base font-black uppercase tracking-widest">TODO POR SÓLO</span>
-          <div class="flex items-baseline gap-1.5 mt-2 text-pink-400">
-            <span class="text-xl sm:text-2xl font-black">solo</span>
-            <span class="text-4xl sm:text-5xl md:text-6xl font-sans font-black text-white">$14,90</span>
-            <span class="text-base sm:text-lg font-black uppercase">USD</span>
-          </div>
-        </div>
-
-        <!-- CTA Button -->
-        <div class="max-w-sm mx-auto">
-          <button
-            onclick="redirectToAffiliateCheckout()"
-            id="cta-footer"
-            class="w-full bg-gradient-to-r from-pink-600 to-rose-500 hover:from-pink-700 hover:to-rose-600 text-white font-extrabold py-4 rounded-[20px] shadow-lg shadow-pink-500/10 hover:shadow-xl hover:shadow-pink-500/20 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center text-sm sm:text-base uppercase tracking-wider cursor-pointer"
-          >
-            QUIERO EL MEGAPACK AHORA
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Las recetas son explicadas paso a paso?
+            <span class="faq-icon">+</span>
           </button>
-        </div>
-
-        <!-- Checkout Trust Badges -->
-        <div class="mt-6 flex flex-wrap justify-center items-center gap-x-5 gap-y-2 text-xs text-neutral-400 font-semibold uppercase tracking-wider">
-          <div class="flex items-center gap-1.5 text-emerald-400">
-            <i data-lucide="shield-check" class="w-4 h-4 stroke-[2.5]"></i>
-            <span>Compra Protegida</span>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sí, cada receta detalla cantidades exactas, tiempos de preparación, trucos de horneado o refrigeración, así como consejos de presentación y conservación.
+            </div>
           </div>
-          <span>•</span>
-          <span>Acceso inmediato</span>
-          <span>•</span>
-          <span>Garantía de 7 días</span>
-          <span>•</span>
-          <span>Compatible con celular y PC</span>
         </div>
 
-        <!-- Secure payment logos -->
-        <div class="mt-8 flex justify-center items-center select-none max-w-[280px] mx-auto">
-          <img
-            src="https://lh3.googleusercontent.com/d/1s2vMkqEYV653nBBufdwasSvnfGNIxsRc"
-            alt="Compra Segura"
-            class="w-full h-auto object-contain mx-auto"
-            referrerpolicy="no-referrer"
-          />
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Realmente puedo vender estos postres todo el año?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              ¡Totalmente! Incluye variedad de postres fríos para verano, galletas y horneados para días frescos, además de presentaciones individuales (en vaso) que se venden muy bien en cualquier época.
+            </div>
+          </div>
         </div>
 
-        <!-- Copyright info -->
-        <div class="mt-16 pt-8 border-t border-neutral-800/80 text-xs text-neutral-500 text-center">
-          <p>© 2026 - Todos los derechos reservados.</p>
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿Cómo funciona la garantía de 7 días?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Tienes 7 días completos para revisar todo el contenido. Si sientes que no es para ti, nos escribes un correo y te reembolsamos el 100% de tu dinero de manera automática.
+            </div>
+          </div>
         </div>
 
+        <div class="faq-item">
+          <button class="faq-question">
+            ¿El pago es seguro y en qué moneda se cobra?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              El pago es 100% encriptado y seguro a través de pasarelas internacionales. El precio está fijado en USD (Dólares) y tu tarjeta convertirá el cobro automáticamente a tu moneda local.
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
 
-  </main>
+      <a href="#pricing" class="btn btn-primary btn-center">
+        Quiero mis recetas ahora
+      </a>
+    </div>
+  </section>
 
-  <!-- INTERACTIVE FUNCTIONALITY SCRIPTS -->
+  <!-- ===== SECCIÓN 12: CTA FINAL ===== -->
+  <section id="final-cta">
+    <div class="container">
+      <h2>
+        Tu emprendimiento dulce<br />
+        <span>empieza hoy mismo</span>
+      </h2>
+      <a href="#pricing" class="btn btn-white" style="font-size:17px; padding:18px 48px;">
+        Quiero mi recetario ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN 13: FOOTER ===== -->
+  <footer>
+    <p><strong>© 2026 Recetario Dulce Emprendimiento.</strong> Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- ===== POPUP UPSELL ===== -->
+  <div id="upsell-overlay" role="dialog" aria-modal="true" aria-labelledby="upsell-title">
+    <div id="upsell-card">
+      <button id="upsell-close" aria-label="Cerrar">&#x2715;</button>
+      <span class="upsell-tag">Oferta especial</span>
+      <h2 class="upsell-headline" id="upsell-title">¡Espera! Tenemos una oferta exclusiva para ti</h2>
+      <p class="upsell-body">Aprovecha y llévate el <strong>Recetario Completo</strong> (+160 recetas) con los 5 bonos de negocio por un precio especial. Son más de $18 USD en materiales extras por mucho menos de lo que imaginas.</p>
+      <img src="https://lh3.googleusercontent.com/d/1mSvsbeM2inTlTpHuV8j--eZJrbdzvoMW" alt="Recetario Completo" style="width:100%;max-width:220px;height:auto;object-fit:contain;margin:0 auto 16px;display:block;filter:drop-shadow(0 8px 20px rgba(238,108,138,0.25));" loading="lazy" referrerpolicy="no-referrer" />
+      <div class="upsell-price-block" style="flex-direction:column;gap:4px;">
+        <span class="upsell-price-old" id="upsell-old-price"></span>
+        <span class="upsell-price-new" id="upsell-new-price"></span>
+      </div>
+      <p class="upsell-price-label">Pago único en USD. Acceso inmediato.</p>
+      <a id="upsell-btn-yes" class="upsell-btn-yes btn-checkout" target="_blank">
+        Quiero el recetario completo con descuento
+      </a>
+      <button id="upsell-btn-no" class="upsell-btn-no btn-checkout">
+        No, solo quiero el recetario básico
+      </button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
-    // Smooth scroll to offer/pricing section
-    function scrollToPricing() {
-      const element = document.getElementById("pricing-section");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+    // Inicializar ícones Lucide
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+
+    // ===== CONFIG DO POPUP UPSELL =====
+    var UPSELL = {
+      checkoutPagina:   'https://pay.hotmart.com/Y106546858K?off=nrm40zc2&checkoutMode=10',
+      checkoutCompleto: 'https://pay.wiapy.com/Dc-HpAeSV',
+      checkoutBasico:   'https://pay.hotmart.com/Y106546858K?off=6c5r99t7&checkoutMode=10',
+      precoOriginal:    'De $9.90 USD',
+      precoDesconto:    '$5.90 USD'
+    };
+
+    // ===== REDIRECIONAMENTO COM PARÂMETROS =====
+    function irParaCheckout(url) {
+      try {
+        var dest = new URL(url);
+        new URLSearchParams(window.location.search).forEach(function(v, k) {
+          dest.searchParams.set(k, v);
+        });
+        window.location.href = dest.toString();
+      } catch(e) {
+        window.location.href = url + window.location.search;
       }
     }
 
-    // Redirect directly to Hotmart Checkout
-    function redirectToCheckout() {
-      window.location.href = "https://pay.hotmart.com/Y106546858K?checkoutMode=10";
-    }
+    // ===== POPUP UPSELL =====
+    (function() {
+      var overlay  = document.getElementById('upsell-overlay');
+      var btnYes   = document.getElementById('upsell-btn-yes');
+      var btnNo    = document.getElementById('upsell-btn-no');
+      var btnClose = document.getElementById('upsell-close');
+      var trigger  = document.getElementById('btn-basico-trigger');
+      var btnCompletoLink = document.getElementById('btn-completo-link');
 
-    // Redirect to Affiliate Checkout
-    function redirectToAffiliateCheckout() {
-      window.location.href = "https://pay.hotmart.com/Y106546858K?checkoutMode=10";
-    }
-
-    // Initializer on page load
-    document.addEventListener("DOMContentLoaded", () => {
-      // 1. Create Lucide icons
-      if (window.lucide) {
-        lucide.createIcons();
+      // Preenche preços dinamicamente
+      if (document.getElementById('upsell-old-price')) {
+        document.getElementById('upsell-old-price').textContent = UPSELL.precoOriginal;
+      }
+      var newEl = document.getElementById('upsell-new-price');
+      if (newEl) {
+        var cleanVal = UPSELL.precoDesconto.replace('R$','').replace('$','').replace('USD','').trim();
+        var parts = cleanVal.split('.');
+        newEl.innerHTML = '<sup>$</sup>' + parts[0] + (parts[1] ? '<sup>.' + parts[1] + '</sup>' : '') + ' <span style="font-size:20px; font-weight:800; color:var(--brand-secondary);">USD</span>';
       }
 
-      // 2. Setup persistent countdown target (24h)
-      initCountdown();
-    });
+      if (btnCompletoLink) {
+        btnCompletoLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          irParaCheckout(UPSELL.checkoutPagina);
+        });
+      }
 
-    // FAQ Accordion Toggle Interaction
-    function toggleFaq(button) {
-      const faqItem = button.closest(".faq-item");
-      const answerContainer = faqItem.querySelector(".faq-answer-container");
-      const iconContainer = faqItem.querySelector(".faq-icon-container");
-      const isAlreadyOpen = faqItem.getAttribute("data-open") === "true";
-
-      // Close all other FAQ items
-      document.querySelectorAll(".faq-item").forEach((item) => {
-        if (item !== faqItem) {
-          item.setAttribute("data-open", "false");
-          const otherAns = item.querySelector(".faq-answer-container");
-          otherAns.style.maxHeight = "0px";
-          otherAns.style.opacity = "0";
-          const otherIcon = item.querySelector(".faq-icon-container");
-          otherIcon.className = "faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400";
-          // Update icon to chevron-down
-          const iconEl = otherIcon.querySelector("i");
-          if (iconEl) iconEl.setAttribute("data-lucide", "chevron-down");
+      function openPopup(e) {
+        if (e) e.preventDefault();
+        if (overlay) {
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
         }
+      }
+
+      function closePopup() {
+        if (overlay) {
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (btnYes) {
+        btnYes.addEventListener('click', function(e) {
+          e.preventDefault();
+          irParaCheckout(UPSELL.checkoutCompleto);
+        });
+      }
+
+      function goBasico() {
+        closePopup();
+        irParaCheckout(UPSELL.checkoutBasico);
+      }
+
+      if (trigger) {
+        trigger.addEventListener('click', function(e) {
+          e.preventDefault();
+          irParaCheckout(UPSELL.checkoutBasico);
+        });
+      }
+      if (btnClose) btnClose.addEventListener('click', closePopup);
+      if (btnNo) btnNo.addEventListener('click', goBasico);
+
+      // Fechar clicando fora do card
+      if (overlay) {
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) closePopup();
+        });
+      }
+
+      // Fechar com ESC
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closePopup();
+      });
+    })();
+
+    // ===== Carrossel de Depoimentos =====
+    (function() {
+      var track = document.querySelector('.t-track');
+      var dots  = document.querySelectorAll('.t-dot');
+      var prev  = document.querySelector('.t-prev');
+      var next  = document.querySelector('.t-next');
+      if (!track) return;
+      var slides = document.querySelectorAll('.t-slide');
+      var total = slides.length;
+      if (total === 0) return;
+      var cur = 0, timer, startX = 0;
+
+      function goTo(idx) {
+        cur = (idx + total) % total;
+        track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === cur); });
+      }
+      function resetAuto() { clearInterval(timer); timer = setInterval(function() { goTo(cur + 1); }, 5000); }
+
+      if (prev) prev.addEventListener('click', function() { goTo(cur - 1); resetAuto(); });
+      if (next) next.addEventListener('click', function() { goTo(cur + 1); resetAuto(); });
+      dots.forEach(function(d, i) { d.addEventListener('click', function() { goTo(i); resetAuto(); }); });
+
+      track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, {passive:true});
+      track.addEventListener('touchend', function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) { goTo(cur + (diff > 0 ? 1 : -1)); resetAuto(); }
       });
 
-      // Toggle clicked item
-      if (isAlreadyOpen) {
-        faqItem.setAttribute("data-open", "false");
-        answerContainer.style.maxHeight = "0px";
-        answerContainer.style.opacity = "0";
-        iconContainer.className = "faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-neutral-50 text-neutral-400";
-        const iconEl = iconContainer.querySelector("i");
-        if (iconEl) iconEl.setAttribute("data-lucide", "chevron-down");
-      } else {
-        faqItem.setAttribute("data-open", "true");
-        answerContainer.style.maxHeight = "500px";
-        answerContainer.style.opacity = "1";
-        iconContainer.className = "faq-icon-container p-1 sm:p-1.5 rounded-full shrink-0 bg-pink-100 text-pink-600";
-        const iconEl = iconContainer.querySelector("i");
-        if (iconEl) iconEl.setAttribute("data-lucide", "chevron-up");
-      }
+      resetAuto();
+    })();
 
-      // Refresh Lucide icons inside containers
-      if (window.lucide) {
-        lucide.createIcons();
-      }
-    }
+    // ===== Countdown de 24 horas guardado en localStorage =====
+    (function() {
+      var targets = [
+        document.getElementById('countdown-timer'),
+        document.getElementById('urgency-countdown')
+      ];
+      
+      var STORAGE_KEY = 'dulce_countdown_target_24h';
+      var DURATION_MS = 24 * 60 * 60 * 1000; // 24 horas
 
-    // Persistent 24h Countdown Timer logic
-    function initCountdown() {
-      const storageKey = "offer_target_timestamp_24h";
-      let targetTime = localStorage.getItem(storageKey);
+      function getTargetTime() {
+        var saved = null;
+        try {
+          saved = localStorage.getItem(STORAGE_KEY);
+        } catch(e) {}
 
-      if (!targetTime) {
-        // Set new target 24 hours from now
-        targetTime = Date.now() + 24 * 60 * 60 * 1000;
-        localStorage.setItem(storageKey, targetTime.toString());
-      } else {
-        targetTime = parseInt(targetTime, 10);
-        // If invalid, reset to 24h from now (no auto-reset if expired)
-        if (isNaN(targetTime)) {
-          targetTime = Date.now() + 24 * 60 * 60 * 1000;
-          localStorage.setItem(storageKey, targetTime.toString());
+        var target = saved ? parseInt(saved, 10) : NaN;
+        var now = Date.now();
+
+        // Si no existe (ej: borrado de datos), expiró o es inválido, reinicia desde 24 horas
+        if (isNaN(target) || now >= target) {
+          target = now + DURATION_MS;
+          try {
+            localStorage.setItem(STORAGE_KEY, target.toString());
+          } catch(e) {}
         }
+        return target;
       }
 
-      function updateTimer() {
-        const diff = Math.floor((targetTime - Date.now()) / 1000);
-        
+      var targetTime = getTargetTime();
+
+      function tick() {
+        var now = Date.now();
+        var diff = targetTime - now;
+
         if (diff <= 0) {
-          // If finished, reset or keep at 0
-          document.getElementById("timer-hours").textContent = "00";
-          document.getElementById("timer-minutes").textContent = "00";
-          document.getElementById("timer-seconds").textContent = "00";
-          clearInterval(timerInterval);
-          return;
+          targetTime = now + DURATION_MS;
+          try {
+            localStorage.setItem(STORAGE_KEY, targetTime.toString());
+          } catch(e) {}
+          diff = DURATION_MS;
         }
 
-        const hours = Math.floor(diff / 3600);
-        const minutes = Math.floor((diff % 3600) / 60);
-        const seconds = diff % 60;
+        var h = Math.floor(diff / (1000 * 60 * 60));
+        var m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((diff % (1000 * 60)) / 1000);
 
-        document.getElementById("timer-hours").textContent = hours.toString().padStart(2, "0");
-        document.getElementById("timer-minutes").textContent = minutes.toString().padStart(2, "0");
-        document.getElementById("timer-seconds").textContent = seconds.toString().padStart(2, "0");
+        var str = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        targets.forEach(function(el) {
+          if (el) el.textContent = str;
+        });
       }
 
-      updateTimer();
-      const timerInterval = setInterval(updateTimer, 1000);
-    }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    // ===== FAQ Accordion =====
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+
+        // Fechar todos
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('active');
+          const a = i.querySelector('.faq-answer');
+          if (a) a.style.maxHeight = null;
+        });
+
+        // Abrir o clicado se não estava ativo
+        if (!isActive && answer) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
   </script>
 </body>
 </html>
